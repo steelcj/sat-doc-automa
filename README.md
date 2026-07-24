@@ -10,22 +10,34 @@ That is an automa at work. An automa is a self-operating mechanism designed to f
 
 ## What lives here
 
-### Style guides
+### Automa
 
-- [Versioned Documents in Unrendered Markdown](en/docs/style-guide--versioned-documents-in-unrendered-markdown-v0-2-0.md), filename patterns, frontmatter schema, document structure, and prose authoring rules
-- [Technical Documentation for Technologists](en/docs/style-guide--technical-documentation-for-technologists-v0-4-0.md), register, decision rationale requirements, and conceptual boundary documentation
-- [Plain Language for General Audiences](en/docs/style-guide--plain-language-for-general-audiences-v0-4-0.md), the companion guide for general-audience writing
-- [Navigation and Accessibility](en/docs/style-guide-navigation-accessibility-v0-1-1.md), real headings over bolded pseudo-headings, grounded in WCAG 2.1
-- [Web-Ready Unrendered Markdown Using APA 7](en/docs/web-ready-unrendered-markdown-using-apa-7-v0-4-0.md), APA 7 conformance and the Citation Anchor Pair workflow
+Standing directives, organized per-format, with a `defaults/` directory answering "what is in force right now" and an `examples/` directory for deliberately-chosen alternatives. The directory designates status; titles state only the rule.
 
-### Templates and defaults
+#### Markdown
 
-Standing directives for markdown documents live in [en/docs/markdown/](en/docs/markdown/), organized per-format with a `defaults/` directory answering "what is in force right now" and an `examples/` directory for deliberately-chosen alternatives:
+- [Markdown: Use Commas, Not Em Dashes](en/docs/automa/markdown/defaults/markdown--use-commas-not-em-dashes-v0-3-1.md)
+- [Markdown: No Heading Numbers](en/docs/automa/markdown/defaults/markdown--no-heading-numbers-v0-4-1.md)
+- [Markdown: No Horizontal Rules](en/docs/automa/markdown/defaults/markdown--no-horizontal-rules-v0-3-1.md)
+- [Markdown: License Statement Templates](en/docs/automa/markdown/defaults/markdown--license-statement-templates-v0-3-1.md)
 
-- [Markdown: Use Commas, Not Em Dashes](en/docs/markdown/defaults/markdown--use-commas-not-em-dashes-v0-3-1.md)
-- [Markdown: No Heading Numbers](en/docs/markdown/defaults/markdown--no-heading-numbers-v0-4-1.md)
-- [Markdown: No Horizontal Rules](en/docs/markdown/defaults/markdown--no-horizontal-rules-v0-3-1.md)
-- [Markdown: License Statement Templates](en/docs/markdown/defaults/markdown--license-statement-templates-v0-3-1.md)
+#### AI collaboration
+
+- [Collaboration: Energy Conservation in AI Collaborations](en/docs/automa/ai-collaboration/defaults/collaboration--energy-conservation-in-ai-collaborations-v0-1-0.md)
+
+### Guides
+
+#### Style guides
+
+- [Versioned Documents in Unrendered Markdown](en/docs/guides/style-guides/style-guide--versioned-documents-in-unrendered-markdown-v0-2-0.md), filename patterns, frontmatter schema, document structure, and prose authoring rules
+- [Technical Documentation for Technologists](en/docs/guides/style-guides/style-guide--technical-documentation-for-technologists-v0-4-0.md), register, decision rationale requirements, and conceptual boundary documentation
+- [Plain Language for General Audiences](en/docs/guides/style-guides/style-guide--plain-language-for-general-audiences-v0-4-0.md), the companion guide for general-audience writing
+- [Navigation and Accessibility](en/docs/guides/style-guides/style-guide--navigation-accessibility-v0-1-1.md), real headings over bolded pseudo-headings, grounded in WCAG 2.1
+- [Web-Ready Unrendered Markdown Using APA 7](en/docs/guides/style-guides/style-guide--web-ready-unrendered-markdown-using-apa-7-v0-4-0.md), APA 7 conformance and the Citation Anchor Pair workflow
+
+#### DevOps
+
+- [Commit and Versioning Workflow](en/docs/guides/devops/commit-and-versioning-workflow-v0-1-0.md), the two paths: initial commit and every version bump after it
 
 ## Structure
 
@@ -34,9 +46,15 @@ This repository is structured as a SAT archive from its first commit, per the de
 The language layer sits at the root of the subtree that varies by language, matching the governance repository's convention:
 
 ```
-en/docs/                     style guides and other versioned documents
-en/docs/markdown/defaults/   standing directives in force for markdown documents
-en/docs/markdown/examples/   deliberately-chosen alternatives to the defaults
+en/docs/
+    automa/                          standing directives, organized per-format
+        ai-collaboration/defaults/   directives for AI collaboration sessions
+        ai-collaboration/examples/   deliberately-chosen alternatives
+        markdown/defaults/           directives in force for markdown documents
+        markdown/examples/           deliberately-chosen alternatives
+    guides/
+        devops/                      operational workflow guides
+        style-guides/                normative style guides
 ```
 
 ## Languages

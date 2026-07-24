@@ -1,6 +1,6 @@
 # Markdown
 
-This directory holds the standing directives for markdown documents, organized so that what applies by default is answerable by listing one directory.
+Standing directives for markdown documents, organized so that what applies by default is answerable by listing one directory.
 
 ## Structure
 
@@ -17,4 +17,4 @@ Adjusting a default over time means versioning the default document itself, the 
 
 ## Other formats
 
-This structure is per-format. As additional formats gain their own standing directives, they receive sibling directories alongside this one, each with the same `defaults/` and `examples/` shape.
+This structure is per-format. Additional formats live as sibling directories under `automa/`, each with the same `defaults/` and `examples/` shape. See [ai-collaboration](../ai-collaboration/) for an example.
