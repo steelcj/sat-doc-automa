@@ -1,10 +1,10 @@
 ---
 dcterms:title: "Style Guide: Plain Language for General Audiences"
-dcterms:version: "0.4.0"
+dcterms:version: "0.5.0"
 dcterms:creator: "Christopher Steel"
 dcterms:description: "Governs the authoring of plain language documents intended for a general audience; companion to the technical documentation style guide."
 dcterms:created: "2026-07-23"
-dcterms:modified: "2026-07-24"
+dcterms:modified: "2026-07-25"
 dcterms:format: "text/markdown"
 dcterms:language: "en"
 sat:language_bcp47: "en"
@@ -17,6 +17,17 @@ sat:uuid: ""
 sat:version_at_creation: "0.4.0"
 sat:migration_status: pre-sat
 sat:changelog:
+  - version: "0.5.0"
+    date: "2026-07-25"
+    author: "Christopher Steel"
+    notes: >
+      Compliance pass per ROADMAP.md Milestone 0.3.0. Added a deference
+      statement to the authoritative versioned-documents guide. Removed the
+      "numbered" qualifier from body sections and deferred heading numbering
+      to Markdown: No Heading Numbers. Added License to the closing sequence
+      and aligned it to the one canonical order. Replaced double hyphens in
+      prose when naming the technical guide, corrected a stale numbered-section
+      reference in the changelog, and set the Sources heading to sentence case.
   - version: "0.4.0"
     date: "2026-07-24"
     author: "Christopher Steel"
@@ -29,21 +40,21 @@ sat:changelog:
 
 # Style Guide: Plain Language for General Audiences
 
-Version: 0.4.0
+Version: 0.5.0
 Status: Draft
 Style Guide: style-guide--technical-documentation-for-technologists
 
 ## Abstract
 
-This style guide governs the authoring of plain language documents intended for a general audience. It is a companion to *Style Guide -- Technical Documentation for Technologists*. It exists to ensure consistency across sessions and versions of any document it governs. It should be provided to any collaborators, human or AI, at the start of a new session involving the creation of plain language content.
+This style guide governs the authoring of plain language documents intended for a general audience. It is a companion to *Style Guide: Technical Documentation for Technologists*. It exists to ensure consistency across sessions and versions of any document it governs. It should be provided to any collaborators, human or AI, at the start of a new session involving the creation of plain language content.
 
-## Sources and Acknowledgements
+## Sources and acknowledgements
 
 Plain language principles in this document follow the <a name="apa-plain-language-citation"></a>[Plain Language Action and Information Network (2011)](#apa-plain-language-reference) federal plain language guidelines, the authoritative plain language standard used by the United States government. Reading level measurement uses the <a name="apa-flesch-kincaid-citation"></a>[Flesch (1948)](#apa-flesch-kincaid-reference) readability formula and its refinement by <a name="apa-kincaid-citation"></a>[Kincaid et al. (1975)](#apa-kincaid-reference), which together form the Flesch-Kincaid grade level scale. Document structure and citation practice follow the <a name="apa-apa7-citation"></a>[American Psychological Association (2020)](#apa-apa7-reference) publication manual, seventh edition.
 
 ## Purpose
 
-This style guide governs the authoring of plain language documents intended for a general audience. It is a companion to *Style Guide -- Technical Documentation for Technologists*. Where that guide governs precise, peer-to-peer technical writing, this guide governs writing for a general audience. The two share the same document conventions, versioning, structure, markdown formatting, and authoring process, so that a project can produce both technical and plain language documentation without maintaining two incompatible systems.
+This style guide governs the authoring of plain language documents intended for a general audience. It is a companion to *Style Guide: Technical Documentation for Technologists*. Where that guide governs precise, peer-to-peer technical writing, this guide governs writing for a general audience. The two share the same document conventions, versioning, structure, markdown formatting, and authoring process, so that a project can produce both technical and plain language documentation without maintaining two incompatible systems. Those shared conventions, filename patterns, frontmatter, structure, and closing sections, are defined by *Style Guide: Versioned Documents in Unrendered Markdown*, which is authoritative; this guide governs plain-language register and audience.
 
 It exists to ensure consistency across sessions and versions of any document it governs. It should be provided to any collaborators, human or AI, at the start of a new session involving the creation of plain language content.
 
@@ -84,7 +95,7 @@ To achieve this:
 
 **Explanatory sections**, clear and patient. Build understanding one idea at a time. Use examples and analogies where they help. Do not use an analogy that requires as much explanation as the thing it is explaining.
 
-**Instructional sections**, precise and sequential. Use numbered steps for any process that must be followed in order. Use plain imperatives ("click Save", "open the terminal"). Do not skip steps that feel obvious, what is obvious to the author is often not obvious to the reader.
+**Instructional sections**, precise and sequential. If you think numbered steps would be helpful then explain why and specifically request permission to use them. Use plain imperatives ("click Save", "open the terminal"). Do not skip steps that feel obvious, what is obvious to the author is often not obvious to the reader.
 
 **Reference sections**, concise and scannable. Use short entries. Readers coming to a reference section already have context, do not re-explain, just inform.
 
@@ -108,12 +119,13 @@ Prefer consistent terms over varied ones. Do not alternate between "computer", "
 
 Documents governed by this style guide follow this general structure:
 
-1. **Title and version block**, as defined in the companion technical style guide
+1. **Title and version block**, as defined by *Style Guide: Versioned Documents in Unrendered Markdown*
 2. **Abstract**, two to four sentences. What is this document, and who is it for?
-3. **Body sections**, numbered, with plain language headings that describe the content, not the category
-4. **Resources**, grouped by topic, linked to reference anchors
-5. **References**, full APA 7 entries with CAP anchors
-6. **Changelog**, versioned table of changes
+3. **Body sections**, with plain language headings that describe the content, not the category. Headings are not numbered (see *Markdown: No Heading Numbers*); number them only if explicitly requested.
+4. **License**, the document's licence statement
+5. **Resources**, grouped by topic, linked to reference anchors
+6. **References**, full APA 7 entries with CAP anchors
+7. **Changelog**, versioned table of changes
 
 Sections are composed paragraph by paragraph. Each paragraph covers one idea. If a paragraph requires more than five sentences, consider whether it contains two ideas that should be separated.
 
@@ -127,7 +139,13 @@ Never use bold in markdown headings.
 
 ### File naming
 
-File names are slugs of the H1 title. They are lowercase and hyphen-separated. The document version is appended using the format `vMAJOR.MINOR.PATCH`, preserving dots so the version remains machine-detectable. Spaces and underscores are not used. Example: `git--a-plain-language-guide-v0.1.0.md`.
+File names are slugs of the H1 title. They are lowercase and hyphen-separated. The document version is appended using the format `vMAJOR-MINOR-PATCH.`
+
+Example:
+
+ ```bash
+ git--a-plain-language-guide-v0-1-0.md
+ ```
 
 ## Code and examples
 
@@ -176,7 +194,8 @@ Plain language documents should be reviewed for reading level before they are ma
 
 | Version | Status | Notes |
 |---------|--------|-------|
+| 0.5.0 | Draft | Compliance pass: deference statement added, body sections de-numbered and heading numbering deferred to the markdown default, License added to the closing sequence, double hyphens in prose replaced, stale numbered-section reference and Sources heading case corrected |
 | 0.4.0 | Draft | Recreated in sat-doc-automa; compliance pass: heading numbers removed, em dashes to commas, H1 retitled with colon, style guide reference normalized |
 | 0.3.0 | Draft | Migrated into the sat-doc-automa repository; added frontmatter; corrected filename version separators to the hyphenated convention; body content unchanged |
-| 0.2.0 | Draft | Added section 8.1 file naming, lowercase hyphen-separated slug, version appended as vMAJOR.MINOR.PATCH with dots preserved for machine detection |
+| 0.2.0 | Draft | Added a file naming rule: lowercase hyphen-separated slug of the H1 title with the version suffix appended |
 | 0.1.0 | Draft | Initial draft |

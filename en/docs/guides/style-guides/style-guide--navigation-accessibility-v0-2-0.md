@@ -1,14 +1,14 @@
 ---
 dcterms:title: "Style Guide: Navigation and Accessibility"
-dcterms:version: "0.1.1"
+dcterms:version: "0.2.0"
 dcterms:creator: "Christopher Steel"
 dcterms:description: "Governs the use of real ATX headings, rather than bolded pseudo-headings, for accessibility and deep-linking across OSAT Fluent and Universal Cake documentation."
 dcterms:created: "2026-07-21"
-dcterms:modified: "2026-07-24"
+dcterms:modified: "2026-07-25"
 dcterms:format: "text/markdown"
 dcterms:language: "en"
 sat:language_bcp47: "en"
-dcterms:identifier: "style-guide-navigation-accessibility"
+dcterms:identifier: "style-guide--navigation-accessibility"
 dcterms:rightsHolder: "Christopher Steel"
 dcterms:rights: >
   Copyright 2026 Christopher Steel.
@@ -17,6 +17,15 @@ sat:uuid: ""
 sat:version_at_creation: "0.4.0"
 sat:migration_status: pre-sat
 sat:changelog:
+  - version: "0.2.0"
+    date: "2026-07-25"
+    author: "Christopher Steel"
+    notes: >
+      Compliance pass per ROADMAP.md Milestone 0.3.0. Corrected the
+      identifier to use the double-hyphen semantic separator matching the
+      filename and sibling documents. Fixed the second W3C reference URL,
+      which pointed at WCAG20 rather than WCAG21. Added a deference statement
+      to the authoritative versioned-documents guide.
   - version: "0.1.1"
     date: "2026-07-24"
     author: "Christopher Steel"
@@ -29,13 +38,15 @@ sat:changelog:
 
 # Style Guide: Navigation and Accessibility
 
-Version: 0.1.1
+Version: 0.2.0
 Status: Draft
 Style Guide: style-guide--versioned-documents-in-unrendered-markdown
 
 ## Abstract
 
 This style guide governs how headings are used in markdown documents across OSAT Fluent and Universal Cake, specifically the rule against using bold text as a substitute for real headings. It exists because this is easy to get subtly wrong: bolded text visually resembles a heading and reads correctly to a sighted person scanning the page, while carrying none of the structural information a heading actually needs to carry. It should be provided to any collaborator, human or AI, before editing or generating markdown documentation for either project.
+
+For document structure, filename patterns, frontmatter, and closing sections, this guide defers to *Style Guide: Versioned Documents in Unrendered Markdown*, which is authoritative across this repository. This guide governs heading semantics and accessibility.
 
 ## Purpose
 
@@ -93,11 +104,12 @@ This document, *Style Guide: Navigation and Accessibility*, by **Christopher Ste
 
 World Wide Web Consortium Web Accessibility Initiative. (n.d.-a). *Understanding Success Criterion 1.3.1: Info and relationships*. W3C. Retrieved July 21, 2026, from https://www.w3.org/WAI/WCAG21/Understanding/info-and-relationships.html
 
-World Wide Web Consortium Web Accessibility Initiative. (n.d.-b). *Understanding Success Criterion 2.4.6: Headings and labels*. W3C. Retrieved July 21, 2026, from https://www.w3.org/WAI/WCAG20/Understanding/headings-and-labels
+World Wide Web Consortium Web Accessibility Initiative. (n.d.-b). *Understanding Success Criterion 2.4.6: Headings and labels*. W3C. Retrieved July 21, 2026, from https://www.w3.org/WAI/WCAG21/Understanding/headings-and-labels
 
 ## Changelog
 
 | Version | Status | Notes |
 |---------|--------|-------|
+| 0.2.0 | Draft | Compliance pass: identifier corrected to the double-hyphen separator, second W3C URL corrected from WCAG20 to WCAG21, deference statement added |
 | 0.1.1 | Draft | Recreated in sat-doc-automa; Style Guide reference normalized to the versionless slug |
 | 0.1.0 | Draft | Initial draft |

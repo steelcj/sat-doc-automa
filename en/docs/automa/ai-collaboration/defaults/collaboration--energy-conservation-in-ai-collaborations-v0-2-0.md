@@ -1,10 +1,10 @@
 ---
 dcterms:title: "Collaboration: Energy Conservation in AI Collaborations"
-dcterms:version: "0.1.0"
+dcterms:version: "0.2.0"
 dcterms:creator: "Christopher Steel"
 dcterms:description: "Standing directive and Universal Cake evaluation: AI collaborators ask before computationally intensive operations. Includes sourced impact projections for adoption at organizational and industry scale."
 dcterms:created: "2026-07-24"
-dcterms:modified: "2026-07-24"
+dcterms:modified: "2026-07-25"
 dcterms:format: "text/markdown"
 dcterms:language: "en"
 sat:language_bcp47: "en"
@@ -17,6 +17,19 @@ sat:uuid: ""
 sat:version_at_creation: "0.4.0"
 sat:migration_status: pre-sat
 sat:changelog:
+  - version: "0.2.0"
+    date: "2026-07-25"
+    author: "Christopher Steel"
+    notes: >
+      Compliance pass per ROADMAP.md Milestone 0.3.0. Corrected the
+      one-team-of-ten water arithmetic (2,000 queries/day is approximately
+      33 litres/day, not 3.3) and the annual and industry-scale figures that
+      follow from it, and made the working-day basis of the per-year figures
+      explicit. Brought the citations into the Citation Anchor Pair workflow
+      and corrected the Epoch AI in-text citation to match its reference
+      entry, filed under You, J. (2025). Applied copy-edits: today's, life
+      giving, and terminal periods on the Reality bullets. Set the Placement
+      prose and the Reality heading to match the settled ai-collaboration name.
   - version: "0.1.0"
     date: "2026-07-24"
     author: "Christopher Steel"
@@ -25,7 +38,7 @@ sat:changelog:
 
 # Collaboration: Energy Conservation in AI Collaborations
 
-Version: 0.1.0
+Version: 0.2.0
 Status: Draft
 Style Guide: style-guide--versioned-documents-in-unrendered-markdown
 
@@ -33,15 +46,15 @@ Style Guide: style-guide--versioned-documents-in-unrendered-markdown
 
 A standing directive for AI collaborators: ask before performing computationally intensive operations rather than assuming permission. This document states the rule, evaluates it against the Universal Cake framework across four pillars, and projects the concrete reductions in energy, water, bandwidth, time, and cognitive load if the practice is adopted beyond a single project, grounded in published per-query consumption data rather than hypothetical estimates.
 
-## The Reality
+## The reality
 
-In todays very human world the following are true
+In today's very human world, the following are true:
 
-* Compute is never "free".
-* Bandwidth is never "free".
-* Clean water is a live giving and limited resource
-* Clean air is a live giving and limited resource
-* Clean food requires clean air and clean water
+- Compute is never "free".
+- Bandwidth is never "free".
+- Clean water is a life giving and limited resource.
+- Clean air is a life giving and limited resource.
+- Clean food requires clean air and clean water.
 
 ## The rule
 
@@ -66,22 +79,22 @@ Single-file edits, reading files, short shell commands for verification, and sea
 
 Published data gives us real numbers rather than vague appeals to "be mindful."
 
-A typical AI query consumes approximately 0.3 watt-hours of electricity (Epoch AI, 2025; Toolpod, 2026). Larger models and longer exchanges consume more: Claude 3 Opus benchmarks at approximately 4 watt-hours per 400-token exchange (EnergyCosts.co.uk, 2026), and coding agents like Claude Code can consume the equivalent of thousands of typical queries in a single session (Willison, 2026).
+A typical AI query consumes approximately 0.3 watt-hours of electricity (<a name="apa-you-citation"></a>[You, 2025](#apa-you-reference); <a name="apa-toolpod-citation"></a>[Toolpod, 2026](#apa-toolpod-reference)). Larger models and longer exchanges consume more: Claude 3 Opus benchmarks at approximately 4 watt-hours per 400-token exchange (<a name="apa-energycosts-citation"></a>[EnergyCosts.co.uk, 2026](#apa-energycosts-reference)), and coding agents like Claude Code can consume the equivalent of thousands of typical queries in a single session (<a name="apa-willison-citation"></a>[Willison, 2026](#apa-willison-reference)).
 
-Each query also consumes water. Direct cooling alone accounts for approximately 0.3 milliliters per query (Altman, cited in Axis Intelligence, 2026). When indirect water use from electricity generation is included, a 20-to-50-query conversation consumes roughly 500 milliliters, about one standard bottle of water (Li et al., 2023).
+Each query also consumes water. Direct cooling alone accounts for approximately 0.3 milliliters per query (Altman, cited in <a name="apa-axis-citation"></a>[Axis Intelligence, 2026](#apa-axis-reference)). When indirect water use from electricity generation is included, a 20-to-50-query conversation consumes roughly 500 milliliters, about one standard bottle of water (<a name="apa-li-citation"></a>[Li et al., 2023](#apa-li-reference)).
 
 A computationally intensive operation in a collaboration session, rebuilding a repository, repackaging an archive, running a test suite, is not one query. It is dozens to hundreds of tool calls, file operations, and model invocations chained together. A single unnecessary rebuild of the kind this directive exists to prevent can easily consume 50 to 200 queries' worth of compute, roughly 15 to 800 watt-hours of electricity and 15 to 60 milliliters of direct cooling water, plus the bandwidth to transfer the results.
 
 ## What adoption at scale would reduce
 
-These projections use the published per-query figures above and a conservative assumption: that a typical AI-assisted development session includes two computationally intensive operations that could have been avoided by asking first. The actual number varies by workflow, but "two unnecessary rebuilds per session" is consistent with the pattern that prompted this directive.
+These projections use the published per-query figures above and a conservative assumption: that a typical AI-assisted development session includes two computationally intensive operations that could have been avoided by asking first. The actual number varies by workflow, but "two unnecessary rebuilds per session" is consistent with the pattern that prompted this directive. The per-year figures assume a 260-day working year.
 
 ### One team of ten
 
 Ten developers, each running one AI collaboration session per workday, each session containing two avoidable intensive operations averaging 100 queries' worth of compute each.
 
-- **Energy**: 10 people x 2 operations x 100 queries x 0.3 Wh = 600 Wh per day, roughly 156 kWh per year, equivalent to running a domestic refrigerator for two months (Willison, 2026).
-- **Water**: at the comprehensive scope of roughly 500 mL per 30-query conversation (Li et al., 2023), two 100-query operations per person per day is approximately 3.3 liters per day across the team, over 850 liters per year, enough to fill a bathtub eight times.
+- **Energy**: 10 people x 2 operations x 100 queries x 0.3 Wh = 600 Wh per day, roughly 156 kWh per year (260 working days), equivalent to running a domestic refrigerator for two months (<a name="apa-willison-citation-2"></a>[Willison, 2026](#apa-willison-reference)).
+- **Water**: at the comprehensive scope of roughly 500 mL per 30-query conversation (<a name="apa-li-citation-2"></a>[Li et al., 2023](#apa-li-reference)), two 100-query operations per person per day is approximately 33 liters per day across the team, over 8,500 liters per year (260 working days), enough to fill a 150-litre bathtub more than fifty times.
 - **Bandwidth**: each rebuild or repackage cycle typically transfers 10 to 50 MB of artifacts. Twenty unnecessary transfers per day across the team is 200 to 1,000 MB per day, meaningful for anyone on a metered, mobile, or intermittent connection.
 - **Time**: each unnecessary operation takes 2 to 10 minutes of wall-clock time during which the human waits. Twenty per day across the team is 40 to 200 minutes of dead time daily.
 
@@ -90,13 +103,13 @@ Ten developers, each running one AI collaboration session per workday, each sess
 Scale the team figures by 1,000 and the numbers become infrastructure-grade:
 
 - **Energy**: 156,000 kWh per year, enough to power roughly 14 US homes for a year.
-- **Water**: 850,000 liters per year, approximately one-fifth of an Olympic swimming pool.
+- **Water**: approximately 8,500,000 liters per year, over three Olympic swimming pools.
 - **Bandwidth**: 200 to 1,000 GB per day of unnecessary transfers.
 - **Time**: 40,000 to 200,000 minutes of developer wait time per day, 700 to 3,300 person-hours daily.
 
 ### Industry-wide
 
-Generative AI platforms currently serve on the order of 2.5 billion queries per day (IEEE Spectrum, 2025). If even 1% of those queries belong to collaborative development sessions, and 10% of the compute in those sessions is avoidable, the reduction from this single practice would be on the order of tens of thousands of kilowatt-hours per day, tens of thousands of liters of water per day, and hundreds of thousands of minutes of human wait time. These are conservative figures; the actual share of collaborative development in total AI usage is growing as coding agents become more common (Willison, 2026).
+Generative AI platforms currently serve on the order of 2.5 billion queries per day (<a name="apa-ieee-citation"></a>[IEEE Spectrum, 2025](#apa-ieee-reference)). If even 1% of those queries belong to collaborative development sessions, and 10% of the compute in those sessions is avoidable, the reduction from this single practice would be on the order of tens of thousands of kilowatt-hours per day, tens of thousands of liters of water per day, and hundreds of thousands of minutes of human wait time. These are conservative figures; the actual share of collaborative development in total AI usage is growing as coding agents become more common (<a name="apa-willison-citation-3"></a>[Willison, 2026](#apa-willison-reference)).
 
 ## Universal Cake evaluation
 
@@ -130,11 +143,11 @@ A project that evaluates its tools for environmental impact but does not apply t
 
 ## Placement
 
-This is the first directive in the `collaboration` format directory under `automa/`. The same `defaults/` and `examples/` structure used for markdown directives applies here.
+This is the first directive in the `ai-collaboration` format directory under `automa/`. The same `defaults/` and `examples/` structure used for markdown directives applies here.
 
-```
-en/docs/automa/collaboration/defaults/
-en/docs/automa/collaboration/examples/
+```bash
+en/docs/automa/ai-collaboration/defaults/
+en/docs/automa/ai-collaboration/examples/
 ```
 
 ## License
@@ -143,22 +156,30 @@ This document, *Collaboration: Energy Conservation in AI Collaborations*, by **C
 
 ## References
 
-Axis Intelligence. (2026). *AI data center water usage statistics 2026*. https://axis-intelligence.com/ai-data-center-water-usage-statistics/
+<a name="apa-axis-reference"></a>Axis Intelligence. (2026). *AI data center water usage statistics 2026*. https://axis-intelligence.com/ai-data-center-water-usage-statistics/
+[Return to citation](#apa-axis-citation)
 
-EnergyCosts.co.uk. (2026). *How much energy does Anthropic's Claude AI consume?*. Network Equity Ltd. https://www.energycosts.co.uk/articles/anthropic-claude-ai-energy/
+<a name="apa-energycosts-reference"></a>EnergyCosts.co.uk. (2026). *How much energy does Anthropic's Claude AI consume?*. Network Equity Ltd. https://www.energycosts.co.uk/articles/anthropic-claude-ai-energy/
+[Return to citation](#apa-energycosts-citation)
 
-IEEE Spectrum. (2025). *AI energy use: The hidden cost of ChatGPT queries*. https://spectrum.ieee.org/ai-energy-use
+<a name="apa-ieee-reference"></a>IEEE Spectrum. (2025). *AI energy use: The hidden cost of ChatGPT queries*. https://spectrum.ieee.org/ai-energy-use
+[Return to citation](#apa-ieee-citation)
 
-Li, P., Yang, J., Islam, M. A., & Ren, S. (2023). Making AI less "thirsty": Uncovering and addressing the secret water footprint of AI models. *arXiv preprint arXiv:2304.03271*. https://arxiv.org/abs/2304.03271
+<a name="apa-li-reference"></a>Li, P., Yang, J., Islam, M. A., & Ren, S. (2023). Making AI less "thirsty": Uncovering and addressing the secret water footprint of AI models. *arXiv preprint arXiv:2304.03271*. https://arxiv.org/abs/2304.03271
+[Return to citation](#apa-li-citation)
 
-Toolpod. (2026). *AI energy consumption: How much power does AI use?*. https://toolpod.dev/blog/ai-energy-consumption-environmental-impact
+<a name="apa-toolpod-reference"></a>Toolpod. (2026). *AI energy consumption: How much power does AI use?*. https://toolpod.dev/blog/ai-energy-consumption-environmental-impact
+[Return to citation](#apa-toolpod-citation)
 
-Willison, S. (2026). *Electricity use of AI coding agents*. Simon Willison's Weblog. https://simonwillison.net/tags/ai-energy-usage/
+<a name="apa-willison-reference"></a>Willison, S. (2026). *Electricity use of AI coding agents*. Simon Willison's Weblog. https://simonwillison.net/tags/ai-energy-usage/
+[Return to citation](#apa-willison-citation)
 
-You, J. (2025). *How much energy does ChatGPT use?*. Epoch AI. https://epoch.ai/gradient-updates/how-much-energy-does-chatgpt-use
+<a name="apa-you-reference"></a>You, J. (2025). *How much energy does ChatGPT use?*. Epoch AI. https://epoch.ai/gradient-updates/how-much-energy-does-chatgpt-use
+[Return to citation](#apa-you-citation)
 
 ## Changelog
 
 | Version | Status | Notes |
 |---------|--------|-------|
+| 0.2.0 | Draft | Compliance pass: corrected the one-team-of-ten water arithmetic (33 L/day, not 3.3) and the figures that scale from it, made the 260-working-day basis explicit, brought citations into the CAP workflow, corrected the Epoch AI citation to match the You (2025) reference, and applied the roadmap copy-edits |
 | 0.1.0 | Draft | Initial draft |

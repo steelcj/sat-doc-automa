@@ -1,10 +1,10 @@
 ---
 dcterms:title: "Commit and Versioning Workflow"
-dcterms:version: "0.1.0"
+dcterms:version: "0.1.1"
 dcterms:creator: "Christopher Steel"
 dcterms:description: "Practical workflow for commits and version bumps: initial commit, and every subsequent version bump after that."
 dcterms:created: "2026-07-24"
-dcterms:modified: "2026-07-24"
+dcterms:modified: "2026-07-25"
 dcterms:format: "text/markdown"
 dcterms:language: "en"
 sat:language_bcp47: "en"
@@ -17,6 +17,10 @@ sat:uuid: ""
 sat:version_at_creation: "0.4.0"
 sat:migration_status: pre-sat
 sat:changelog:
+  - version: "0.1.1"
+    date: "2026-07-25"
+    author: "Christopher Steel"
+    notes: "Compliance pass per ROADMAP.md Milestone 0.3.0. Replaced the em dash in the initial-commit example message with a comma, per Markdown: Use Commas, Not Em Dashes; a template the reader copies is not exempt from the rule."
   - version: "0.1.0"
     date: "2026-07-24"
     author: "Christopher Steel"
@@ -25,7 +29,7 @@ sat:changelog:
 
 # Commit and Versioning Workflow
 
-Version: 0.1.0
+Version: 0.1.1
 Status: Draft
 Style Guide: style-guide--versioned-documents-in-unrendered-markdown
 
@@ -76,7 +80,7 @@ The `git status` output after staging is used directly in the commit body. At in
 Summary line, then the staged file list from `git status`:
 
 ```bash
-git commit -m "Initial commit — v0.1.0
+git commit -m "Initial commit, v0.1.0
 
 	new file:   VERSION
 	new file:   README.md
@@ -158,4 +162,5 @@ This document, *Commit and Versioning Workflow*, by **Christopher Steel**, with 
 
 | Version | Status | Notes |
 |---------|--------|-------|
+| 0.1.1 | Draft | Compliance pass: replaced the em dash in the initial-commit example message with a comma |
 | 0.1.0 | Draft | Initial draft, generalized from the osat-fluent-rclone-tool workflow into a project-neutral guide |

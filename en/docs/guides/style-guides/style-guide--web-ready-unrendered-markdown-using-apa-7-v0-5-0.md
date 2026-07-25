@@ -1,14 +1,14 @@
 ---
-dcterms:title: "Web-Ready Unrendered Markdown Using APA 7"
-dcterms:version: "0.4.0"
+dcterms:title: "Style Guide: Web-Ready Unrendered Markdown Using APA 7"
+dcterms:version: "0.5.0"
 dcterms:creator: "Christopher Steel"
 dcterms:description: "Conventions for authoring web-ready markdown source files conforming to APA 7 formatting and citation standards using the Citation Anchor Pair (CAP) workflow."
 dcterms:created: "2026-07-23"
-dcterms:modified: "2026-07-24"
+dcterms:modified: "2026-07-25"
 dcterms:format: "text/markdown"
 dcterms:language: "en"
 sat:language_bcp47: "en"
-dcterms:identifier: "web-ready-unrendered-markdown-using-apa-7"
+dcterms:identifier: "style-guide--web-ready-unrendered-markdown-using-apa-7"
 dcterms:rightsHolder: "Christopher Steel"
 dcterms:rights: >
   Copyright 2026 Christopher Steel.
@@ -17,6 +17,18 @@ sat:uuid: ""
 sat:version_at_creation: "0.4.0"
 sat:migration_status: pre-sat
 sat:changelog:
+  - version: "0.5.0"
+    date: "2026-07-25"
+    author: "Christopher Steel"
+    notes: >
+      Compliance pass per ROADMAP.md Milestone 0.3.0. Added the required
+      License section. Prefixed the title, H1, and identifier with the
+      style-guide convention so all naming layers agree with the filename.
+      Added a deference statement to the authoritative versioned-documents
+      guide. Removed the "numbered" qualifier from body sections and added
+      License to the closing sequence in the one canonical order. Repaired
+      the malformed 0.2.2 changelog rows, removed stale numbered-section
+      references from changelog notes, and set body headings to sentence case.
   - version: "0.4.0"
     date: "2026-07-24"
     author: "Christopher Steel"
@@ -27,9 +39,9 @@ sat:changelog:
     notes: "Migrated into the sat-doc-automa repository. Added frontmatter. Resolved a version inconsistency in the source (filename said 0.2.2, version block said 0.2.0) by superseding both with 0.3.0. Body content unchanged from the 0.2.2 file."
 ---
 
-# Web-Ready Unrendered Markdown Using APA 7
+# Style Guide: Web-Ready Unrendered Markdown Using APA 7
 
-Version: 0.4.0
+Version: 0.5.0
 Status: Draft
 Style Guide: style-guide--versioned-documents-in-unrendered-markdown
 
@@ -37,7 +49,9 @@ Style Guide: style-guide--versioned-documents-in-unrendered-markdown
 
 This document defines the conventions for authoring web-ready markdown source files that conform to APA 7 formatting and citation standards using the Citation Anchor Pair (CAP) workflow. It is intended for authors producing technical documentation that must render correctly across a broad range of markdown renderers while maintaining academically rigorous citation practice in its unrendered source form.
 
-## Sources and Acknowledgements
+For document structure, filename patterns, frontmatter, and closing sections, this guide defers to *Style Guide: Versioned Documents in Unrendered Markdown*, which is authoritative across this repository. This guide governs APA 7 formatting and citation practice.
+
+## Sources and acknowledgements
 
 The conventions in this document are derived from three primary sources. Formatting and citation structure follow the <a name="apa-apa7-citation"></a>[American Psychological Association (2020)](#apa-apa7-reference) publication manual, seventh edition. Markdown syntax compatibility targets the <a name="apa-commonmark-citation"></a>[CommonMark specification (MacFarlane et al., 2024)](#apa-commonmark-reference) as the broadly supported baseline, with table syntax following the <a name="apa-gfm-citation"></a>[GitHub Flavoured Markdown specification (GitHub, 2024)](#apa-gfm-reference) where CommonMark has no equivalent.
 
@@ -49,7 +63,7 @@ Web-ready markdown must satisfy two simultaneous requirements. First, the render
 
 These are distinct formats with different conventions and must not be conflated. **Rule: Each paragraph is a single unbroken line. Do not wrap prose at 80 characters or at any other fixed width.** Terminal-readable plain text wraps prose at 80 characters per line to ensure readability in fixed-width terminal environments. This convention has no place in web-ready markdown. Markdown renderers handle line length and wrapping entirely. Introducing artificial line breaks in markdown source does not affect rendered output but introduces inconsistency and ambiguity in the source file. A line break in markdown source is either a blank line (paragraph separator) or an intentional structural element (list item, heading, code block). It is never a prose wrap. **If you are generating or editing this document with an AI assistant: do not wrap prose lines. Every paragraph is one line, regardless of length.**
 
-## Source File Conventions
+## Source file conventions
 
 ### Encoding and line endings
 
@@ -69,9 +83,9 @@ Prose paragraphs have no maximum line length. Each paragraph is written as a sin
 
 ### File naming
 
-File names are made from a slug of H1 title, they are lowercase, hyphen-separated and include the document's version in the version block. Spaces and underscores are not used. Example: `infrastructure-shim-pattern-v0.2.0.md`.
+File names are made from a slug of H1 title, they are lowercase, hyphen-separated and include the document's version in the version block. Spaces and underscores are not used. Example: `infrastructure-shim-pattern-v0-2-0.md`.
 
-## Document Structure
+## Document structure
 
 APA 7 document structure is applied as follows in markdown:
 
@@ -93,11 +107,14 @@ Every document must contain the following sections in this order:
 
 1. Title and version block
 2. Abstract
-3. Sources and Acknowledgements
-4. Body sections (numbered)
-5. Resources (grouped by topic, anchor-linked)
-6. References (full APA 7 entries with CAP anchors)
-7. Changelog
+3. Sources and acknowledgements
+4. Body sections
+5. License
+6. Resources (grouped by topic, anchor-linked)
+7. References (full APA 7 entries with CAP anchors)
+8. Changelog
+
+Body sections are not numbered; the closing sequence of License, Resources, References, and Changelog is the one canonical order defined by the versioned-documents guide, with Resources and References omitted when empty.
 
 ### Version block
 
@@ -109,7 +126,7 @@ Status: Draft | Review | Stable
 Style Guide: style-guide--versioned-documents-in-unrendered-markdown
 ```
 
-## Citations: The CAP Workflow
+## Citations: the CAP workflow
 
 All citations use the Citation Anchor Pair (CAP) workflow, which provides bidirectional navigation between in-text citations and their reference entries in the rendered document. Every source requires exactly two anchors: an in-text anchor and a reference anchor.
 
@@ -155,7 +172,7 @@ Each reference entry includes a return link to its first in-text citation. Where
 - No trailing period after a URL or DOI
 - Include a retrieval date only for undated or frequently changing content
 
-## Code Blocks
+## Code blocks
 
 APA 7 has no native convention for code. The following conventions apply:
 
@@ -233,6 +250,10 @@ The References section contains full APA 7 formatted entries with CAP anchors an
 [Return to citation](#apa-ansible-docs-citation)
 ```
 
+## License
+
+This document, *Style Guide: Web-Ready Unrendered Markdown Using APA 7*, by **Christopher Steel**, with AI assistance from **Claude Sonnet 4.6 (Anthropic)**, is licensed under the [GNU Affero General Public License v3.0 or later](https://www.gnu.org/licenses/agpl-3.0.html).
+
 ## Resources
 
 ### Document Standards
@@ -257,12 +278,10 @@ The References section contains full APA 7 formatted entries with CAP anchors an
 
 | Version | Status | Notes |
 |---------|--------|-------|
+| 0.5.0 | Draft | Compliance pass: added the required License section, prefixed title/H1/identifier to agree with the filename, added a deference statement, de-numbered body sections, added License to the canonical closing sequence, repaired the malformed 0.2.2 changelog rows, removed stale numbered-section references, set body headings to sentence case |
 | 0.4.0 | Draft | Recreated in sat-doc-automa; compliance pass: heading numbers and horizontal rules removed, em dashes to commas, numbering rule revised to defer to the markdown defaults, stale references repaired |
 | 0.3.0 | Draft | Migrated into the sat-doc-automa repository; added frontmatter; resolved the filename (0.2.2) vs version block (0.2.0) inconsistency by superseding both; body content unchanged |
-| 0.2.2 | Draft | Strengthened section 1.1 with explicit rule |
-|AI-assistant instruction; added section 2.4 on line length with|||
-|exhaustive list of acceptable line break reasons; renumbered subsequent|||
-|source file convention sections |||
+| 0.2.2 | Draft | Strengthened the web-ready-versus-terminal-text rule with an explicit AI-assistant instruction; added the line-length section with an exhaustive list of acceptable line-break reasons; renumbered subsequent source-file-convention sections |
 | 0.2.1 | Draft | Changed file name to be H1 title and added section on not using horizontal rules in content |
-| 0.2.0 | Draft | Removed incorrect 80-char line wrapping convention; added section 1.1 distinguishing web-ready markdown from terminal-readable plain text; renumbered source file convention sections |
+| 0.2.0 | Draft | Removed incorrect 80-char line wrapping convention; added a section distinguishing web-ready markdown from terminal-readable plain text; renumbered source file convention sections |
 | 0.1.0 | Draft | Initial draft |

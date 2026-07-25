@@ -23,21 +23,34 @@ Standing directives, organized per-format, with a `defaults/` directory answerin
 
 #### AI collaboration
 
-- [Collaboration: Energy Conservation in AI Collaborations](en/docs/automa/ai-collaboration/defaults/collaboration--energy-conservation-in-ai-collaborations-v0-1-0.md)
+- [Collaboration: Energy Conservation in AI Collaborations](en/docs/automa/ai-collaboration/defaults/collaboration--energy-conservation-in-ai-collaborations-v0-2-0.md)
+
+#### Licenses
+
+Reusable License-section blocks, copied into a document's or project's own License section.
+
+- [Content: CC BY 4.0 International](en/docs/automa/licenses/license-block--content-cc-4-0-international.md)
+- [Document: GNU GPL v3.0 or later](en/docs/automa/licenses/license-block--gnu-general-public-license-3-plus.md)
+- [Software: GNU GPL v3.0 or later](en/docs/automa/licenses/license-block--gplv3plus.md)
 
 ### Guides
 
 #### Style guides
 
-- [Versioned Documents in Unrendered Markdown](en/docs/guides/style-guides/style-guide--versioned-documents-in-unrendered-markdown-v0-2-0.md), filename patterns, frontmatter schema, document structure, and prose authoring rules
-- [Technical Documentation for Technologists](en/docs/guides/style-guides/style-guide--technical-documentation-for-technologists-v0-4-0.md), register, decision rationale requirements, and conceptual boundary documentation
-- [Plain Language for General Audiences](en/docs/guides/style-guides/style-guide--plain-language-for-general-audiences-v0-4-0.md), the companion guide for general-audience writing
-- [Navigation and Accessibility](en/docs/guides/style-guides/style-guide--navigation-accessibility-v0-1-1.md), real headings over bolded pseudo-headings, grounded in WCAG 2.1
-- [Web-Ready Unrendered Markdown Using APA 7](en/docs/guides/style-guides/style-guide--web-ready-unrendered-markdown-using-apa-7-v0-4-0.md), APA 7 conformance and the Citation Anchor Pair workflow
+- [Versioned Documents in Unrendered Markdown](en/docs/guides/style-guides/style-guide--versioned-documents-in-unrendered-markdown-v0-3-0.md), the authoritative guide: filename patterns, frontmatter schema, document structure, and prose authoring rules
+- [Technical Documentation for Technologists](en/docs/guides/style-guides/style-guide--technical-documentation-for-technologists-v0-5-0.md), register, decision rationale requirements, and conceptual boundary documentation
+- [Plain Language for General Audiences](en/docs/guides/style-guides/style-guide--plain-language-for-general-audiences-v0-5-0.md), the companion guide for general-audience writing
+- [Navigation and Accessibility](en/docs/guides/style-guides/style-guide--navigation-accessibility-v0-2-0.md), real headings over bolded pseudo-headings, grounded in WCAG 2.1
+- [Web-Ready Unrendered Markdown Using APA 7](en/docs/guides/style-guides/style-guide--web-ready-unrendered-markdown-using-apa-7-v0-5-0.md), APA 7 conformance and the Citation Anchor Pair workflow
 
 #### DevOps
 
-- [Commit and Versioning Workflow](en/docs/guides/devops/commit-and-versioning-workflow-v0-1-0.md), the two paths: initial commit and every version bump after it
+- [Commit and Versioning Workflow](en/docs/guides/devops/commit-and-versioning-workflow-v0-1-1.md), the two paths: initial commit and every version bump after it
+
+### References
+
+- [SPDX License Identifiers](en/docs/references/reference--spdx-license-identifiers-v0-1-0.md), the canonical SPDX identifiers used in `dcterms:rights`, License sections, and `LICENSE` files
+- [CNCF Project Maturity Levels](en/docs/references/cncf-project-maturity-levels-v0-1-0.md), the three CNCF maturity levels as a governance signal for tool evaluation
 
 ## Structure
 
@@ -50,11 +63,13 @@ en/docs/
     automa/                          standing directives, organized per-format
         ai-collaboration/defaults/   directives for AI collaboration sessions
         ai-collaboration/examples/   deliberately-chosen alternatives
+        licenses/                    reusable License-section blocks
         markdown/defaults/           directives in force for markdown documents
         markdown/examples/           deliberately-chosen alternatives
     guides/
         devops/                      operational workflow guides
         style-guides/                normative style guides
+    references/                      standing reference material
 ```
 
 ## Languages

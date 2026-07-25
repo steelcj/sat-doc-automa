@@ -1,10 +1,10 @@
 ---
 dcterms:title: "Style Guide: Versioned Documents in Unrendered Markdown"
-dcterms:version: "0.2.0"
+dcterms:version: "0.3.0"
 dcterms:creator: "Christopher Steel"
-dcterms:description: "Conventions for creating versioned documents in SAT using unrendered markdown: filename patterns, frontmatter schema, document structure, and prose authoring rules."
+dcterms:description: "Conventions for creating versioned documents in SAT using unrendered markdown: filename patterns, frontmatter schema, document structure, and prose authoring rules. Authoritative for structure and naming across the repository's guides."
 dcterms:created: "2026-07-21"
-dcterms:modified: "2026-07-24"
+dcterms:modified: "2026-07-25"
 dcterms:format: "text/markdown"
 dcterms:language: "en"
 sat:language_bcp47: "en"
@@ -17,6 +17,17 @@ sat:uuid: ""
 sat:version_at_creation: "0.4.0"
 sat:migration_status: pre-sat
 sat:changelog:
+  - version: "0.3.0"
+    date: "2026-07-25"
+    author: "Christopher Steel"
+    notes: >
+      Designated the authoritative guide for structure, naming,
+      frontmatter, and closing sections across the repository's guides,
+      per ROADMAP.md Milestone 0.2.0. Register-and-audience guides now
+      defer to it; it defers to the markdown automa for markdown-specific
+      rules. Added Resources as an optional closing section so the one
+      canonical closing sequence covers the register guides. Repaired the
+      Changelog table, which listed only 0.1.0.
   - version: "0.2.0"
     date: "2026-07-24"
     author: "Christopher Steel"
@@ -37,13 +48,15 @@ sat:changelog:
 
 # Style Guide: Versioned Documents in Unrendered Markdown
 
-Version: 0.2.0
+Version: 0.3.0
 Status: Draft
 Style Guide: self-referential
 
 ## Abstract
 
 This guide defines the conventions for creating versioned documents in SAT using unrendered markdown. It covers filename patterns, frontmatter schema, document structure, and prose authoring rules. It is written to be read as plain text and to render cleanly in any markdown renderer without relying on either for correctness.
+
+This guide is authoritative for document structure, filename patterns, frontmatter schema, and closing sections across the repository. The register-and-audience guides (*Technical Documentation for Technologists*, *Plain Language for General Audiences*, *Web-Ready Unrendered Markdown Using APA 7*, and *Navigation and Accessibility*) govern voice, register, audience, and citation practice, and defer to this guide on structure and naming. This guide in turn defers to the markdown automa in `automa/markdown/defaults/` for the markdown-specific rules they define, heading numbers, em dashes, horizontal rules, and license statement form.
 
 ## Filename conventions
 
@@ -209,13 +222,17 @@ Do not number headings. If numbered headings would genuinely aid navigation in a
 
 ### Closing sections
 
-End every versioned document with three sections in this order:
+End every versioned document with these sections, in this order. Sections marked optional are omitted when they would be empty.
 
 **License**, the document's licence statement, using the author name and the SPDX identifier.
 
-**References**, APA 7 formatted references for any cited works. Omit this section if there are no citations.
+**Resources** (optional), a topic-grouped list of sources that links to their reference anchors, not to raw URLs. Register-and-audience guides that carry a Resources section place it here; structural documents omit it.
+
+**References** (optional), APA 7 formatted references for any cited works. Omit this section if there are no citations.
 
 **Changelog**, a markdown table with columns `Version`, `Status`, and `Notes`. Entries are listed newest-first.
+
+This is the one canonical closing sequence. Document classes vary only by which optional sections they carry, not by reordering the sequence.
 
 ```markdown
 ## License
@@ -294,4 +311,6 @@ This document, *Style Guide: Versioned Documents in Unrendered Markdown*, by **C
 
 | Version | Status | Notes |
 |---------|--------|-------|
+| 0.3.0 | Draft | Designated authoritative for structure, naming, frontmatter, and closing sections; added Resources as an optional closing section; repaired this table, which previously listed only 0.1.0 |
+| 0.2.0 | Draft | Recreated in sat-doc-automa; added the frontmatter this guide defines but lacked; removed heading numbers and horizontal rules; H1 em dash retitled to colon; section-numbering and em dash rules revised to defer to the markdown defaults |
 | 0.1.0 | Draft | Initial draft |

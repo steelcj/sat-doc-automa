@@ -4,9 +4,9 @@
 bump-version.py, bump this repository's version.
 
 Updates the VERSION file in this script's own directory. Nothing else.
-Document version lines and changelogs are a separate concern, handled by
-bump-doc-versions.py, so that this script stays a single-purpose tool
-that cannot half-update a repository.
+Document version lines and changelogs are a separate concern, updated by
+hand as part of each document's own version bump, so that this script
+stays a single-purpose tool that cannot half-update a repository.
 
 Usage:
     bump-version.py patch          0.1.0 -> 0.1.1
