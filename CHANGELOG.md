@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.1.4] - 2026-07-28
+
 ### Changed
 
 - Roadmap compliance pass, resolving ROADMAP.md Milestones 0.2.0 through 0.4.0. Designated *Versioned Documents in Unrendered Markdown* (now 0.3.0) authoritative for structure, naming, frontmatter, and closing sections, with every other guide carrying an explicit deference statement. Reconciled the filename version separator, numbered body sections, closing-section order, bullet markers, and heading case across the guides. Bumped and brought into compliance: Technical Documentation (0.5.0, License section added), Plain Language (0.5.0), Web-Ready APA 7 (0.5.0, License section and title/identifier prefix added), Navigation and Accessibility (0.2.0, identifier and WCAG URL fixed), Energy Conservation (0.2.0, arithmetic corrected and citations moved to the CAP workflow), Commit and Versioning Workflow (0.1.1, em dash removed). Corrected `bump-version.py` to stop referencing a `bump-doc-versions.py` that does not exist. Brought the CNCF reference and license-block files into naming and structural conformance.
