@@ -1,0 +1,43 @@
+# file-fairy-sync-manifest.yaml
+#
+# Declares which sat-doc-automa artifacts should be present in file-fairy
+# itself, and where. Same manifest-plus-stamp shape as
+# osat-fluent-sync-manifest.yaml, applied to a different target repo.
+# Per-target sync state lives in <local_target_repo_path>/.file-fairy-state.yaml,
+# written by `ff apply`, not here. This file only declares what belongs;
+# it does not track what is currently applied.
+
+version: "0.1.0"
+
+# Remote identity, for provenance and for anyone reading this file without
+# a local checkout in view.
+remote_source_repo: "steelcj/sat-doc-automa"
+remote_target_repo: "steelcj/file-fairy"
+
+# Local filesystem paths the sync tooling actually operates against.
+# Fill in to match your local layout.
+local_source_repo_path: "~/2-areas/development/sat-doc-automa"
+local_target_repo_path: "~/2-areas/development/file-fairy"
+
+groups:
+
+  devops-scripts:
+    description: >
+      Release-tooling scripts. file-fairy had none of these until this
+      manifest was first applied, same gap osat-fluent had, ironic given
+      file-fairy exists to close exactly this kind of gap.
+    items:
+      - source: bump-version.py
+        dest: bump-version.py
+      - source: cut-release.py
+        dest: cut-release.py
+      - source: check-conformance.py
+        dest: check-conformance.py
+
+  devops-docs:
+    description: >
+      The workflow guide the devops-scripts group's ceremony actually
+      implements.
+    items:
+      - source: en/docs/devops/commit-and-versioning-workflow-v0-2-0.md
+        dest: en/docs/devops/commit-and-versioning-workflow-v0-2-0.md
