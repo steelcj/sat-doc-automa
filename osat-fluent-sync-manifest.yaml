@@ -1,0 +1,109 @@
+# osat-fluent-sync-manifest.yaml
+#
+# Declares which sat-doc-automa artifacts should be present in osat-fluent,
+# and where. Draft only, not yet consumed by any tooling. Follows the
+# manifest-plus-stamp shape recorded in "Distributing and Synchronizing
+# Shared Documentation and Scripts Across OSAT Fluent Repositories"
+# (v0.1.0), applied here to the automa -> osat-fluent leg of the
+# propagation chain: automa -> osat-fluent -> osat-fluent-<tool>-tool -> automa.
+#
+# Per-target-repo sync state (what has actually been applied, and from
+# which automa commit or version) belongs in a separate stamp file, e.g.
+# osat-fluent/.automa-sync-stamp.yaml, not here. This file only declares
+# what belongs; it does not track what is currently applied.
+
+version: "0.1.0"
+
+# Remote identity, for provenance and for anyone reading this file without
+# a local checkout in view.
+remote_source_repo: "steelcj/sat-doc-automa"
+remote_target_repo: "steelcj/osat-fluent"
+
+# Local filesystem paths the sync tooling actually operates against.
+# Fill in to match your local layout under ~/2-areas/development/.
+local_source_repo_path: "~/2-areas/development/sat-doc-automa"
+local_target_repo_path: "~/2-areas/development/osat-fluent"
+
+groups:
+
+  devops-scripts:
+    description: >
+      Release-tooling scripts. osat-fluent currently has none of these;
+      it bumps VERSION by hand, with no changelog discipline and no linter.
+    items:
+      - source: bump-version.py
+        dest: bump-version.py
+      - source: cut-release.py
+        dest: cut-release.py
+      - source: check-conformance.py
+        dest: check-conformance.py
+
+  changelog-scaffold:
+    description: >
+      cut-release.py expects a target CHANGELOG.md with a "## [Unreleased]"
+      heading. osat-fluent has no CHANGELOG.md at all. Not a literal file
+      copy, sat-doc-automa's own CHANGELOG.md is repo-specific content,
+      not a template, so this seeds a fresh one using its structure only.
+    items:
+      - source: null
+        dest: CHANGELOG.md
+        note: "Structural example only; content is osat-fluent's own."
+
+  markdown-automa:
+    description: >
+      Standing markdown rules. These are the rules osat-fluent's own docs
+      currently violate: 212 numbered-heading, 189 em-dash, and 45
+      asterisk-bullet issues across 18 files, per check-conformance.py.
+    items:
+      - source: en/docs/automa/markdown/defaults/markdown--no-heading-numbers-v0-4-1.md
+        dest: en/docs/automa/markdown/defaults/markdown--no-heading-numbers-v0-4-1.md
+      - source: en/docs/automa/markdown/defaults/markdown--no-horizontal-rules-v0-3-1.md
+        dest: en/docs/automa/markdown/defaults/markdown--no-horizontal-rules-v0-3-1.md
+      - source: en/docs/automa/markdown/defaults/markdown--use-commas-not-em-dashes-v0-3-1.md
+        dest: en/docs/automa/markdown/defaults/markdown--use-commas-not-em-dashes-v0-3-1.md
+      - source: en/docs/automa/markdown/defaults/markdown--license-statement-templates-v0-3-1.md
+        dest: en/docs/automa/markdown/defaults/markdown--license-statement-templates-v0-3-1.md
+      - source: en/docs/automa/markdown/defaults/markdown--apa-7-citations-using-citation-anchor-pairs-v0-1-0.md
+        dest: en/docs/automa/markdown/defaults/markdown--apa-7-citations-using-citation-anchor-pairs-v0-1-0.md
+
+  ai-collaboration:
+    description: >
+      The energy-conservation directive already governs how work in
+      osat-fluent gets done in practice, but the document itself is not
+      present in the repository it governs.
+    items:
+      - source: en/docs/automa/ai-collaboration/defaults/collaboration--energy-conservation-in-ai-collaborations-v0-2-0.md
+        dest: en/docs/automa/ai-collaboration/defaults/collaboration--energy-conservation-in-ai-collaborations-v0-2-0.md
+
+  license-blocks:
+    description: >
+      Reusable License-section snippets. osat-fluent's README License
+      section already matches this wording by hand; syncing the source
+      snippets removes the need to keep re-deriving it correctly by eye.
+    items:
+      - source: en/docs/automa/licenses/license-block--agpl-3-0-or-later.md
+        dest: en/docs/automa/licenses/license-block--agpl-3-0-or-later.md
+      - source: en/docs/automa/licenses/license-block--code-and-code-docs--gpl-3-0-or-later.md
+        dest: en/docs/automa/licenses/license-block--code-and-code-docs--gpl-3-0-or-later.md
+      - source: en/docs/automa/licenses/license-block--content-cc-by-4-0.md
+        dest: en/docs/automa/licenses/license-block--content-cc-by-4-0.md
+
+  style-guides:
+    description: >
+      Deliberately not synced as file copies. osat-fluent already holds
+      one stale duplicate, style-guide--versioned-documents-in-unrendered-
+      markdown frozen at v0-1-0, two majors behind automa's current v0-3-0,
+      which is exactly the drift a copy-based sync invites. These stay
+      reference-only: osat-fluent's own docs cite the automa slug and
+      version, and a future check compares the cited version against
+      automa's current one rather than holding a second copy that can
+      silently diverge.
+    sync_mode: reference_only
+    items:
+      - source: en/docs/style-guides/style-guide--versioned-documents-in-unrendered-markdown-v0-3-0.md
+        cited_as: style-guide--versioned-documents-in-unrendered-markdown
+        note: >
+          osat-fluent's local v0-1-0 copy should be deleted once every
+          osat-fluent document's "Style Guide:" line cites the versionless
+          slug, per the current convention, instead of a dotted inline
+          version.
