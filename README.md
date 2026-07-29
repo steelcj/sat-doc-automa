@@ -45,7 +45,7 @@ Reusable License-section blocks, copied into a document's or project's own Licen
 
 #### DevOps
 
-- [Commit and Versioning Workflow](en/docs/guides/devops/commit-and-versioning-workflow-v0-1-1.md), the two paths: initial commit and every version bump after it
+- [Commit and Versioning Workflow](en/docs/guides/devops/commit-and-versioning-workflow-v0-2-0.md), the two paths: initial commit and every version bump after it
 
 ### References
 
