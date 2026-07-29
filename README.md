@@ -45,7 +45,8 @@ Reusable License-section blocks, copied into a document's or project's own Licen
 
 #### DevOps
 
-- [Commit and Versioning Workflow](en/docs/guides/devops/commit-and-versioning-workflow-v0-2-0.md), the two paths: initial commit and every version bump after it
+- [Commit and Versioning Workflow](en/docs/guides/devops/commit-and-versioning-workflow-v0-2-0.md), the two paths: initial commit and every release after it
+- [Decision: GitHub CLI (gh) for Release Asset Publishing](en/docs/guides/devops/decision--gh-cli-for-release-asset-publishing-v0-1-0.md), why gh over raw API calls, and why this is a dev-only, release-side dependency that never reaches end users
 
 ### References
 

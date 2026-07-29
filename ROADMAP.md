@@ -1,10 +1,10 @@
 ---
 dcterms:title: "sat-doc-automa Roadmap"
-dcterms:version: "0.2.0"
+dcterms:version: "0.3.0"
 dcterms:creator: "Christopher Steel"
 dcterms:description: "Planned work for the sat-doc-automa repository, sequenced by target repository version, with the governing-hierarchy decisions resolved and the compliance work applied."
 dcterms:created: "2026-07-25"
-dcterms:modified: "2026-07-25"
+dcterms:modified: "2026-07-28"
 dcterms:format: "text/markdown"
 dcterms:language: "en"
 sat:language_bcp47: "en"
@@ -17,6 +17,14 @@ sat:uuid: ""
 sat:version_at_creation: "0.4.0"
 sat:migration_status: pre-sat
 sat:changelog:
+  - version: "0.3.0"
+    date: "2026-07-28"
+    author: "Christopher Steel"
+    notes: >
+      Added a Pending section: GPG-signing SHA256SUMS for published
+      release assets, following from decision--gh-cli-for-release-asset-
+      publishing-v0-1-0. Not tied to a milestone number, since it isn't
+      part of the 0.2.0 compliance pass this roadmap otherwise records.
   - version: "0.2.0"
     date: "2026-07-25"
     author: "Christopher Steel"
@@ -41,7 +49,7 @@ sat:changelog:
 
 # sat-doc-automa Roadmap
 
-Version: 0.2.0
+Version: 0.3.0
 Status: Draft
 Style Guide: style-guide--versioned-documents-in-unrendered-markdown
 
@@ -242,13 +250,22 @@ These are now answered.
 
 **Resolved.** The automa remain a flat set with no inherent precedence. When two directives appear to conflict, the governing hierarchy resolves it: the authoritative versioned-documents guide and each document's explicit deference, not an ordering among the automa. This is revisited only if the set grows enough that genuine conflicts arise. Nothing conflicts today.
 
+## Pending
+
+Items identified but not yet scheduled to a milestone.
+
+### GPG-sign SHA256SUMS for published release assets
+
+Release-publishing scripts (`publish-release.py` or equivalent, per repository) generate and upload a tarball plus `SHA256SUMS` for each tagged release, per *Decision: GitHub CLI (gh) for Release Asset Publishing*. When a `gpg` binary and a project signing key are available, additionally sign `SHA256SUMS` at publish time, and verify that signature at self-update time in the consuming tool. This mirrors `osat-fluent-restic-tool`'s own deferred "Optional GPG verification" ROADMAP item, applied to the checksum file here rather than the downloaded binary there; the two should be resolved together, or explicitly cross-referenced, rather than drifting into separate answers. Absence of `gpg` must not block publishing or self-update, the same rule already stated for the binary-verification case.
+
 ## License
 
-This document, *sat-doc-automa Roadmap*, by **Christopher Steel**, with AI assistance from **Claude Opus 4.8 (Anthropic)**, is licensed under the [GNU Affero General Public License v3.0 or later](https://www.gnu.org/licenses/agpl-3.0.html).
+This document, *sat-doc-automa Roadmap*, by **Christopher Steel**, with AI assistance from **Claude Opus 4.8 (Anthropic)** and **Claude Sonnet 5 (Anthropic)**, is licensed under the [GNU Affero General Public License v3.0 or later](https://www.gnu.org/licenses/agpl-3.0.html).
 
 ## Changelog
 
 | Version | Status | Notes |
 |---------|--------|-------|
+| 0.3.0 | Draft | Added a Pending section: GPG-signing SHA256SUMS for published release assets |
 | 0.2.0 | Draft | Resolved every scheduled item; recorded the seven governing-hierarchy decisions with rationale; marked Milestones 0.2.0, 0.3.0, and 0.4.0 resolved item by item; answered the three open questions; noted the remaining 1.0.0 graduation criteria |
 | 0.1.0 | Draft | Initial draft, findings from the first full read of the repository at VERSION 0.1.2, sequenced into target releases |
