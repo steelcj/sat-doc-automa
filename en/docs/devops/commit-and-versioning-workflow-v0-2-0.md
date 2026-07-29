@@ -143,25 +143,49 @@ Or `minor`, `major`, or an explicit version. This calls `bump-version.py` to wri
 Output example:
 
 ```bash
-VERSION: 0.1.2 -> 0.1.3
-CHANGELOG.md: [Unreleased] -> ## [0.1.3] - 2026-07-28
-[main 513c2f0] release 0.1.3
- 2 files changed, 8 insertions(+), 1 deletion(-)
+VERSION: 0.1.3 -> 0.1.4
+CHANGELOG.md: [Unreleased] -> ## [0.1.4] - 2026-07-28
+[main b03266b] release 0.1.4
+ 2 files changed, 3 insertions(+), 1 deletion(-)
 
-[RELEASE] 0.1.2 -> 0.1.3, tagged v0.1.3.
+[RELEASE] 0.1.3 -> 0.1.4, tagged v0.1.4.
   Nothing pushed. Push when ready:
-    git push && git push origin v0.1.3
+    git push && git push origin v0.1.4
 ```
-
-It refuses, rather than proceeding, if `VERSION` already has uncommitted changes (a previous release was left half-done), if `Unreleased` is empty (nothing written to release), or if the target tag already exists (tags are never reused; fix forward with the next version number).
 
 ### Push
 
+Pushing stays a deliberate, separate act. cut-release.py never does it for you.
+
+Run the push command
+
 ```bash
-git push && git push origin v0.1.3
+git push && git push origin v0.1.4
 ```
 
-Pushing stays a deliberate, separate act. `cut-release.py` never does it for you.
+output example:
+
+```bash
+Enumerating objects: 19, done.
+Counting objects: 100% (19/19), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (12/12), 6.24 KiB | 6.24 MiB/s, done.
+Total 12 (delta 3), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (3/3), completed with 2 local objects.
+To github.com:steelcj/sat-doc-automa.git
+   cb48d31..b03266b  main -> main
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 169 bytes | 169.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:steelcj/sat-doc-automa.git
+ * [new tag]         v0.1.4 -> v0.1.4
+```
+
+#### Troubleshooting
+
+It your push refuses, rather than proceeding, if `VERSION` already has uncommitted changes (a previous release was left half-done), if `Unreleased` is empty (nothing written to release), or if the target tag already exists (tags are never reused; fix forward with the next version number).
 
 ## License
 
