@@ -17,12 +17,12 @@ version: "0.1.0"
 # Remote identity, for provenance and for anyone reading this file without
 # a local checkout in view.
 remote_source_repo: "steelcj/sat-doc-automa"
-remote_target_repo: "steelcj/osat-fluent"
+remote_target_repo: "steelcj/fluent/osat-fluent"
 
 # Local filesystem paths the sync tooling actually operates against.
 # Fill in to match your local layout under ~/2-areas/development/.
 local_source_repo_path: "~/2-areas/development/sat-doc-automa"
-local_target_repo_path: "~/2-areas/development/osat-fluent"
+local_target_repo_path: "~/2-areas/development/fluent/osat-fluent"
 
 groups:
 
