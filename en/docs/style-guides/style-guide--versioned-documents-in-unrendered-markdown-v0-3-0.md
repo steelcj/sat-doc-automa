@@ -150,7 +150,7 @@ dcterms:relation: ""
 
 ### Namespace rules
 
-Use `dcterms:` (Dublin Core Terms) throughout. The legacy `dc:` (Dublin Core Elements) prefix is deprecated in SAT. Do not mix namespaces in a single document.
+Use `dc:` (Dublin Core Elements) throughout. SAT metadata is stored as YAML, not RDF, and `dcterms:`'s domains, ranges, and URI-valued properties carry no meaning in a YAML key-value context — see *Dublin Core Metadata Usage in SAT* and ADR-028. Where a property has no `dc:` equivalent (`dcterms:created`, `dcterms:modified`, `dcterms:rightsHolder`), use the full `dcterms:` prefix. Do not mix namespaces beyond this documented exception.
 
 ### The `dcterms:identifier` field
 
