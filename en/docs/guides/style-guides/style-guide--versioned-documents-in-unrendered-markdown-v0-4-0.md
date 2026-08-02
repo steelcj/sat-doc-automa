@@ -1,10 +1,10 @@
 ---
 dcterms:title: "Style Guide: Versioned Documents in Unrendered Markdown"
-dcterms:version: "0.3.0"
+dcterms:version: "0.4.0"
 dcterms:creator: "Christopher Steel"
 dcterms:description: "Conventions for creating versioned documents in SAT using unrendered markdown: filename patterns, frontmatter schema, document structure, and prose authoring rules. Authoritative for structure and naming across the repository's guides."
 dcterms:created: "2026-07-21"
-dcterms:modified: "2026-07-25"
+dcterms:modified: "2026-08-02"
 dcterms:format: "text/markdown"
 dcterms:language: "en"
 sat:language_bcp47: "en"
@@ -17,6 +17,18 @@ sat:uuid: ""
 sat:version_at_creation: "0.4.0"
 sat:migration_status: pre-sat
 sat:changelog:
+  - version: "0.4.0"
+    date: "2026-08-02"
+    author: "Christopher Steel"
+    notes: >
+      Namespace rules rewritten per the metadata ingress pipeline:
+      canonical metadata is dc: per ADR-028 and lives in the canonical
+      sidecar generated as part of the ingress process; a document's
+      own frontmatter is a working dialect recorded verbatim in
+      provenance, not legislated; the dcterms shape in this guide's
+      examples is the corpus's inherited shape, a fact rather than a
+      rule. Also records that the paragraph's em dash was replaced
+      with a comma in a prior untracked edit.
   - version: "0.3.0"
     date: "2026-07-25"
     author: "Christopher Steel"
@@ -48,7 +60,7 @@ sat:changelog:
 
 # Style Guide: Versioned Documents in Unrendered Markdown
 
-Version: 0.3.0
+Version: 0.4.0
 Status: Draft
 Style Guide: self-referential
 
@@ -150,7 +162,7 @@ dcterms:relation: ""
 
 ### Namespace rules
 
-Use `dc:` (Dublin Core Elements) throughout. SAT metadata is stored as YAML, not RDF, and `dcterms:`'s domains, ranges, and URI-valued properties carry no meaning in a YAML key-value context, see *Dublin Core Metadata Usage in SAT* and ADR-028. Where a property has no `dc:` equivalent (`dcterms:created`, `dcterms:modified`, `dcterms:rightsHolder`), use the full `dcterms:` prefix. Do not mix namespaces beyond this documented exception.
+Canonical metadata is `dc:` (Dublin Core Elements), per ADR-028, as currently configured, and it lives in the canonical sidecar generated as part of the ingress process, not in a working document's frontmatter; see *Metadata Ingress Pipeline* (`metadata-ingress-pipeline`, in the sat repository). A document's own frontmatter is a working dialect: recorded verbatim in provenance at ingress, and not legislated by this guide. The `dcterms:` shape shown in this guide's examples is the corpus's current, inherited shape, a fact about how these documents have been written, not a namespace rule. Where a property has no `dc:` equivalent (`dcterms:created`, `dcterms:modified`, `dcterms:rightsHolder`), the canonical sidecar keeps the full `dcterms:` prefix, the documented exception ADR-028 carries.
 
 ### The `dcterms:identifier` field
 
@@ -245,6 +257,7 @@ from **Claude Sonnet 4.6 (Anthropic)**, is licensed under the
 
 | Version | Status | Notes |
 |---------|--------|-------|
+| 0.4.0 | Draft | Namespace rules rewritten per the metadata ingress pipeline: canonical is `dc:` in the sidecar, generated as part of the ingress process; frontmatter is a working dialect recorded in provenance, not legislated; the examples' `dcterms:` shape is inherited fact, not rule. Em-dash-to-comma fix from a prior untracked edit recorded. |
 | 0.2.0 | Draft | Recreated in sat-doc-automa; added the frontmatter this guide defines but lacked; removed heading numbers and horizontal rules; H1 em dash retitled to colon; section-numbering and em dash rules revised to defer to the markdown defaults |
 | 0.1.0 | Draft | Initial draft |
 ```

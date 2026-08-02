@@ -37,7 +37,7 @@ Reusable License-section blocks, copied into a document's or project's own Licen
 
 #### Style guides
 
-- [Versioned Documents in Unrendered Markdown](en/docs/guides/style-guides/style-guide--versioned-documents-in-unrendered-markdown-v0-3-0.md), the authoritative guide: filename patterns, frontmatter schema, document structure, and prose authoring rules
+- [Versioned Documents in Unrendered Markdown](en/docs/guides/style-guides/style-guide--versioned-documents-in-unrendered-markdown-v0-4-0.md), the authoritative guide: filename patterns, frontmatter schema, document structure, and prose authoring rules
 - [Technical Documentation for Technologists](en/docs/guides/style-guides/style-guide--technical-documentation-for-technologists-v0-5-0.md), register, decision rationale requirements, and conceptual boundary documentation
 - [Plain Language for General Audiences](en/docs/guides/style-guides/style-guide--plain-language-for-general-audiences-v0-5-0.md), the companion guide for general-audience writing
 - [Navigation and Accessibility](en/docs/guides/style-guides/style-guide--navigation-accessibility-v0-2-0.md), real headings over bolded pseudo-headings, grounded in WCAG 2.1

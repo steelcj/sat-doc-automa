@@ -17,6 +17,15 @@ sat:uuid: ""
 sat:version_at_creation: "0.4.0"
 sat:migration_status: pre-sat
 sat:changelog:
+  - version: "0.4.0"
+    date: "2026-08-02"
+    author: "Christopher Steel"
+    notes: >
+      Added a Pending item: make check-conformance.py configurable via
+      a per-repository conformance.yml, so the shared script can travel
+      to repositories with their own conventions without flooding them
+      with findings, and so the checker's rules are declared rather
+      than hardcoded.
   - version: "0.3.0"
     date: "2026-07-28"
     author: "Christopher Steel"
@@ -49,7 +58,7 @@ sat:changelog:
 
 # sat-doc-automa Roadmap
 
-Version: 0.3.0
+Version: 0.4.0
 Status: Draft
 Style Guide: style-guide--versioned-documents-in-unrendered-markdown
 
@@ -253,6 +262,10 @@ These are now answered.
 ## Pending
 
 Items identified but not yet scheduled to a milestone.
+
+### Make check-conformance.py configurable
+
+The checker hardcodes its required frontmatter fields and its rule set, which makes it the enforcement arm of inherited practice and blocks distribution: the script already travels to receiving repositories through the devops-scripts manifest group, but those repositories have their own conventions, and the shared checker would flood them with findings about rules they never adopted. Add a per-repository `conformance.yml` declaring required fields, rule toggles, and path excludes, with each rule entry citing the automa document identifier it enforces, so the configuration stays a machine-readable projection of the automa rather than a second source of truth. Distribution per the manifest-declared sync-policy vocabulary: the script syncs `mirror`, the configuration seeds once and is owned by the repository.
 
 ### GPG-sign SHA256SUMS for published release assets
 
