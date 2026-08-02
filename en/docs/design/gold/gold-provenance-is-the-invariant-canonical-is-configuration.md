@@ -1,0 +1,3 @@
+# Gold - provenance is the invariant, canonical is configuration
+
+has the same shape as the narrowest-backend rule, a design principle that emerged from real work, generalizes past its origin, and could someday earn a spot on the gold shelf if it proves itself in a second domain. It's already flirting with one: the File Fairy's state file is a kind of provenance (what was synced, from what source, when), and the sync manifest is its configuration. No need to shelve it today; just marking that the pattern rhymed twice.
