@@ -67,10 +67,10 @@ groups:
       existing en/docs/guides/commit-and-versioning becomes reference-only
       to this).
     items:
-      - source: en/docs/devops/commit-and-versioning-workflow-v0-2-0.md
-        dest: en/docs/devops/commit-and-versioning-workflow-v0-2-0.md
+      - source: en/docs/guides/devops/commit-and-versioning-workflow-v0-2-0.md
+        dest: en/docs/guides/devops/commit-and-versioning-workflow-v0-2-0.md
     notes:
-      - "Current version only; en/docs/devops/artifacts/ is not synced."
+      - "Current version only; en/docs/guides/devops/artifacts/ is not synced."
 
   markdown-automa:
     description: >
@@ -123,7 +123,7 @@ groups:
       today (four documents).
     sync_mode: reference_only
     items:
-      - source: en/docs/style-guides/style-guide--technical-documentation-for-technologists-v0-5-0.md
+      - source: en/docs/guides/style-guides/style-guide--technical-documentation-for-technologists-v0-5-0.md
         cited_as: style-guide--technical-documentation-for-technologists
         note: >
           sat's citing documents should use the versionless slug per the

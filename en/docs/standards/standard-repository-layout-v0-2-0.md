@@ -1,6 +1,6 @@
 ---
 dcterms:title: "Standard OSAT Repository Layout"
-dcterms:version: "0.1.0"
+dcterms:version: "0.2.0"
 dcterms:creator: "Christopher Steel"
 dcterms:description: "The standard directory and file layout for OSAT repositories: the repository skeleton, the shared zone synced from sat-doc-automa, and the project zone each repository owns."
 dcterms:created: "2026-08-02"
@@ -17,6 +17,14 @@ sat:uuid: ""
 sat:version_at_creation: "0.1.4"
 sat:migration_status: pre-sat
 sat:changelog:
+  - version: "0.2.0"
+    date: "2026-08-02"
+    author: "Christopher Steel"
+    notes: >
+      Shared zone gains the guides/ layer: style-guides/ and devops/ move
+      to guides/style-guides/ and guides/devops/, matching the layout the
+      README and the fleet's guides convention already advertise. Paths
+      updated throughout, including the known-drift table.
   - version: "0.1.0"
     date: "2026-08-02"
     author: "Christopher Steel"
@@ -29,7 +37,7 @@ sat:changelog:
 
 # Standard OSAT Repository Layout
 
-Version: 0.1.0
+Version: 0.2.0
 Status: Draft
 Style Guide: style-guide--versioned-documents-in-unrendered-markdown
 
@@ -77,12 +85,13 @@ en/docs/
       README.md
       defaults/
       examples/
-  devops/
-    artifacts/
-  style-guides/
+  guides/
+    devops/
+      artifacts/
+    style-guides/
 ```
 
-The `automa/` tree holds shared conventions grouped by domain, each domain a `README.md` describing the domain, a `defaults/` directory of the standing rules or snippets, and an `examples/` directory. The domains in use today are `ai-collaboration`, `licenses`, `markdown`, and `svg`. The `devops/` tree holds workflow documents such as the commit and versioning workflow, with superseded versions parked under `devops/artifacts/` rather than deleted. The `style-guides/` tree holds style guides that are cited rather than copied.
+The `automa/` tree holds shared conventions grouped by domain, each domain a `README.md` describing the domain, a `defaults/` directory of the standing rules or snippets, and an `examples/` directory. The domains in use today are `ai-collaboration`, `licenses`, `markdown`, and `svg`. The `guides/` tree holds the shared guides: `guides/devops/` for workflow documents such as the commit and versioning workflow, with superseded versions parked under `guides/devops/artifacts/` rather than deleted, and `guides/style-guides/` for style guides that are cited rather than copied.
 
 Two rules govern this zone. First, synced items are copied at `source == dest`: a shared document keeps the same path in every repository, which is what makes drift detectable and keeps the fleet consistent. Second, style guides are reference-only: a repository cites a style guide by its versionless slug and a future check compares the cited version against the source's current version, rather than holding a second copy that can silently fall behind. A copied style guide is exactly the drift this zone is meant to prevent.
 
@@ -92,9 +101,9 @@ If a shared item ever needs a tidier home, the canonical path is changed once in
 
 Everything else under `en/docs/` belongs to the repository and is organized for its own needs. The convention here is light and is about naming and a few well-known slots, not about a mandated tree.
 
-Documents are versioned markdown named by slug and version, for example `some-document-v0-1-0.md`, per the versioned-documents style guide. Session logs, where a repository keeps them, live under `en/docs/process/sessions/`. Where a document supersedes earlier versions, the earlier versions may be parked under a sibling `artifacts/` directory, the same retired-not-erased pattern the shared `devops/` tree uses.
+Documents are versioned markdown named by slug and version, for example `some-document-v0-1-0.md`, per the versioned-documents style guide. Session logs, where a repository keeps them, live under `en/docs/process/sessions/`. Where a document supersedes earlier versions, the earlier versions may be parked under a sibling `artifacts/` directory, the same retired-not-erased pattern the shared `guides/devops/` tree uses.
 
-Beyond that, a repository arranges its own material as suits it. The documentation-heavy flagship repository organizes `en/docs/` by artifact type, with `architecture/adrs/`, `specifications/`, `guides/`, and `process/`, while a small tool repository may have almost nothing here beyond a `devops/` entry. Both are conformant: the project zone is theirs to shape.
+Beyond that, a repository arranges its own material as suits it. The documentation-heavy flagship repository organizes `en/docs/` by artifact type, with `architecture/adrs/`, `specifications/`, `guides/`, and `process/`, while a small tool repository may have almost nothing here beyond a `guides/devops/` entry. Both are conformant: the project zone is theirs to shape.
 
 ## How a repository is measured against this
 
@@ -116,8 +125,8 @@ A snapshot of where the current repositories stand against this layout, recorded
 
 | Repository | Standing against the layout |
 |------------|-----------------------------|
-| sat-doc-automa | The source of the shared zone. Holds the full `automa/`, `devops/`, and `style-guides/` trees and the devops scripts. |
-| sat | Skeleton nearly complete. Carries a divergent `bump-sat-version.py` in place of the standard `bump-version.py` and `cut-release.py`, and has not yet opted into the shared `en/docs/automa` or `en/docs/devops` trees. Rich project zone. |
+| sat-doc-automa | The source of the shared zone. Holds the full `automa/`, `guides/devops/`, and `guides/style-guides/` trees and the devops scripts. |
+| sat | Skeleton nearly complete. Carries a divergent `bump-sat-version.py` in place of the standard `bump-version.py` and `cut-release.py`, and has not yet opted into the shared `en/docs/automa` or `en/docs/guides/devops` trees. Rich project zone. |
 | file-fairy | Skeleton present with the full devops trio; missing `ROADMAP.md`. Minimal project zone beyond its own tool. |
 | osat-fluent | Skeleton incomplete: no `CHANGELOG.md` and none of the devops scripts. Uses `CONTRIBUTORS.md` where the standard names `CONTRIBUTING.md`. Shared zone not yet applied. |
 
@@ -129,4 +138,5 @@ This document, *Standard OSAT Repository Layout*, by **Christopher Steel**, with
 
 | Version | Status | Notes |
 |---------|--------|-------|
+| 0.2.0 | Draft | Shared zone gains the `guides/` layer: `style-guides/` and `devops/` become `guides/style-guides/` and `guides/devops/`, matching the layout the README and the fleet's guides convention already advertise. |
 | 0.1.0 | Draft | Initial draft. Names the repository skeleton, the shared zone synced from sat-doc-automa at source equals dest, and the project zone each repository owns. Derived from comparing the layouts of sat, file-fairy, osat-fluent, and sat-doc-automa. |

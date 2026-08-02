@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Changed
+
+- Shared zone gains the `guides/` layer: `en/docs/style-guides/` and `en/docs/devops/` move to `en/docs/guides/style-guides/` and `en/docs/guides/devops/`, matching the layout the README already advertises and the guides convention the receiving repositories use. All three sync manifests updated at `source == dest`. Standard OSAT Repository Layout amended to 0.2.0 to match.
+
 ## [0.1.4] - 2026-07-28
 
 ### Changed

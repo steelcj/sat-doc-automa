@@ -39,5 +39,5 @@ groups:
       The workflow guide the devops-scripts group's ceremony actually
       implements.
     items:
-      - source: en/docs/devops/commit-and-versioning-workflow-v0-2-0.md
-        dest: en/docs/devops/commit-and-versioning-workflow-v0-2-0.md
+      - source: en/docs/guides/devops/commit-and-versioning-workflow-v0-2-0.md
+        dest: en/docs/guides/devops/commit-and-versioning-workflow-v0-2-0.md
