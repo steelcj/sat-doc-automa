@@ -15,6 +15,8 @@ dcterms:rights: >
   Copyright 2026 Christopher Steel.
   SPDX-License-Identifier: AGPL-3.0-or-later
 sat:uuid: ""
+sat:repository: "sat-doc-automa"
+sat:path: "en/docs/decisions/devops/"
 sat:version_at_creation: "0.1.4"
 sat:migration_status: pre-sat
 sat:changelog:
