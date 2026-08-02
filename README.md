@@ -48,6 +48,16 @@ Reusable License-section blocks, copied into a document's or project's own Licen
 - [Commit and Versioning Workflow](en/docs/guides/devops/commit-and-versioning-workflow-v0-3-0.md), the ceremony in four steps: write the changelog entries, cut, push, publish
 - [Decision: GitHub CLI (gh) for Release Asset Publishing](en/docs/decisions/devops/decision--gh-cli-for-release-asset-publishing-v0-1-0.md), why gh over raw API calls, and why this is a dev-only, release-side dependency that never reaches end users
 
+### DevOps scripts
+
+The release ceremony, four scripts at the repository root, each self-documenting via its docstring, all stdlib-only Python 3.8+, distributed to the receiving repositories through the sync manifests' devops-scripts groups. The ceremony and its requirements are documented in the [Commit and Versioning Workflow](en/docs/guides/devops/commit-and-versioning-workflow-v0-3-0.md); the design decisions live under [decisions/devops/](en/docs/decisions/devops/).
+
+- `bump-version.py`, writes `VERSION`, single purpose, the one place that computes the next version
+- `cut-release.py`, cuts a release: bump, roll the changelog, surgical commit, tag, stops before push
+- `publish-release.py`, publishes an already-pushed tag: deterministic tarball, `SHA256SUMS`, optional GPG signature, through a provider backend (`gh` for GitHub, or a plain directory)
+- `check-conformance.py`, lints the repository's markdown against the shared house rules; run it before committing
+- `test_publish_release.py`, the offline test suite for the publish ceremony: `python3 test_publish_release.py`
+
 ### References
 
 - [SPDX License Identifiers](en/docs/references/reference--spdx-license-identifiers-v0-1-0.md), the canonical SPDX identifiers used in `dcterms:rights`, License sections, and `LICENSE` files
