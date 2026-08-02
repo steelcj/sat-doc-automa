@@ -6,8 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+
+- publish-release.py, the fourth release-ceremony script: builds a deterministic tarball for an already-pushed tag (built twice, refused on any byte difference), writes SHA256SUMS, optionally GPG-signs it (never blocking when gpg is absent), and publishes through a provider backend (gh for GitHub; a plain directory as the narrowest backend). Per decision--publish-release-shared-script-with-provider-interface. Ships with test_publish_release.py, an offline suite (20 checks) covering the ceremony, the refusals, and real signing.
+
 ### Changed
 
+- Commit and Versioning Workflow amended to 0.3.0: a "Publish the release" section completes the ceremony's documentation (write entries, cut, push, publish), with maintainer-side requirements stated. The 0.2.0 version parks under guides/devops/artifacts/; the three sync manifests now point at 0.3.0.
 - Decision records gain their own tree, `en/docs/decisions/`, subdivided by the same domain names automa/ and guides/ use. The gh-cli decision moves from `guides/devops/` to `decisions/devops/`; decisions are cited by identifier, not synced. Standard OSAT Repository Layout amended to 0.3.0 to match.
 - Shared zone gains the `guides/` layer: `en/docs/style-guides/` and `en/docs/devops/` move to `en/docs/guides/style-guides/` and `en/docs/guides/devops/`, matching the layout the README already advertises and the guides convention the receiving repositories use. All three sync manifests updated at `source == dest`. Standard OSAT Repository Layout amended to 0.2.0 to match.
 

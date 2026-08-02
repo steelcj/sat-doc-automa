@@ -128,9 +128,23 @@ Every future release goes through the release workflow below.
 
 Use this for every release after the initial commit.
 
-### Write the changelog entries
+### Changelog entries
 
-As work happens, add entries to `CHANGELOG.md`'s `## [Unreleased]` section by hand, under `### Added`, `### Changed`, or `### Removed` as appropriate. This is a separate concern from cutting the release itself: `cut-release.py` reads what's already there, it never writes changelog prose.
+As work happens, add entries to CHANGELOG.md.
+
+```markdown
+
+## [Unreleased]
+
+### Added
+
+### Changes
+
+### Removed
+
+```
+
+`CHANGELOG.md`'s `## [Unreleased]` section by hand, under `### Added`, `### Changed`, or `### Removed` as appropriate. This is a separate concern from cutting the release itself: `cut-release.py` reads what's already there, it never writes changelog prose.
 
 ### Cut the release
 

@@ -67,8 +67,8 @@ groups:
       existing en/docs/guides/commit-and-versioning becomes reference-only
       to this).
     items:
-      - source: en/docs/guides/devops/commit-and-versioning-workflow-v0-2-0.md
-        dest: en/docs/guides/devops/commit-and-versioning-workflow-v0-2-0.md
+      - source: en/docs/guides/devops/commit-and-versioning-workflow-v0-3-0.md
+        dest: en/docs/guides/devops/commit-and-versioning-workflow-v0-3-0.md
     notes:
       - "Current version only; en/docs/guides/devops/artifacts/ is not synced."
 
