@@ -1,0 +1,137 @@
+# sat-sync-manifest.yaml
+#
+# Declares which sat-doc-automa artifacts should be present in sat, and
+# where. Draft only, not yet consumed by any tooling. Same manifest-plus-
+# stamp shape as osat-fluent-sync-manifest.yaml and file-fairy-sync-
+# manifest.yaml, applied to the automa -> sat leg.
+#
+# Per-target sync state (what has actually been applied, and from which
+# automa commit or version) lives in <local_target_repo_path>/.file-fairy-
+# state.yaml, written by `ff apply`, not here. This file only declares what
+# belongs; it does not track what is currently applied.
+#
+# Two standing rules this manifest follows:
+#   - Current versions only. Retired versions in a source `artifacts/`
+#     directory are never synced; they stay in their origin repo.
+#   - Shared-zone documents are mirrored at their source path (source ==
+#     dest) and referenced by sat's own docs, never duplicated into sat's
+#     project buckets.
+
+version: "0.1.0"
+
+# Remote identity, for provenance and for anyone reading this file without
+# a local checkout in view.
+remote_source_repo: "steelcj/sat-doc-automa"
+remote_target_repo: "steelcj/sat"
+
+# Local filesystem paths the sync tooling actually operates against.
+local_source_repo_path: "~/2-areas/development/sat-doc-automa"
+local_target_repo_path: "~/2-areas/development/sat"
+
+# Not synced, recorded here so the omissions are deliberate, not forgotten:
+#   - changelog-scaffold: sat already has CHANGELOG.md with an
+#     "## [Unreleased]" heading, so cut-release.py's precondition is met.
+#     No scaffold group is needed (unlike osat-fluent).
+#   - devops/artifacts/*: retired workflow versions, per the current-only
+#     rule above.
+#   - devops/decision--gh-cli-for-release-asset-publishing: a tooling
+#     assessment that belongs in uc-radar, not automa's devops tree; it is
+#     not part of this or any sync.
+
+groups:
+
+  devops-scripts:
+    description: >
+      Release-tooling scripts. sat currently carries a divergent
+      bump-sat-version.py (VERSION plus a README sat_version propagation)
+      in place of the standard trio. This group brings the canonical
+      scripts; the divergent one is removed by hand (a sync adds, it does
+      not delete) and sat's README sat_version line is either hand-
+      maintained or dropped.
+    items:
+      - source: bump-version.py
+        dest: bump-version.py
+      - source: cut-release.py
+        dest: cut-release.py
+      - source: check-conformance.py
+        dest: check-conformance.py
+    notes:
+      - "Remove sat/bump-sat-version.py after this group applies."
+      - "Decide sat/README.md sat_version: hand-maintain or drop the line."
+
+  devops-docs:
+    description: >
+      The workflow the devops-scripts group implements: how to bump and cut
+      releases using the root scripts. Mirrored at its source path; sat's
+      own process docs reference it rather than keeping a local copy (the
+      existing en/docs/guides/commit-and-versioning becomes reference-only
+      to this).
+    items:
+      - source: en/docs/devops/commit-and-versioning-workflow-v0-2-0.md
+        dest: en/docs/devops/commit-and-versioning-workflow-v0-2-0.md
+    notes:
+      - "Current version only; en/docs/devops/artifacts/ is not synced."
+
+  markdown-automa:
+    description: >
+      Standing markdown house rules, enforced by check-conformance.py. sat's
+      own docs violate several of these today (em dashes and numbered
+      headings are both flagged in sat's ROADMAP), so syncing the rules is
+      what makes the linter's findings actionable against a shared standard.
+    items:
+      - source: en/docs/automa/markdown/defaults/markdown--no-heading-numbers-v0-4-1.md
+        dest: en/docs/automa/markdown/defaults/markdown--no-heading-numbers-v0-4-1.md
+      - source: en/docs/automa/markdown/defaults/markdown--no-horizontal-rules-v0-3-1.md
+        dest: en/docs/automa/markdown/defaults/markdown--no-horizontal-rules-v0-3-1.md
+      - source: en/docs/automa/markdown/defaults/markdown--use-commas-not-em-dashes-v0-3-1.md
+        dest: en/docs/automa/markdown/defaults/markdown--use-commas-not-em-dashes-v0-3-1.md
+      - source: en/docs/automa/markdown/defaults/markdown--no-hard-line-wraps-v0-1-0.md
+        dest: en/docs/automa/markdown/defaults/markdown--no-hard-line-wraps-v0-1-0.md
+      - source: en/docs/automa/markdown/defaults/markdown--license-statement-templates-v0-3-1.md
+        dest: en/docs/automa/markdown/defaults/markdown--license-statement-templates-v0-3-1.md
+      - source: en/docs/automa/markdown/defaults/markdown--apa-7-citations-using-citation-anchor-pairs-v0-1-0.md
+        dest: en/docs/automa/markdown/defaults/markdown--apa-7-citations-using-citation-anchor-pairs-v0-1-0.md
+
+  ai-collaboration:
+    description: >
+      The energy-conservation directive already governs how work in sat gets
+      done in practice, but the document itself is not present in the
+      repository it governs.
+    items:
+      - source: en/docs/automa/ai-collaboration/defaults/collaboration--energy-conservation-in-ai-collaborations-v0-2-0.md
+        dest: en/docs/automa/ai-collaboration/defaults/collaboration--energy-conservation-in-ai-collaborations-v0-2-0.md
+
+  license-blocks:
+    description: >
+      Reusable License-section snippets. sat's README and per-document
+      license lines already match this wording by hand; syncing the source
+      snippets removes the need to keep re-deriving it correctly by eye.
+    items:
+      - source: en/docs/automa/licenses/license-block--agpl-3-0-or-later.md
+        dest: en/docs/automa/licenses/license-block--agpl-3-0-or-later.md
+      - source: en/docs/automa/licenses/license-block--code-and-code-docs--gpl-3-0-or-later.md
+        dest: en/docs/automa/licenses/license-block--code-and-code-docs--gpl-3-0-or-later.md
+      - source: en/docs/automa/licenses/license-block--content-cc-by-4-0.md
+        dest: en/docs/automa/licenses/license-block--content-cc-by-4-0.md
+
+  style-guides:
+    description: >
+      Reference-only, not copied. sat cites the automa slug by its
+      versionless form and a future check compares the cited version against
+      automa's current one, rather than holding a second copy that can
+      silently diverge. sat cites technical-documentation-for-technologists
+      today (four documents).
+    sync_mode: reference_only
+    items:
+      - source: en/docs/style-guides/style-guide--technical-documentation-for-technologists-v0-5-0.md
+        cited_as: style-guide--technical-documentation-for-technologists
+        note: >
+          sat's citing documents should use the versionless slug per the
+          versioned-documents guide's convention, not a dotted inline
+          version.
+    notes:
+      - >
+        Drift: one sat document cites style-guide--7th-grade-reading-level,
+        which has no source in automa's style-guides. Reconcile the citation
+        (likely to plain-language-for-general-audiences) or add the guide to
+        automa; not syncable until it resolves to a real source.
