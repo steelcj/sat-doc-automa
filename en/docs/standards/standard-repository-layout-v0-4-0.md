@@ -1,6 +1,6 @@
 ---
 dcterms:title: "Standard OSAT Repository Layout"
-dcterms:version: "0.3.0"
+dcterms:version: "0.4.0"
 dcterms:creator: "Christopher Steel"
 dcterms:description: "The standard directory and file layout for OSAT repositories: the repository skeleton, the shared zone synced from sat-doc-automa, and the project zone each repository owns."
 dcterms:created: "2026-08-02"
@@ -17,6 +17,17 @@ sat:uuid: ""
 sat:version_at_creation: "0.1.4"
 sat:migration_status: pre-sat
 sat:changelog:
+  - version: "0.4.0"
+    date: "2026-08-02"
+    author: "Christopher Steel"
+    notes: >
+      publish-release.py joins the skeleton as the fourth
+      release-ceremony script, required for release-managed
+      repositories, now that it exists, is tested, and has published
+      its first real release (sat-doc-automa v0.1.4). Corrected the
+      known-drift table's sat row: the divergent bump-sat-version.py
+      no longer exists; sat's devops trio is byte-identical to
+      canonical.
   - version: "0.3.0"
     date: "2026-08-02"
     author: "Christopher Steel"
@@ -46,7 +57,7 @@ sat:changelog:
 
 # Standard OSAT Repository Layout
 
-Version: 0.3.0
+Version: 0.4.0
 Status: Draft
 Style Guide: style-guide--versioned-documents-in-unrendered-markdown
 
@@ -78,6 +89,7 @@ Every OSAT repository carries these at its root. Required items are expected in 
 | `CONTRIBUTING.md` | recommended | Contributor guidance. The name is standardized as `CONTRIBUTING.md`, not `CONTRIBUTORS.md`, so the slot is found the same way everywhere. |
 | `bump-version.py` | required for release-managed repositories | Writes `VERSION` only, single purpose, cannot half-update a repository. |
 | `cut-release.py` | required for release-managed repositories | Reads the changelog, calls `bump-version.py`, rolls `Unreleased` into a dated heading, commits `VERSION` and `CHANGELOG.md` surgically, tags, and stops before push. |
+| `publish-release.py` | required for release-managed repositories | Publishes an already-pushed tag: deterministic tarball (built twice, refused on any byte difference), `SHA256SUMS`, optional never-blocking GPG signature, through a provider backend, `gh` for GitHub or a plain directory. Ships with `test_publish_release.py`, its offline suite. |
 | `check-conformance.py` | recommended | Lints the repository's markdown against the shared house rules. |
 | `en/` | required | The language root. All documentation lives under a language directory, English at `en/`, so a repository is multilingual-ready by construction. |
 
@@ -137,7 +149,7 @@ A snapshot of where the current repositories stand against this layout, recorded
 | Repository | Standing against the layout |
 |------------|-----------------------------|
 | sat-doc-automa | The source of the shared zone. Holds the full `automa/`, `guides/devops/`, and `guides/style-guides/` trees and the devops scripts. |
-| sat | Skeleton nearly complete. Carries a divergent `bump-sat-version.py` in place of the standard `bump-version.py` and `cut-release.py`, and has not yet opted into the shared `en/docs/automa` or `en/docs/guides/devops` trees. Rich project zone. |
+| sat | Skeleton nearly complete. The devops trio is present and byte-identical to canonical (the formerly divergent `bump-sat-version.py` is gone); not yet opted into the shared `en/docs/automa` or `en/docs/guides/devops` trees. Rich project zone. |
 | file-fairy | Skeleton present with the full devops trio; missing `ROADMAP.md`. Minimal project zone beyond its own tool. |
 | osat-fluent | Skeleton incomplete: no `CHANGELOG.md` and none of the devops scripts. Uses `CONTRIBUTORS.md` where the standard names `CONTRIBUTING.md`. Shared zone not yet applied. |
 
@@ -149,6 +161,7 @@ This document, *Standard OSAT Repository Layout*, by **Christopher Steel**, with
 
 | Version | Status | Notes |
 |---------|--------|-------|
+| 0.4.0 | Draft | `publish-release.py` joins the skeleton, required for release-managed repositories, after its first real publish (sat-doc-automa v0.1.4). Corrected the sat drift row: the divergent `bump-sat-version.py` no longer exists. |
 | 0.3.0 | Draft | Decision records gain their own tree, `decisions/`, subdivided by the shared domain names; cited by identifier, not synced. The gh-cli decision relocates from `guides/devops/`. |
 | 0.2.0 | Draft | Shared zone gains the `guides/` layer: `style-guides/` and `devops/` become `guides/style-guides/` and `guides/devops/`, matching the layout the README and the fleet's guides convention already advertise. |
 | 0.1.0 | Draft | Initial draft. Names the repository skeleton, the shared zone synced from sat-doc-automa at source equals dest, and the project zone each repository owns. Derived from comparing the layouts of sat, file-fairy, osat-fluent, and sat-doc-automa. |

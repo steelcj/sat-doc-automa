@@ -33,6 +33,10 @@ groups:
         dest: cut-release.py
       - source: check-conformance.py
         dest: check-conformance.py
+      - source: publish-release.py
+        dest: publish-release.py
+      - source: test_publish_release.py
+        dest: test_publish_release.py
 
   devops-docs:
     description: >
