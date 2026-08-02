@@ -72,6 +72,10 @@ Each milestone states what it was for and records its resolution. Every schedule
 
 Version impact notes use the semantic versioning definitions in *Style Guide: Versioned Documents in Unrendered Markdown*, applied to the affected document, not to the repository.
 
+## check-conformance.py should have configuration file
+
+Now this is hardcoded, a `conformance.yml` per repository declaring required fields, rule toggles, and path excludes (your metrics-drafts case would have been one exclude line), with each rule entry citing the automa document identifier it enforces, so the config stays a machine-readable *projection* of the automa rather than a second source of truth. 
+
 ## Decisions
 
 The versioned-documents guide requires that a directional decision record what was decided, the alternatives considered, and the rationale. The seven decisions that Milestone 0.2.0 turned on are recorded here so the later milestones can reference them.
