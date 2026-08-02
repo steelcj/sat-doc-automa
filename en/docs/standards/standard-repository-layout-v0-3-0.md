@@ -1,6 +1,6 @@
 ---
 dcterms:title: "Standard OSAT Repository Layout"
-dcterms:version: "0.2.0"
+dcterms:version: "0.3.0"
 dcterms:creator: "Christopher Steel"
 dcterms:description: "The standard directory and file layout for OSAT repositories: the repository skeleton, the shared zone synced from sat-doc-automa, and the project zone each repository owns."
 dcterms:created: "2026-08-02"
@@ -17,6 +17,15 @@ sat:uuid: ""
 sat:version_at_creation: "0.1.4"
 sat:migration_status: pre-sat
 sat:changelog:
+  - version: "0.3.0"
+    date: "2026-08-02"
+    author: "Christopher Steel"
+    notes: >
+      Decision records gain their own tree, decisions/, subdivided by
+      the same domain names the automa and guides trees use. Decisions
+      are cited by identifier, not synced, the same reference-only
+      footing as style guides. The gh-cli decision relocates from
+      guides/devops/ accordingly.
   - version: "0.2.0"
     date: "2026-08-02"
     author: "Christopher Steel"
@@ -37,7 +46,7 @@ sat:changelog:
 
 # Standard OSAT Repository Layout
 
-Version: 0.2.0
+Version: 0.3.0
 Status: Draft
 Style Guide: style-guide--versioned-documents-in-unrendered-markdown
 
@@ -85,13 +94,15 @@ en/docs/
       README.md
       defaults/
       examples/
+  decisions/
+    <domain>/
   guides/
     devops/
       artifacts/
     style-guides/
 ```
 
-The `automa/` tree holds shared conventions grouped by domain, each domain a `README.md` describing the domain, a `defaults/` directory of the standing rules or snippets, and an `examples/` directory. The domains in use today are `ai-collaboration`, `licenses`, `markdown`, and `svg`. The `guides/` tree holds the shared guides: `guides/devops/` for workflow documents such as the commit and versioning workflow, with superseded versions parked under `guides/devops/artifacts/` rather than deleted, and `guides/style-guides/` for style guides that are cited rather than copied.
+The `automa/` tree holds shared conventions grouped by domain, each domain a `README.md` describing the domain, a `defaults/` directory of the standing rules or snippets, and an `examples/` directory. The domains in use today are `ai-collaboration`, `licenses`, `markdown`, and `svg`. The `decisions/` tree holds decision records, subdivided by the same domain names the other trees use; decisions are cited by identifier, not synced, since a decision is a record of a choice, not a rule to distribute. The `guides/` tree holds the shared guides: `guides/devops/` for workflow documents such as the commit and versioning workflow, with superseded versions parked under `guides/devops/artifacts/` rather than deleted, and `guides/style-guides/` for style guides that are cited rather than copied.
 
 Two rules govern this zone. First, synced items are copied at `source == dest`: a shared document keeps the same path in every repository, which is what makes drift detectable and keeps the fleet consistent. Second, style guides are reference-only: a repository cites a style guide by its versionless slug and a future check compares the cited version against the source's current version, rather than holding a second copy that can silently fall behind. A copied style guide is exactly the drift this zone is meant to prevent.
 
@@ -138,5 +149,6 @@ This document, *Standard OSAT Repository Layout*, by **Christopher Steel**, with
 
 | Version | Status | Notes |
 |---------|--------|-------|
+| 0.3.0 | Draft | Decision records gain their own tree, `decisions/`, subdivided by the shared domain names; cited by identifier, not synced. The gh-cli decision relocates from `guides/devops/`. |
 | 0.2.0 | Draft | Shared zone gains the `guides/` layer: `style-guides/` and `devops/` become `guides/style-guides/` and `guides/devops/`, matching the layout the README and the fleet's guides convention already advertise. |
 | 0.1.0 | Draft | Initial draft. Names the repository skeleton, the shared zone synced from sat-doc-automa at source equals dest, and the project zone each repository owns. Derived from comparing the layouts of sat, file-fairy, osat-fluent, and sat-doc-automa. |

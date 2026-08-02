@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- Decision records gain their own tree, `en/docs/decisions/`, subdivided by the same domain names automa/ and guides/ use. The gh-cli decision moves from `guides/devops/` to `decisions/devops/`; decisions are cited by identifier, not synced. Standard OSAT Repository Layout amended to 0.3.0 to match.
 - Shared zone gains the `guides/` layer: `en/docs/style-guides/` and `en/docs/devops/` move to `en/docs/guides/style-guides/` and `en/docs/guides/devops/`, matching the layout the README already advertises and the guides convention the receiving repositories use. All three sync manifests updated at `source == dest`. Standard OSAT Repository Layout amended to 0.2.0 to match.
 
 ## [0.1.4] - 2026-07-28
