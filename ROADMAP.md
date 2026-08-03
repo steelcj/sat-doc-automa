@@ -1,16 +1,16 @@
 ---
-dcterms:title: "sat-doc-automa Roadmap"
+dc:title: "sat-doc-automa Roadmap"
 dcterms:version: "0.3.0"
-dcterms:creator: "Christopher Steel"
-dcterms:description: "Planned work for the sat-doc-automa repository, sequenced by target repository version, with the governing-hierarchy decisions resolved and the compliance work applied."
+dc:creator: "Christopher Steel"
+dc:description: "Planned work for the sat-doc-automa repository, sequenced by target repository version, with the governing-hierarchy decisions resolved and the compliance work applied."
 dcterms:created: "2026-07-25"
 dcterms:modified: "2026-07-28"
-dcterms:format: "text/markdown"
-dcterms:language: "en"
+dc:format: "text/markdown"
+dc:language: "en"
 sat:language_bcp47: "en"
-dcterms:identifier: "roadmap"
+dc:identifier: "roadmap"
 dcterms:rightsHolder: "Christopher Steel"
-dcterms:rights: >
+dc:rights: >
   Copyright 2026 Christopher Steel.
   SPDX-License-Identifier: AGPL-3.0-or-later
 sat:uuid: ""

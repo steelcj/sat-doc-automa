@@ -1,16 +1,16 @@
 ---
-dcterms:title: "Markdown: APA 7 Citations Using Citation Anchor Pairs"
+dc:title: "Markdown: APA 7 Citations Using Citation Anchor Pairs"
 dcterms:version: "0.1.0"
-dcterms:creator: "Christopher Steel"
-dcterms:description: "House rule: cite every source in markdown documents using a Citation Anchor Pair, an in-text anchor and a reference anchor, with a return link from the reference to the citation."
+dc:creator: "Christopher Steel"
+dc:description: "House rule: cite every source in markdown documents using a Citation Anchor Pair, an in-text anchor and a reference anchor, with a return link from the reference to the citation."
 dcterms:created: "2026-07-25"
 dcterms:modified: "2026-07-25"
-dcterms:format: "text/markdown"
-dcterms:language: "en"
+dc:format: "text/markdown"
+dc:language: "en"
 sat:language_bcp47: "en"
-dcterms:identifier: "markdown--apa-7-citations-using-citation-anchor-pairs"
+dc:identifier: "markdown--apa-7-citations-using-citation-anchor-pairs"
 dcterms:rightsHolder: "Christopher Steel"
-dcterms:rights: >
+dc:rights: >
   Copyright 2026 Christopher Steel.
   SPDX-License-Identifier: AGPL-3.0-or-later
 sat:uuid: ""

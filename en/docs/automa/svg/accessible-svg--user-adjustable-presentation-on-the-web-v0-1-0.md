@@ -1,16 +1,16 @@
 ---
-dcterms:title: "Accessible SVG: User-Adjustable Presentation on the Web"
+dc:title: "Accessible SVG: User-Adjustable Presentation on the Web"
 dcterms:version: "0.1.0"
-dcterms:creator: "Christopher Steel"
-dcterms:description: "How to author SVG diagrams whose language, colour, typography, encoding, motion, and layout are set by the reader through a preferences toolbar rather than fixed by the author."
+dc:creator: "Christopher Steel"
+dc:description: "How to author SVG diagrams whose language, colour, typography, encoding, motion, and layout are set by the reader through a preferences toolbar rather than fixed by the author."
 dcterms:created: "2026-07-26"
 dcterms:modified: "2026-07-26"
-dcterms:format: "text/markdown"
-dcterms:language: "en"
+dc:format: "text/markdown"
+dc:language: "en"
 sat:language_bcp47: "en"
-dcterms:identifier: "accessible-svg--user-adjustable-presentation-on-the-web"
+dc:identifier: "accessible-svg--user-adjustable-presentation-on-the-web"
 dcterms:rightsHolder: "Christopher Steel"
-dcterms:rights: >
+dc:rights: >
   Copyright 2026 Christopher Steel.
   SPDX-License-Identifier: AGPL-3.0-or-later
 sat:uuid: ""

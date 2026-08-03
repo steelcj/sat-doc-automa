@@ -1,16 +1,16 @@
 ---
-dcterms:title: "Style Guide: Navigation and Accessibility"
+dc:title: "Style Guide: Navigation and Accessibility"
 dcterms:version: "0.2.0"
-dcterms:creator: "Christopher Steel"
-dcterms:description: "Governs the use of real ATX headings, rather than bolded pseudo-headings, for accessibility and deep-linking across OSAT Fluent and Universal Cake documentation."
+dc:creator: "Christopher Steel"
+dc:description: "Governs the use of real ATX headings, rather than bolded pseudo-headings, for accessibility and deep-linking across OSAT Fluent and Universal Cake documentation."
 dcterms:created: "2026-07-21"
 dcterms:modified: "2026-07-25"
-dcterms:format: "text/markdown"
-dcterms:language: "en"
+dc:format: "text/markdown"
+dc:language: "en"
 sat:language_bcp47: "en"
-dcterms:identifier: "style-guide--navigation-accessibility"
+dc:identifier: "style-guide--navigation-accessibility"
 dcterms:rightsHolder: "Christopher Steel"
-dcterms:rights: >
+dc:rights: >
   Copyright 2026 Christopher Steel.
   SPDX-License-Identifier: AGPL-3.0-or-later
 sat:uuid: ""

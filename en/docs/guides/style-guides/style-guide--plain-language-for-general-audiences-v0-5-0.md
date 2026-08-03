@@ -1,16 +1,16 @@
 ---
-dcterms:title: "Style Guide: Plain Language for General Audiences"
+dc:title: "Style Guide: Plain Language for General Audiences"
 dcterms:version: "0.5.0"
-dcterms:creator: "Christopher Steel"
-dcterms:description: "Governs the authoring of plain language documents intended for a general audience; companion to the technical documentation style guide."
+dc:creator: "Christopher Steel"
+dc:description: "Governs the authoring of plain language documents intended for a general audience; companion to the technical documentation style guide."
 dcterms:created: "2026-07-23"
 dcterms:modified: "2026-07-25"
-dcterms:format: "text/markdown"
-dcterms:language: "en"
+dc:format: "text/markdown"
+dc:language: "en"
 sat:language_bcp47: "en"
-dcterms:identifier: "style-guide--plain-language-for-general-audiences"
+dc:identifier: "style-guide--plain-language-for-general-audiences"
 dcterms:rightsHolder: "Christopher Steel"
-dcterms:rights: >
+dc:rights: >
   Copyright 2026 Christopher Steel.
   SPDX-License-Identifier: AGPL-3.0-or-later
 sat:uuid: ""

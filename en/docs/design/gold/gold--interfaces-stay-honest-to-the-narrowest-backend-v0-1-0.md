@@ -1,17 +1,17 @@
 ---
-dcterms:title: "Gold: Interfaces Stay Honest to the Narrowest Backend"
+dc:title: "Gold: Interfaces Stay Honest to the Narrowest Backend"
 dcterms:version: "0.1.0"
-dcterms:creator: "Christopher Steel"
-dcterms:contributor: "Claude Fable 5 (Anthropic) — drafting assistance"
-dcterms:description: "A distilled design principle: an interface over multiple backends must be designed against its poorest backend and merely implemented against its richest. Emerged from the publish-release provider-interface design; recorded with provenance and a running list of applications."
+dc:creator: "Christopher Steel"
+dc:contributor: "Claude Fable 5 (Anthropic) — drafting assistance"
+dc:description: "A distilled design principle: an interface over multiple backends must be designed against its poorest backend and merely implemented against its richest. Emerged from the publish-release provider-interface design; recorded with provenance and a running list of applications."
 dcterms:created: "2026-08-02"
 dcterms:modified: "2026-08-02"
-dcterms:format: "text/markdown"
-dcterms:language: "en"
+dc:format: "text/markdown"
+dc:language: "en"
 sat:language_bcp47: "en"
-dcterms:identifier: "gold--interfaces-stay-honest-to-the-narrowest-backend"
+dc:identifier: "gold--interfaces-stay-honest-to-the-narrowest-backend"
 dcterms:rightsHolder: "Christopher Steel"
-dcterms:rights: >
+dc:rights: >
   Copyright 2026 Christopher Steel.
   SPDX-License-Identifier: AGPL-3.0-or-later
 sat:uuid: ""

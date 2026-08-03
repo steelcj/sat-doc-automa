@@ -1,16 +1,16 @@
 ---
-dcterms:title: "Markdown: No Heading Numbers"
+dc:title: "Markdown: No Heading Numbers"
 dcterms:version: "0.4.1"
-dcterms:creator: "Christopher Steel"
-dcterms:description: "House rule: do not number headings in markdown documents unless explicitly asked."
+dc:creator: "Christopher Steel"
+dc:description: "House rule: do not number headings in markdown documents unless explicitly asked."
 dcterms:created: "2026-07-23"
 dcterms:modified: "2026-07-24"
-dcterms:format: "text/markdown"
-dcterms:language: "en"
+dc:format: "text/markdown"
+dc:language: "en"
 sat:language_bcp47: "en"
-dcterms:identifier: "markdown--no-heading-numbers"
+dc:identifier: "markdown--no-heading-numbers"
 dcterms:rightsHolder: "Christopher Steel"
-dcterms:rights: >
+dc:rights: >
   Copyright 2026 Christopher Steel.
   SPDX-License-Identifier: AGPL-3.0-or-later
 sat:uuid: ""

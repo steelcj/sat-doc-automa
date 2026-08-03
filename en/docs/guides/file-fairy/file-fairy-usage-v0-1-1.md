@@ -1,18 +1,18 @@
 ---
-dcterms:title: "file-fairy Usage"
+dc:title: "file-fairy Usage"
 dcterms:version: "0.1.1"
-dcterms:creator: "Christopher Steel"
-dcterms:contributor: "Claude Fable 5 (Anthropic) — drafting assistance"
-dcterms:description: "Operator guide for file-fairy: the manifest concepts, the plan, status, and apply verbs, the sync modes, retraction, managed blocks, conflict resolution, and the receive-then-commit pattern that precedes a release. Canonical here in sat-doc-automa and distributed to file-fairy by the fairy itself."
+dc:creator: "Christopher Steel"
+dc:contributor: "Claude Fable 5 (Anthropic) — drafting assistance"
+dc:description: "Operator guide for file-fairy: the manifest concepts, the plan, status, and apply verbs, the sync modes, retraction, managed blocks, conflict resolution, and the receive-then-commit pattern that precedes a release. Canonical here in sat-doc-automa and distributed to file-fairy by the fairy itself."
 dcterms:created: "2026-08-03"
 dcterms:modified: "2026-08-03"
-dcterms:format: "text/markdown"
-dcterms:language: "en"
+dc:format: "text/markdown"
+dc:language: "en"
 sat:language_bcp47: "en"
-dcterms:relation: "commit-and-versioning-workflow, decision--file-fairy-manifest-declared-sync-policy, decision--manifest-organization-one-key-per-axis"
-dcterms:identifier: "file-fairy-usage"
+dc:relation: "commit-and-versioning-workflow, decision--file-fairy-manifest-declared-sync-policy, decision--manifest-organization-one-key-per-axis"
+dc:identifier: "file-fairy-usage"
 dcterms:rightsHolder: "Christopher Steel"
-dcterms:rights: >
+dc:rights: >
   Copyright 2026 Christopher Steel.
   SPDX-License-Identifier: AGPL-3.0-or-later
 sat:uuid: ""

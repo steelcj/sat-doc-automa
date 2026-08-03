@@ -1,17 +1,17 @@
 ---
-dcterms:title: "Recommendation: Use a CLAUDE.md File"
-dcterms:version: "0.1.0"
-dcterms:creator: "Christopher Steel"
-dcterms:contributor: "Claude (Anthropic) — drafting assistance"
-dcterms:description: "Recommends adding a small CLAUDE.md signpost file to sat-doc-automa and to every project it feeds, so AI work sessions load the standing automa directives automatically instead of depending on a person to point to them."
+dc:title: "Recommendation: Use a CLAUDE.md File"
+dcterms:version: "0.1.1"
+dc:creator: "Christopher Steel"
+dc:contributor: "Claude (Anthropic)"
+dc:description: "Recommends adding a small CLAUDE.md signpost file to sat-doc-automa and to every project it feeds, so AI work sessions load the standing automa directives automatically instead of depending on a person to point to them."
 dcterms:created: "2026-08-02"
-dcterms:modified: "2026-08-02"
-dcterms:format: "text/markdown"
-dcterms:language: "en"
+dcterms:modified: "2026-08-03"
+dc:format: "text/markdown"
+dc:language: "en"
 sat:language_bcp47: "en"
-dcterms:identifier: "recommendation--use-a-claude-md-file"
+dc:identifier: "recommendation--use-a-claude-md-file"
 dcterms:rightsHolder: "Christopher Steel"
-dcterms:rights: >
+dc:rights: >
   Copyright 2026 Christopher Steel.
   SPDX-License-Identifier: AGPL-3.0-or-later
 sat:uuid: ""
@@ -20,6 +20,14 @@ sat:path: "en/docs/decisions/ai-collaboration/"
 sat:version_at_creation: "0.1.0"
 sat:migration_status: pre-sat
 sat:changelog:
+  - version: "0.1.1"
+    date: "2026-08-03"
+    author: "Christopher Steel"
+    notes: >
+      The attribution rule in the worked example now names dc:contributor,
+      following the corpus-wide dc: normalization of 2026-08-03. The
+      dc:contributor value trimmed to the "Name (Organization)" form this
+      document itself recommends, removing an em dash.
   - version: "0.1.0"
     date: "2026-08-02"
     author: "Christopher Steel"
@@ -28,7 +36,7 @@ sat:changelog:
 
 # Recommendation: Use a CLAUDE.md File
 
-Version: 0.1.0
+Version: 0.1.1
 Status: Draft
 Style Guide: style-guide--plain-language-for-general-audiences
 
@@ -94,7 +102,7 @@ Read this before starting any work.
 
 ## Attribution
 
-- Record AI assistance in `dcterms:contributor` using the form "Name (Organization)".
+- Record AI assistance in `dc:contributor` using the form "Name (Organization)".
 - Transcribe what is true. Never invent it. Leave the field out entirely when no AI helped.
 
 ## Versioning
@@ -144,4 +152,5 @@ Inside this project family, the related documents are `en/docs/automa/ai-collabo
 
 | Version | Status | Notes |
 | --- | --- | --- |
+| 0.1.1 | Draft | The attribution rule in the worked example now names `dc:contributor`, following the corpus-wide `dc:` normalization; the `dc:contributor` value trimmed to the "Name (Organization)" form this document recommends |
 | 0.1.0 | Draft | Initial draft: the signpost design and its rationale, the ready-to-use example file, distribution through the File Fairy, and the two limits of the mechanism. |

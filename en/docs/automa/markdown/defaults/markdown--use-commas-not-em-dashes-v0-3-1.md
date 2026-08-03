@@ -1,16 +1,16 @@
 ---
-dcterms:title: "Markdown: Use Commas, Not Em Dashes"
+dc:title: "Markdown: Use Commas, Not Em Dashes"
 dcterms:version: "0.3.1"
-dcterms:creator: "Christopher Steel"
-dcterms:description: "House rule: use commas rather than em dashes in all markdown documents."
+dc:creator: "Christopher Steel"
+dc:description: "House rule: use commas rather than em dashes in all markdown documents."
 dcterms:created: "2026-07-23"
 dcterms:modified: "2026-07-24"
-dcterms:format: "text/markdown"
-dcterms:language: "en"
+dc:format: "text/markdown"
+dc:language: "en"
 sat:language_bcp47: "en"
-dcterms:identifier: "markdown--use-commas-not-em-dashes"
+dc:identifier: "markdown--use-commas-not-em-dashes"
 dcterms:rightsHolder: "Christopher Steel"
-dcterms:rights: >
+dc:rights: >
   Copyright 2026 Christopher Steel.
   SPDX-License-Identifier: AGPL-3.0-or-later
 sat:uuid: ""

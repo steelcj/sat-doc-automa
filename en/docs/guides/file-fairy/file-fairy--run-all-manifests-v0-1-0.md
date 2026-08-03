@@ -1,18 +1,18 @@
 ---
-dcterms:title: "file-fairy: Run All Manifests"
+dc:title: "file-fairy: Run All Manifests"
 dcterms:version: "0.1.0"
-dcterms:creator: "Christopher Steel"
-dcterms:contributor: "Claude Fable 5 (Anthropic) — drafting assistance"
-dcterms:description: "The two-loop pattern for reviewing and applying every fleet manifest in one pass, with the captured output of the first fleet-wide sync, 2026-08-03, as the worked example."
+dc:creator: "Christopher Steel"
+dc:contributor: "Claude Fable 5 (Anthropic) — drafting assistance"
+dc:description: "The two-loop pattern for reviewing and applying every fleet manifest in one pass, with the captured output of the first fleet-wide sync, 2026-08-03, as the worked example."
 dcterms:created: "2026-08-03"
 dcterms:modified: "2026-08-03"
-dcterms:format: "text/markdown"
-dcterms:language: "en"
+dc:format: "text/markdown"
+dc:language: "en"
 sat:language_bcp47: "en"
-dcterms:relation: "file-fairy-usage"
-dcterms:identifier: "file-fairy--run-all-manifests"
+dc:relation: "file-fairy-usage"
+dc:identifier: "file-fairy--run-all-manifests"
 dcterms:rightsHolder: "Christopher Steel"
-dcterms:rights: >
+dc:rights: >
   Copyright 2026 Christopher Steel.
   SPDX-License-Identifier: AGPL-3.0-or-later
 sat:uuid: ""

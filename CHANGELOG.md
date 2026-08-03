@@ -6,6 +6,20 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+
+- normalize-metadata.py, the frontmatter normalizer: converts the fifteen mappable Dublin Core element keys from `dcterms:` to `dc:` in every markdown frontmatter block, dry-run by default with `--apply` to write, leaving `dcterms:created`, `dcterms:modified`, `dcterms:rightsHolder`, `dcterms:version`, and all `sat:` keys untouched
+- en/docs/process/fluent/creating-os-agnostic-tools--a-worked-process-v0-1-0.md, the OSAT Fluent worked-process guide, intaken in the `dc:` frontmatter family
+- normalize-metadata.py rows in all eleven ff-manifests' devops-scripts groups, so the normalizer travels with the release tooling and each target repo can run its own project-zone normalization
+
+### Changed
+
+- Corpus-wide frontmatter normalization to the `dc:` family: 162 keys converted across 22 documents by normalize-metadata.py. Git history is the provenance record; the parent of the normalization commit holds every original frontmatter verbatim. `dcterms:` remains only for created, modified, rightsHolder (the ADR-028 exceptions) and version (a local extension, `sat:version` pending)
+- check-conformance.py now requires the `dc:` spellings (dc:title, dc:creator, dc:identifier) alongside the retained dcterms:version, dcterms:created, dcterms:modified, and sat:uuid, and reports dc:identifier in its messages
+- style-guide--versioned-documents-in-unrendered-markdown 0.4.0 to 0.5.0, renamed accordingly: Required and Optional field examples now show `dc:` keys, Namespace rules rewritten to state the corpus is dc:-normalized with git as provenance, missing 0.4.0 Changelog-table row restored; README.md and ff-manifest-osat-fluent.yaml references updated to the new filename
+- CLAUDE.md, its block source claude-md-signpost-block.md, and recommendation--use-a-claude-md-file (0.1.0 to 0.1.1, renamed accordingly): the attribution rule now names `dc:contributor`
+- README.md: the SPDX reference line now says `dc:rights`
+
 ## [0.2.1] - 2026-08-03
 
 ### Added

@@ -1,17 +1,17 @@
 ---
-dcterms:title: "Decision: publish-release.py as a Shared Script with a Provider Interface"
+dc:title: "Decision: publish-release.py as a Shared Script with a Provider Interface"
 dcterms:version: "0.1.0"
-dcterms:creator: "Christopher Steel"
-dcterms:contributor: "Claude Fable 5 (Anthropic) — drafting assistance"
-dcterms:description: "Records the choice of a shared publish-release.py, distributed by file-fairy beside the existing devops trio, over a standalone osat-fluent-gh-tool, and the design that makes it durable: connectivity as a named two-layer requirement, a provider interface governed by the narrowest-backend rule, gh as first backend, and an SSH-to-controlled-host backend as the sovereign extension path."
+dc:creator: "Christopher Steel"
+dc:contributor: "Claude Fable 5 (Anthropic) — drafting assistance"
+dc:description: "Records the choice of a shared publish-release.py, distributed by file-fairy beside the existing devops trio, over a standalone osat-fluent-gh-tool, and the design that makes it durable: connectivity as a named two-layer requirement, a provider interface governed by the narrowest-backend rule, gh as first backend, and an SSH-to-controlled-host backend as the sovereign extension path."
 dcterms:created: "2026-08-02"
 dcterms:modified: "2026-08-02"
-dcterms:format: "text/markdown"
-dcterms:language: "en"
+dc:format: "text/markdown"
+dc:language: "en"
 sat:language_bcp47: "en"
-dcterms:identifier: "decision--publish-release-shared-script-with-provider-interface"
+dc:identifier: "decision--publish-release-shared-script-with-provider-interface"
 dcterms:rightsHolder: "Christopher Steel"
-dcterms:rights: >
+dc:rights: >
   Copyright 2026 Christopher Steel.
   SPDX-License-Identifier: AGPL-3.0-or-later
 sat:uuid: ""

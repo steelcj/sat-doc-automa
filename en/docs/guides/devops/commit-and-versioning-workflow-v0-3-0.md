@@ -1,16 +1,16 @@
 ---
-dcterms:title: "Commit and Versioning Workflow"
+dc:title: "Commit and Versioning Workflow"
 dcterms:version: "0.3.0"
-dcterms:creator: "Christopher Steel"
-dcterms:description: "Practical workflow for commits and version bumps: initial commit, and every subsequent release after that."
+dc:creator: "Christopher Steel"
+dc:description: "Practical workflow for commits and version bumps: initial commit, and every subsequent release after that."
 dcterms:created: "2026-07-24"
 dcterms:modified: "2026-08-02"
-dcterms:format: "text/markdown"
-dcterms:language: "en"
+dc:format: "text/markdown"
+dc:language: "en"
 sat:language_bcp47: "en"
-dcterms:identifier: "commit-and-versioning-workflow"
+dc:identifier: "commit-and-versioning-workflow"
 dcterms:rightsHolder: "Christopher Steel"
-dcterms:rights: >
+dc:rights: >
   Copyright 2026 Christopher Steel.
   SPDX-License-Identifier: AGPL-3.0-or-later
 sat:uuid: ""

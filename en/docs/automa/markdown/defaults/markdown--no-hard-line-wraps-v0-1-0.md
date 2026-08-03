@@ -1,16 +1,16 @@
 ---
-dcterms:title: "Markdown: No Hard Line Wraps"
+dc:title: "Markdown: No Hard Line Wraps"
 dcterms:version: "0.1.0"
-dcterms:creator: "Christopher Steel"
-dcterms:description: "House rule: do not hard-wrap prose paragraphs at a fixed column; let lines run to their natural length and wrap only inside code blocks."
+dc:creator: "Christopher Steel"
+dc:description: "House rule: do not hard-wrap prose paragraphs at a fixed column; let lines run to their natural length and wrap only inside code blocks."
 dcterms:created: "2026-07-31"
 dcterms:modified: "2026-07-31"
-dcterms:format: "text/markdown"
-dcterms:language: "en"
+dc:format: "text/markdown"
+dc:language: "en"
 sat:language_bcp47: "en"
-dcterms:identifier: "markdown--no-hard-line-wraps"
+dc:identifier: "markdown--no-hard-line-wraps"
 dcterms:rightsHolder: "Christopher Steel"
-dcterms:rights: >
+dc:rights: >
   Copyright 2026 Christopher Steel.
   SPDX-License-Identifier: AGPL-3.0-or-later
 sat:uuid: ""

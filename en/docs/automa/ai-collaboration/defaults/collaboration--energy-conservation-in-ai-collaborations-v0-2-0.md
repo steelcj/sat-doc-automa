@@ -1,16 +1,16 @@
 ---
-dcterms:title: "Collaboration: Energy Conservation in AI Collaborations"
+dc:title: "Collaboration: Energy Conservation in AI Collaborations"
 dcterms:version: "0.2.0"
-dcterms:creator: "Christopher Steel"
-dcterms:description: "Standing directive and Universal Cake evaluation: AI collaborators ask before computationally intensive operations. Includes sourced impact projections for adoption at organizational and industry scale."
+dc:creator: "Christopher Steel"
+dc:description: "Standing directive and Universal Cake evaluation: AI collaborators ask before computationally intensive operations. Includes sourced impact projections for adoption at organizational and industry scale."
 dcterms:created: "2026-07-24"
 dcterms:modified: "2026-07-25"
-dcterms:format: "text/markdown"
-dcterms:language: "en"
+dc:format: "text/markdown"
+dc:language: "en"
 sat:language_bcp47: "en"
-dcterms:identifier: "collaboration--energy-conservation-in-ai-collaborations"
+dc:identifier: "collaboration--energy-conservation-in-ai-collaborations"
 dcterms:rightsHolder: "Christopher Steel"
-dcterms:rights: >
+dc:rights: >
   Copyright 2026 Christopher Steel.
   SPDX-License-Identifier: AGPL-3.0-or-later
 sat:uuid: ""

@@ -1,16 +1,16 @@
 ---
-dcterms:title: "Style Guide: Web-Ready Unrendered Markdown Using APA 7"
+dc:title: "Style Guide: Web-Ready Unrendered Markdown Using APA 7"
 dcterms:version: "0.5.0"
-dcterms:creator: "Christopher Steel"
-dcterms:description: "Conventions for authoring web-ready markdown source files conforming to APA 7 formatting and citation standards using the Citation Anchor Pair (CAP) workflow."
+dc:creator: "Christopher Steel"
+dc:description: "Conventions for authoring web-ready markdown source files conforming to APA 7 formatting and citation standards using the Citation Anchor Pair (CAP) workflow."
 dcterms:created: "2026-07-23"
 dcterms:modified: "2026-07-25"
-dcterms:format: "text/markdown"
-dcterms:language: "en"
+dc:format: "text/markdown"
+dc:language: "en"
 sat:language_bcp47: "en"
-dcterms:identifier: "style-guide--web-ready-unrendered-markdown-using-apa-7"
+dc:identifier: "style-guide--web-ready-unrendered-markdown-using-apa-7"
 dcterms:rightsHolder: "Christopher Steel"
-dcterms:rights: >
+dc:rights: >
   Copyright 2026 Christopher Steel.
   SPDX-License-Identifier: AGPL-3.0-or-later
 sat:uuid: ""

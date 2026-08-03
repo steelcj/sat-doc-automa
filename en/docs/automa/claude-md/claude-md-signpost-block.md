@@ -19,7 +19,7 @@ Read this before starting any work.
 
 ## Attribution
 
-- Record AI assistance in `dcterms:contributor` using the form "Name (Organization)".
+- Record AI assistance in `dc:contributor` using the form "Name (Organization)".
 - Transcribe what is true. Never invent it. Leave the field out entirely when no AI helped.
 
 ## Versioning

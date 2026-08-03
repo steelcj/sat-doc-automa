@@ -37,6 +37,8 @@ groups:
         dest: cut-release.py
       - source: check-conformance.py
         dest: check-conformance.py
+      - source: normalize-metadata.py
+        dest: normalize-metadata.py
       - source: publish-release.py
         dest: publish-release.py
       - source: test_publish_release.py
@@ -104,7 +106,7 @@ groups:
       silently diverge.
     sync_mode: reference_only
     items:
-      - source: en/docs/guides/style-guides/style-guide--versioned-documents-in-unrendered-markdown-v0-4-0.md
+      - source: en/docs/guides/style-guides/style-guide--versioned-documents-in-unrendered-markdown-v0-5-0.md
         cited_as: style-guide--versioned-documents-in-unrendered-markdown
         note: >
           osat-fluent's local v0-1-0 copy should be deleted once every

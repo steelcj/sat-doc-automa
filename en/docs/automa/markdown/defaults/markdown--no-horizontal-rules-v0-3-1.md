@@ -1,16 +1,16 @@
 ---
-dcterms:title: "Markdown: No Horizontal Rules"
+dc:title: "Markdown: No Horizontal Rules"
 dcterms:version: "0.3.1"
-dcterms:creator: "Christopher Steel"
-dcterms:description: "House rule: do not use horizontal rules in markdown document content without asking and obtaining permission first."
+dc:creator: "Christopher Steel"
+dc:description: "House rule: do not use horizontal rules in markdown document content without asking and obtaining permission first."
 dcterms:created: "2026-07-23"
 dcterms:modified: "2026-07-24"
-dcterms:format: "text/markdown"
-dcterms:language: "en"
+dc:format: "text/markdown"
+dc:language: "en"
 sat:language_bcp47: "en"
-dcterms:identifier: "markdown--no-horizontal-rules"
+dc:identifier: "markdown--no-horizontal-rules"
 dcterms:rightsHolder: "Christopher Steel"
-dcterms:rights: >
+dc:rights: >
   Copyright 2026 Christopher Steel.
   SPDX-License-Identifier: AGPL-3.0-or-later
 sat:uuid: ""

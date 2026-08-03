@@ -1,16 +1,16 @@
 ---
-dcterms:title: "Markdown: License Statement Templates"
+dc:title: "Markdown: License Statement Templates"
 dcterms:version: "0.3.1"
-dcterms:creator: "Christopher Steel"
-dcterms:description: "Templates for the License section of documents and projects: general content, code, and code documentation, with and without AI assistance attribution."
+dc:creator: "Christopher Steel"
+dc:description: "Templates for the License section of documents and projects: general content, code, and code documentation, with and without AI assistance attribution."
 dcterms:created: "2026-07-23"
 dcterms:modified: "2026-07-24"
-dcterms:format: "text/markdown"
-dcterms:language: "en"
+dc:format: "text/markdown"
+dc:language: "en"
 sat:language_bcp47: "en"
-dcterms:identifier: "markdown--license-statement-templates"
+dc:identifier: "markdown--license-statement-templates"
 dcterms:rightsHolder: "Christopher Steel"
-dcterms:rights: >
+dc:rights: >
   Copyright 2026 Christopher Steel.
   SPDX-License-Identifier: AGPL-3.0-or-later
 sat:uuid: ""

@@ -1,16 +1,16 @@
 ---
-dcterms:title: "Style Guide: Technical Documentation for Technologists"
+dc:title: "Style Guide: Technical Documentation for Technologists"
 dcterms:version: "0.5.0"
-dcterms:creator: "Christopher Steel"
-dcterms:description: "Governs the authoring of technical documentation for technologists: research-paper-flavoured register, decision rationale requirements, and conceptual boundary documentation."
+dc:creator: "Christopher Steel"
+dc:description: "Governs the authoring of technical documentation for technologists: research-paper-flavoured register, decision rationale requirements, and conceptual boundary documentation."
 dcterms:created: "2026-07-23"
 dcterms:modified: "2026-07-25"
-dcterms:format: "text/markdown"
-dcterms:language: "en"
+dc:format: "text/markdown"
+dc:language: "en"
 sat:language_bcp47: "en"
-dcterms:identifier: "style-guide--technical-documentation-for-technologists"
+dc:identifier: "style-guide--technical-documentation-for-technologists"
 dcterms:rightsHolder: "Christopher Steel"
-dcterms:rights: >
+dc:rights: >
   Copyright 2026 Christopher Steel.
   SPDX-License-Identifier: AGPL-3.0-or-later
 sat:uuid: ""

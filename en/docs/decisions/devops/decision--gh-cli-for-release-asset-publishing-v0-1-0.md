@@ -1,17 +1,17 @@
 ---
-dcterms:title: "Decision: GitHub CLI (gh) for Release Asset Publishing"
+dc:title: "Decision: GitHub CLI (gh) for Release Asset Publishing"
 dcterms:version: "0.1.0"
-dcterms:creator: "Christopher Steel"
-dcterms:contributor: "Claude (Anthropic) — drafting assistance"
-dcterms:description: "Records the choice of the gh CLI over raw GitHub API calls for release-asset publishing scripts, and the scope boundary between this dev-only dependency and the git-free self-update work in the tool repositories."
+dc:creator: "Christopher Steel"
+dc:contributor: "Claude (Anthropic) — drafting assistance"
+dc:description: "Records the choice of the gh CLI over raw GitHub API calls for release-asset publishing scripts, and the scope boundary between this dev-only dependency and the git-free self-update work in the tool repositories."
 dcterms:created: "2026-07-29"
 dcterms:modified: "2026-07-29"
-dcterms:format: "text/markdown"
-dcterms:language: "en"
+dc:format: "text/markdown"
+dc:language: "en"
 sat:language_bcp47: "en"
-dcterms:identifier: "decision--gh-cli-for-release-asset-publishing"
+dc:identifier: "decision--gh-cli-for-release-asset-publishing"
 dcterms:rightsHolder: "Christopher Steel"
-dcterms:rights: >
+dc:rights: >
   Copyright 2026 Christopher Steel.
   SPDX-License-Identifier: AGPL-3.0-or-later
 sat:uuid: ""

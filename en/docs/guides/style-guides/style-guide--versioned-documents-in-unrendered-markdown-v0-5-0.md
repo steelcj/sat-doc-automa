@@ -1,22 +1,39 @@
 ---
-dcterms:title: "Style Guide: Versioned Documents in Unrendered Markdown"
-dcterms:version: "0.4.0"
-dcterms:creator: "Christopher Steel"
-dcterms:description: "Conventions for creating versioned documents in SAT using unrendered markdown: filename patterns, frontmatter schema, document structure, and prose authoring rules. Authoritative for structure and naming across the repository's guides."
+dc:title: "Style Guide: Versioned Documents in Unrendered Markdown"
+dcterms:version: "0.5.0"
+dc:creator: "Christopher Steel"
+dc:description: "Conventions for creating versioned documents in SAT using unrendered markdown: filename patterns, frontmatter schema, document structure, and prose authoring rules. Authoritative for structure and naming across the repository's guides."
 dcterms:created: "2026-07-21"
-dcterms:modified: "2026-08-02"
-dcterms:format: "text/markdown"
-dcterms:language: "en"
+dcterms:modified: "2026-08-03"
+dc:format: "text/markdown"
+dc:language: "en"
 sat:language_bcp47: "en"
-dcterms:identifier: "style-guide--versioned-documents-in-unrendered-markdown"
+dc:identifier: "style-guide--versioned-documents-in-unrendered-markdown"
 dcterms:rightsHolder: "Christopher Steel"
-dcterms:rights: >
+dc:rights: >
   Copyright 2026 Christopher Steel.
   SPDX-License-Identifier: AGPL-3.0-or-later
 sat:uuid: ""
 sat:version_at_creation: "0.4.0"
 sat:migration_status: pre-sat
 sat:changelog:
+  - version: "0.5.0"
+    date: "2026-08-03"
+    author: "Christopher Steel"
+    notes: >
+      Frontmatter schema converted to the dc: family, following the
+      corpus-wide normalization run of 2026-08-03: the Required and
+      Optional field examples now show dc: keys, and the Namespace
+      rules section now states the corpus is dc:-normalized rather
+      than describing dcterms: as an inherited shape. The dcterms:
+      prefix remains only for created, modified, and rightsHolder,
+      the ADR-028 exceptions, and for version, a local extension
+      that is not a DCMI term in either namespace, deliberately left
+      out of the normalization pass with sat:version as its standing
+      replacement candidate. Git history is the provenance record
+      for the normalization: the parent of the normalization commit
+      holds every original frontmatter verbatim. Also restored the
+      0.4.0 row this document's own Changelog table was missing.
   - version: "0.4.0"
     date: "2026-08-02"
     author: "Christopher Steel"
@@ -60,7 +77,7 @@ sat:changelog:
 
 # Style Guide: Versioned Documents in Unrendered Markdown
 
-Version: 0.4.0
+Version: 0.5.0
 Status: Draft
 Style Guide: self-referential
 
@@ -114,24 +131,24 @@ adr-015-slug-pattern-language    ← two groups: series-number -- title
 
 ## Frontmatter
 
-SAT documents in the working document model (pre-ADR-012 migration) carry a YAML frontmatter block. All fields use the `dcterms:` namespace. SAT-specific fields use the `sat:` namespace.
+SAT documents in the working document model (pre-ADR-012 migration) carry a YAML frontmatter block. Fields use the `dc:` namespace, per ADR-028, except the three properties with no `dc:` element (`dcterms:created`, `dcterms:modified`, `dcterms:rightsHolder`) and the local extension `dcterms:version`; see Namespace rules below. SAT-specific fields use the `sat:` namespace.
 
 ### Required fields
 
 ```yaml
 ---
-dcterms:title: "Human-readable title of the document"
+dc:title: "Human-readable title of the document"
 dcterms:version: "0.1.0"
-dcterms:creator: "Author Name"
-dcterms:description: "One sentence describing this document."
+dc:creator: "Author Name"
+dc:description: "One sentence describing this document."
 dcterms:created: "YYYY-MM-DD"
 dcterms:modified: "YYYY-MM-DD"
-dcterms:format: "text/markdown"
-dcterms:language: "en"
+dc:format: "text/markdown"
+dc:language: "en"
 sat:language_bcp47: "en"
-dcterms:identifier: "the-slug-without-version-suffix"
+dc:identifier: "the-slug-without-version-suffix"
 dcterms:rightsHolder: "Rights Holder Name"
-dcterms:rights: >
+dc:rights: >
   Copyright YYYY Rights Holder.
   SPDX-License-Identifier: AGPL-3.0-or-later
 sat:uuid: ""
@@ -150,26 +167,28 @@ sat:changelog:
 Include these when the values are known and meaningful:
 
 ```yaml
-dcterms:contributor: "Contributor Name"
-dcterms:subject:
+dc:contributor: "Contributor Name"
+dc:subject:
   - "keyword"
   - "keyword"
-dcterms:publisher: "Publisher or Organisation"
-dcterms:type: "Text"
-dcterms:source: ""
-dcterms:relation: ""
+dc:publisher: "Publisher or Organisation"
+dc:type: "Text"
+dc:source: ""
+dc:relation: ""
 ```
 
 ### Namespace rules
 
-Canonical metadata is `dc:` (Dublin Core Elements), per ADR-028, as currently configured, and it lives in the canonical sidecar generated as part of the ingress process, not in a working document's frontmatter; see *Metadata Ingress Pipeline* (`metadata-ingress-pipeline`, in the sat repository). A document's own frontmatter is a working dialect: recorded verbatim in provenance at ingress, and not legislated by this guide. The `dcterms:` shape shown in this guide's examples is the corpus's current, inherited shape, a fact about how these documents have been written, not a namespace rule. Where a property has no `dc:` equivalent (`dcterms:created`, `dcterms:modified`, `dcterms:rightsHolder`), the canonical sidecar keeps the full `dcterms:` prefix, the documented exception ADR-028 carries.
+Canonical metadata is `dc:` (Dublin Core Elements), per ADR-028, as currently configured; canonically it lives in the canonical sidecar generated as part of the ingress process, and see *Metadata Ingress Pipeline* (`metadata-ingress-pipeline`, in the sat repository) for that process. A document's own frontmatter is a working dialect, recorded verbatim in provenance at ingress and not legislated beyond this repository. As of 2026-08-03 this corpus's working dialect is `dc:` as well: a normalization run (`normalize-metadata.py`) converted every mappable Dublin Core element key from `dcterms:` to `dc:` across the repository's frontmatter. Git history is the provenance record for that run, the parent of the normalization commit holds every original frontmatter verbatim, so no sidecar capture was needed for documents already inside the repository.
 
-### The `dcterms:identifier` field
+The `dcterms:` prefix remains in exactly two situations. First, where no `dc:` element exists: `dcterms:created`, `dcterms:modified`, and `dcterms:rightsHolder`, the documented exceptions ADR-028 carries. Second, `dcterms:version`, which is not a DCMI term in either namespace, it is a local extension wearing a standard prefix. It was deliberately left out of the normalization pass rather than moved to a `dc:` spelling that would be equally nonstandard; `sat:version` is its standing replacement candidate, tracked in the *SAT Metadata Key Specification*.
+
+### The `dc:identifier` field
 
 This is the slug of the document, without the version suffix, regardless of the version the document is currently at. It is the stable identity of the document expressed as a string.
 
 ```yaml
-dcterms:identifier: "cascade-resolution-specification"
+dc:identifier: "cascade-resolution-specification"
 ```
 
 ### The `sat:uuid` field
@@ -257,8 +276,8 @@ from **Claude Sonnet 4.6 (Anthropic)**, is licensed under the
 
 | Version | Status | Notes |
 |---------|--------|-------|
+| 0.5.0 | Draft | Frontmatter schema converted to the `dc:` family following the corpus-wide normalization run; Namespace rules now state the corpus is `dc:`-normalized with git history as the provenance record; `dcterms:` retained only for created, modified, rightsHolder, and version |
 | 0.4.0 | Draft | Namespace rules rewritten per the metadata ingress pipeline: canonical is `dc:` in the sidecar, generated as part of the ingress process; frontmatter is a working dialect recorded in provenance, not legislated; the examples' `dcterms:` shape is inherited fact, not rule. Em-dash-to-comma fix from a prior untracked edit recorded. |
-| 0.2.0 | Draft | Recreated in sat-doc-automa; added the frontmatter this guide defines but lacked; removed heading numbers and horizontal rules; H1 em dash retitled to colon; section-numbering and em dash rules revised to defer to the markdown defaults |
 | 0.1.0 | Draft | Initial draft |
 ```
 
@@ -274,7 +293,7 @@ Use fenced code blocks (triple backtick) with a language tag. Indented code bloc
 
 ````markdown
 ```yaml
-dcterms:title: "Example"
+dc:title: "Example"
 ```
 ````
 
@@ -324,6 +343,8 @@ This document, *Style Guide: Versioned Documents in Unrendered Markdown*, by **C
 
 | Version | Status | Notes |
 |---------|--------|-------|
+| 0.5.0 | Draft | Frontmatter schema converted to the `dc:` family following the corpus-wide normalization run of 2026-08-03; Namespace rules now state the corpus is `dc:`-normalized with git history as the provenance record; `dcterms:` retained only for created, modified, rightsHolder, and version (the last pending `sat:version`); restored the 0.4.0 row this table was missing |
+| 0.4.0 | Draft | Namespace rules rewritten per the metadata ingress pipeline: canonical is `dc:` in the sidecar, generated as part of the ingress process; frontmatter is a working dialect recorded in provenance, not legislated; the examples' `dcterms:` shape recorded as inherited fact, not rule |
 | 0.3.0 | Draft | Designated authoritative for structure, naming, frontmatter, and closing sections; added Resources as an optional closing section; repaired this table, which previously listed only 0.1.0 |
 | 0.2.0 | Draft | Recreated in sat-doc-automa; added the frontmatter this guide defines but lacked; removed heading numbers and horizontal rules; H1 em dash retitled to colon; section-numbering and em dash rules revised to defer to the markdown defaults |
 | 0.1.0 | Draft | Initial draft |
