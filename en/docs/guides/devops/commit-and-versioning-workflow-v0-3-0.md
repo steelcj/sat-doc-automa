@@ -153,6 +153,28 @@ Use this for every release after the initial commit.
 
 As work happens, add entries to `CHANGELOG.md`'s `## [Unreleased]` section by hand, under `### Added`, `### Changed`, or `### Removed` as appropriate. This is a separate concern from cutting the release itself: `cut-release.py` reads what's already there, it never writes changelog prose.
 
+### Ensure for and edit the CHANGELOG.md
+
+```bash
+typora CHANGELOG.md
+```
+
+Content example:
+
+```markdown
+# Changelog
+
+All notable changes to the uc-radar repository are recorded here. This is the repository-level changelog: it records what each tagged release contained and why. Each document additionally carries its own changelog, in its frontmatter and in a Changelog table, for changes internal to that document.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/). Versions track the `VERSION` file and the git tags. Dates are ISO 8601.
+
+## [Unreleased]
+
+### Added
+
+- Shared zone received from sat-doc-automa via file-fairy: the release-ceremony scripts, the devops guides, the markdown and AI-collaboration automa, the license blocks, and the CLAUDE.md signpost block. Synced inventory in .file-fairy-state.yaml.
+```
+
 ### Cut the release
 
 ```bash
@@ -210,7 +232,7 @@ After the tag is pushed, publish the release artifacts. Dry-run first to see exa
 
 ```bash
 python3 publish-release.py --dry-run
-python3 publish-release.py
+git co
 ```
 
 Output example (dry run):

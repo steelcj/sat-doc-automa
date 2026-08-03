@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-08-03
+
 ### Added
 
 - normalize-metadata.py, the frontmatter normalizer: converts the fifteen mappable Dublin Core element keys from `dcterms:` to `dc:` in every markdown frontmatter block, dry-run by default with `--apply` to write, leaving `dcterms:created`, `dcterms:modified`, `dcterms:rightsHolder`, `dcterms:version`, and all `sat:` keys untouched
