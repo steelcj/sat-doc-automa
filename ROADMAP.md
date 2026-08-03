@@ -17,6 +17,14 @@ sat:uuid: ""
 sat:version_at_creation: "0.4.0"
 sat:migration_status: pre-sat
 sat:changelog:
+  - version: "0.5.0"
+    date: "2026-08-03"
+    author: "Christopher Steel"
+    notes: >
+      Expanded the configurable-checker Pending item: the configuration
+      names the metadata specification to validate frontmatter keys
+      against, per the SAT Metadata Key Specification and its epistemic
+      rule that unknown keys are reported, never guessed.
   - version: "0.4.0"
     date: "2026-08-02"
     author: "Christopher Steel"
@@ -58,7 +66,7 @@ sat:changelog:
 
 # sat-doc-automa Roadmap
 
-Version: 0.4.0
+Version: 0.5.0
 Status: Draft
 Style Guide: style-guide--versioned-documents-in-unrendered-markdown
 
@@ -269,7 +277,7 @@ Items identified but not yet scheduled to a milestone.
 
 ### Make check-conformance.py configurable
 
-The checker hardcodes its required frontmatter fields and its rule set, which makes it the enforcement arm of inherited practice and blocks distribution: the script already travels to receiving repositories through the devops-scripts manifest group, but those repositories have their own conventions, and the shared checker would flood them with findings about rules they never adopted. Add a per-repository `conformance.yml` declaring required fields, rule toggles, and path excludes, with each rule entry citing the automa document identifier it enforces, so the configuration stays a machine-readable projection of the automa rather than a second source of truth. Distribution per the manifest-declared sync-policy vocabulary: the script syncs `mirror`, the configuration seeds once and is owned by the repository.
+The checker hardcodes its required frontmatter fields and its rule set, which makes it the enforcement arm of inherited practice and blocks distribution: the script already travels to receiving repositories through the devops-scripts manifest group, but those repositories have their own conventions, and the shared checker would flood them with findings about rules they never adopted. Add a per-repository `conformance.yml` declaring required fields, rule toggles, and path excludes, with each rule entry citing the automa document identifier it enforces, so the configuration stays a machine-readable projection of the automa rather than a second source of truth. The configuration also names the metadata specification the checker validates frontmatter keys against (the SAT Metadata Key Specification in the sat repository being the first), so a key absent from the specification's registries is a finding, reported as unknown, never guessed at. Distribution per the manifest-declared sync-policy vocabulary: the script syncs `mirror`, the configuration seeds once and is owned by the repository.
 
 ### GPG-sign SHA256SUMS for published release assets
 
