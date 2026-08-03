@@ -111,3 +111,15 @@ groups:
           osat-fluent document's "Style Guide:" line cites the versionless
           slug, per the current convention, instead of a dotted inline
           version.
+
+  claude-md:
+    description: >
+      The shared CLAUDE.md signpost, per the recommendation in
+      decisions/ai-collaboration: a fairy-owned block at the top of the
+      target's CLAUDE.md, everything below the markers is the target's
+      own. Requires file-fairy with managed blocks (post-0.3.0).
+    items:
+      - block: claude-md-signpost
+        source: en/docs/automa/claude-md/claude-md-signpost-block.md
+        dest: CLAUDE.md
+        anchor: BOF

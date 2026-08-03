@@ -46,6 +46,7 @@ Reusable License-section blocks, copied into a document's or project's own Licen
 #### DevOps
 
 - [Commit and Versioning Workflow](en/docs/guides/devops/commit-and-versioning-workflow-v0-3-0.md), the ceremony in four steps: write the changelog entries, cut, push, publish
+- [file-fairy Usage](en/docs/guides/devops/file-fairy-usage-v0-1-0.md), operating the fairy: manifests, sync modes, retraction, managed blocks, conflicts, and the receive-then-commit pattern
 - [Decision: GitHub CLI (gh) for Release Asset Publishing](en/docs/decisions/devops/decision--gh-cli-for-release-asset-publishing-v0-1-0.md), why gh over raw API calls, and why this is a dev-only, release-side dependency that never reaches end users
 
 ### DevOps scripts
@@ -74,6 +75,7 @@ en/docs/
     automa/                          standing directives, organized per-format
         ai-collaboration/defaults/   directives for AI collaboration sessions
         ai-collaboration/examples/   deliberately-chosen alternatives
+        claude-md/                   the shared CLAUDE.md signpost block
         licenses/                    reusable License-section blocks
         markdown/defaults/           directives in force for markdown documents
         markdown/examples/           deliberately-chosen alternatives

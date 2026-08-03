@@ -8,6 +8,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- file-fairy Usage guide (en/docs/guides/devops/), the operator guide the fairy roadmap called for: concepts, verbs, sync modes, retraction, managed blocks, conflicts, and the receive-then-commit pattern. Distributed to file-fairy and sat via the devops-docs groups.
+- The shared CLAUDE.md signpost block (en/docs/automa/claude-md/) and a claude-md group in all three manifests: a fairy-owned block at the top of each target's CLAUDE.md, per the recommendation in decisions/ai-collaboration. sat-doc-automa's own root CLAUDE.md carries the same block between fairy markers.
 - publish-release.py, the fourth release-ceremony script: builds a deterministic tarball for an already-pushed tag (built twice, refused on any byte difference), writes SHA256SUMS, optionally GPG-signs it (never blocking when gpg is absent), and publishes through a provider backend (gh for GitHub; a plain directory as the narrowest backend). Per decision--publish-release-shared-script-with-provider-interface. Ships with test_publish_release.py, an offline suite (20 checks) covering the ceremony, the refusals, and real signing.
 
 ### Changed

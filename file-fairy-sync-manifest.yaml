@@ -45,3 +45,17 @@ groups:
     items:
       - source: en/docs/guides/devops/commit-and-versioning-workflow-v0-3-0.md
         dest: en/docs/guides/devops/commit-and-versioning-workflow-v0-3-0.md
+      - source: en/docs/guides/devops/file-fairy-usage-v0-1-0.md
+        dest: en/docs/guides/devops/file-fairy-usage-v0-1-0.md
+
+  claude-md:
+    description: >
+      The shared CLAUDE.md signpost, per the recommendation in
+      decisions/ai-collaboration: a fairy-owned block at the top of the
+      target's CLAUDE.md, everything below the markers is the target's
+      own. Requires file-fairy with managed blocks (post-0.3.0).
+    items:
+      - block: claude-md-signpost
+        source: en/docs/automa/claude-md/claude-md-signpost-block.md
+        dest: CLAUDE.md
+        anchor: BOF
