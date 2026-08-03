@@ -1,6 +1,6 @@
 ---
 dcterms:title: "file-fairy Usage"
-dcterms:version: "0.1.0"
+dcterms:version: "0.1.1"
 dcterms:creator: "Christopher Steel"
 dcterms:contributor: "Claude Fable 5 (Anthropic) — drafting assistance"
 dcterms:description: "Operator guide for file-fairy: the manifest concepts, the plan, status, and apply verbs, the sync modes, retraction, managed blocks, conflict resolution, and the receive-then-commit pattern that precedes a release. Canonical here in sat-doc-automa and distributed to file-fairy by the fairy itself."
@@ -21,6 +21,10 @@ sat:path: "en/docs/guides/devops/"
 sat:version_at_creation: "0.1.4"
 sat:migration_status: pre-sat
 sat:changelog:
+  - version: "0.1.1"
+    date: "2026-08-03"
+    author: "Christopher Steel"
+    notes: "Manifest filenames updated to the ff-manifest-<target>.yaml convention in every example."
   - version: "0.1.0"
     date: "2026-08-03"
     author: "Christopher Steel"
@@ -29,7 +33,7 @@ sat:changelog:
 
 # file-fairy Usage
 
-Version: 0.1.0
+Version: 0.1.1
 Status: Draft
 Style Guide: style-guide--technical-documentation-for-technologists
 
@@ -53,8 +57,8 @@ The manifests live in sat-doc-automa's root, one per target repository, so the w
 
 ```bash
 cd ~/2-areas/development/sat-doc-automa
-ff file-fairy-sync-manifest.yaml        # bare manifest means apply
-ff plan sat-sync-manifest.yaml          # read-only, always safe
+ff ff-manifest-file-fairy.yaml          # bare manifest means apply
+ff plan ff-manifest-sat.yaml            # read-only, always safe
 ```
 
 ## Concepts
@@ -130,7 +134,7 @@ A conflict means the target changed something the manifest says this repository 
 A fairy run in a target repository is its own commit, before any release work, so the arrivals are separable from the target's own changes in history. The pattern, as run at file-fairy's own 0.2.0 release:
 
 ```bash
-ff file-fairy-sync-manifest.yaml        # from the sat-doc-automa checkout
+ff ff-manifest-file-fairy.yaml          # from the sat-doc-automa checkout
 cd ~/2-areas/development/file-fairy
 git add -A && git commit -m "Receive the release ceremony from sat-doc-automa"
 python3 cut-release.py minor
@@ -150,4 +154,5 @@ This document, *file-fairy Usage*, by **Christopher Steel**, with AI assistance 
 
 | Version | Status | Notes |
 |---------|--------|-------|
+| 0.1.1 | Draft | Manifest filenames updated to the ff-manifest-<target>.yaml convention in every example. |
 | 0.1.0 | Draft | Initial guide against file-fairy 0.3.0 plus managed blocks: concepts, verbs, sync modes, retraction, blocks, conflicts, receive-then-commit, troubleshooting. |

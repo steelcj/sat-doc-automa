@@ -1,7 +1,7 @@
-# osat-fluent-python-tool-sync-manifest.yaml
+# ff-manifest-osat-fluent-wekan-tool.yaml
 #
 # Declares which sat-doc-automa artifacts should be present in
-# osat-fluent-python-tool, and where, at source == dest per the standard layout.
+# osat-fluent-wekan-tool, and where, at source == dest per the standard layout.
 # Per-target sync state lives in <local_target_repo_path>/.file-fairy-state.yaml,
 # written by `ff apply`, not here. This file only declares what belongs;
 # it does not track what is currently applied.
@@ -9,10 +9,10 @@
 version: "0.1.0"
 
 remote_source_repo: "steelcj/sat-doc-automa"
-remote_target_repo: "steelcj/osat-fluent-python-tool"
+remote_target_repo: "steelcj/osat-fluent-wekan-tool"
 
 local_source_repo_path: "~/2-areas/development/sat-doc-automa"
-local_target_repo_path: "~/2-areas/development/fluent/osat-fluent-python-tool"
+local_target_repo_path: "~/2-areas/development/fluent/osat-fluent-wekan-tool"
 
 groups:
 
@@ -40,8 +40,8 @@ groups:
     items:
       - source: en/docs/guides/devops/commit-and-versioning-workflow-v0-3-0.md
         dest: en/docs/guides/devops/commit-and-versioning-workflow-v0-3-0.md
-      - source: en/docs/guides/devops/file-fairy-usage-v0-1-0.md
-        dest: en/docs/guides/devops/file-fairy-usage-v0-1-0.md
+      - source: en/docs/guides/devops/file-fairy-usage-v0-1-1.md
+        dest: en/docs/guides/devops/file-fairy-usage-v0-1-1.md
 
   markdown-automa:
     description: >

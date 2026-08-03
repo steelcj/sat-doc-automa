@@ -1,8 +1,8 @@
-# sat-sync-manifest.yaml
+# ff-manifest-sat.yaml
 #
 # Declares which sat-doc-automa artifacts should be present in sat, and
 # where. Draft only, not yet consumed by any tooling. Same manifest-plus-
-# stamp shape as osat-fluent-sync-manifest.yaml and file-fairy-sync-
+# stamp shape as ff-manifest-osat-fluent.yaml and file-fairy-sync-
 # manifest.yaml, applied to the automa -> sat leg.
 #
 # Per-target sync state (what has actually been applied, and from which
@@ -73,8 +73,8 @@ groups:
     items:
       - source: en/docs/guides/devops/commit-and-versioning-workflow-v0-3-0.md
         dest: en/docs/guides/devops/commit-and-versioning-workflow-v0-3-0.md
-      - source: en/docs/guides/devops/file-fairy-usage-v0-1-0.md
-        dest: en/docs/guides/devops/file-fairy-usage-v0-1-0.md
+      - source: en/docs/guides/devops/file-fairy-usage-v0-1-1.md
+        dest: en/docs/guides/devops/file-fairy-usage-v0-1-1.md
     notes:
       - "Current version only; en/docs/guides/devops/artifacts/ is not synced."
 

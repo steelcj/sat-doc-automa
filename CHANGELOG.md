@@ -15,6 +15,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Changed
 
+- The sync manifests are renamed to the ff-manifest-<target>.yaml convention, eleven files, so the family sorts together and names the tool that reads them. The fairy usage guide goes to 0.1.1 with its examples updated; every devops-docs row repoints at it.
 - Versioned Documents in Unrendered Markdown amended to 0.4.0: the Namespace rules paragraph now states the metadata ingress pipeline's resolution, canonical `dc:` in the generated sidecar, frontmatter as an unlegislated working dialect recorded in provenance. ROADMAP gains a Pending item for a configurable check-conformance.py.
 - README gains a DevOps scripts section listing the four ceremony scripts and the test suite, with pointers to the workflow guide and the decision records.
 - The three sync manifests distribute publish-release.py and test_publish_release.py in their devops-scripts groups. Standard OSAT Repository Layout amended to 0.4.0: publish-release.py joins the skeleton as required for release-managed repositories, and the sat drift row is corrected (the divergent bump-sat-version.py no longer exists).

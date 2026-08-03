@@ -1,4 +1,4 @@
-# osat-fluent-sat-tool-sync-manifest.yaml
+# ff-manifest-osat-fluent-sat-tool.yaml
 #
 # Declares which sat-doc-automa artifacts should be present in
 # osat-fluent-sat-tool, and where, at source == dest per the standard layout.
@@ -43,8 +43,8 @@ groups:
     items:
       - source: en/docs/guides/devops/commit-and-versioning-workflow-v0-3-0.md
         dest: en/docs/guides/devops/commit-and-versioning-workflow-v0-3-0.md
-      - source: en/docs/guides/devops/file-fairy-usage-v0-1-0.md
-        dest: en/docs/guides/devops/file-fairy-usage-v0-1-0.md
+      - source: en/docs/guides/devops/file-fairy-usage-v0-1-1.md
+        dest: en/docs/guides/devops/file-fairy-usage-v0-1-1.md
 
   markdown-automa:
     description: >

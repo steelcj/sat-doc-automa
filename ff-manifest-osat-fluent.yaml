@@ -1,4 +1,4 @@
-# osat-fluent-sync-manifest.yaml
+# ff-manifest-osat-fluent.yaml
 #
 # Declares which sat-doc-automa artifacts should be present in osat-fluent,
 # and where. Draft only, not yet consumed by any tooling. Follows the
