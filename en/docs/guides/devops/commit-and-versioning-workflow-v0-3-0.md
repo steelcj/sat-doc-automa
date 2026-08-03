@@ -159,7 +159,7 @@ As work happens, add entries to `CHANGELOG.md`'s `## [Unreleased]` section by ha
 python3 cut-release.py patch
 ```
 
-Or `minor`, `major`, or an explicit version. This calls `bump-version.py` to write `VERSION`, rolls `CHANGELOG.md`'s `Unreleased` section into a dated `## [X.Y.Z] - YYYY-MM-DD` heading, leaves a fresh empty `Unreleased` above it, commits `VERSION` and `CHANGELOG.md` surgically, never `git add .`, guards that `HEAD:VERSION` matches, tags, and guards the tag. It stops before push.
+Or `minor`, `major`, `patch`or an explicit version. This calls `bump-version.py` to write `VERSION`, rolls `CHANGELOG.md`'s `Unreleased` section into a dated `## [X.Y.Z] - YYYY-MM-DD` heading, leaves a fresh empty `Unreleased` above it, commits `VERSION` and `CHANGELOG.md` surgically, never `git add .`, guards that `HEAD:VERSION` matches, tags, and guards the tag. It stops before push.
 
 Output example:
 
