@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-08-03
+
 ### Added
 
 - Eight new sync manifests, one per receiving repository: osat-fluent-hugo, osat-fluent-myrepos-tool, osat-fluent-python-tool, osat-fluent-rclone-tool, osat-fluent-restic-tool, osat-fluent-sat-tool, osat-fluent-wekan-tool, and uc-radar. Uniform group set (devops-scripts, devops-docs, markdown-automa, ai-collaboration, license-blocks, the claude-md block, style-guides as reference_only) with per-repository notes: the docs/en layout divergence flagged for restic-tool and sat-tool, and uc-radar's pre-manifest hand-synced copies flagged for deliberate reconciliation on first plan.
