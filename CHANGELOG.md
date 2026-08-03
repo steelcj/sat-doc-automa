@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fixed
+
+- The ten devops-docs rows for the fairy usage guide still pointed at en/docs/guides/devops/, the path it left at 0.2.1 when the guide moved to en/docs/guides/file-fairy/. The first fleet plan after 0.3.0 reported it as MISSING SOURCE in every carrying manifest. Rows repointed to the new path, and a state:absent item added beside each so the stale copy the first sync placed at the old path is retracted from the targets.
+
 ## [0.3.0] - 2026-08-03
 
 ### Added

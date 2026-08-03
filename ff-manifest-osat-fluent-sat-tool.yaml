@@ -45,7 +45,9 @@ groups:
     items:
       - source: en/docs/guides/devops/commit-and-versioning-workflow-v0-3-0.md
         dest: en/docs/guides/devops/commit-and-versioning-workflow-v0-3-0.md
-      - source: en/docs/guides/devops/file-fairy-usage-v0-1-1.md
+      - source: en/docs/guides/file-fairy/file-fairy-usage-v0-1-1.md
+        dest: en/docs/guides/file-fairy/file-fairy-usage-v0-1-1.md
+      - state: absent
         dest: en/docs/guides/devops/file-fairy-usage-v0-1-1.md
 
   markdown-automa:
