@@ -9,6 +9,7 @@ Read this before starting any work.
 
 - Every directive in `en/docs/automa/ai-collaboration/defaults/` applies to this session.
 - Every markdown rule in `en/docs/automa/markdown/defaults/` applies to everything you write here.
+- Every versioning rule in `en/docs/automa/versioning/defaults/` applies to every document artifact, whatever its format.
 - License sections come from the templates in `en/docs/automa/licenses/`.
 
 ## Style guides

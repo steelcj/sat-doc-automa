@@ -1,0 +1,112 @@
+# ff-manifest-uc-cboard.yaml
+#
+# Declares which sat-doc-automa artifacts should be present in
+# uc-cboard, at source == dest per the standard layout.
+# Per-target sync state lives in <local_target_repo_path>/.file-fairy-state.yaml,
+# written by `ff apply`, not here. This file only declares what belongs;
+# it does not track what is currently applied.
+#
+# Deviation from the standard devops-scripts group: publish-release.py
+# and test_publish_release.py are deliberately excluded. uc-cboard's
+# release artifact is a built product (Cboard's static output, produced
+# by build-release.py from a pinned upstream commit), never committed
+# to this repository. publish-release.py's determinism gate builds its
+# tarball with `git archive` on the tagged commit, i.e. it publishes
+# this repository's own source, which is never the thing uc-cboard
+# actually releases. Decision B (see project notes): keep built output
+# out of git, publish via a repo-local publish-cboard-release.py using
+# gh directly instead. bump-version.py and cut-release.py are unaffected
+# and used as-is, since version bump and changelog roll have no
+# git-archive dependency.
+
+version: "0.1.0"
+remote_source_repo: "steelcj/sat-doc-automa"
+remote_target_repo: "steelcj/uc-cboard"
+local_source_repo_path: "~/2-areas/development/sat-doc-automa"
+local_target_repo_path: "~/2-areas/development/uc-cboard"
+
+groups:
+  devops-scripts:
+    description: >
+      The release-ceremony scripts that apply unmodified. publish-release.py
+      and test_publish_release.py are excluded; see the deviation note
+      above. build-release.py and publish-cboard-release.py are
+      uc-cboard-specific and are not part of the shared zone.
+    items:
+      - source: bump-version.py
+        dest: bump-version.py
+      - source: cut-release.py
+        dest: cut-release.py
+      - source: check-conformance.py
+        dest: check-conformance.py
+      - source: normalize-metadata.py
+        dest: normalize-metadata.py
+
+  devops-docs:
+    description: >
+      The workflow the devops-scripts implement, and the fairy's own
+      operating guide. The commit-and-versioning workflow's publish
+      step does not apply as written here; see the deviation note
+      above and this repository's own README for the actual sequence.
+    items:
+      - source: en/docs/guides/devops/commit-and-versioning-workflow-v0-3-0.md
+        dest: en/docs/guides/devops/commit-and-versioning-workflow-v0-3-0.md
+      - source: en/docs/guides/file-fairy/file-fairy-usage-v0-1-1.md
+        dest: en/docs/guides/file-fairy/file-fairy-usage-v0-1-1.md
+
+  markdown-automa:
+    description: >
+      Standing markdown house rules, enforced by check-conformance.py.
+    items:
+      - source: en/docs/automa/markdown/defaults/markdown--no-heading-numbers-v0-4-1.md
+        dest: en/docs/automa/markdown/defaults/markdown--no-heading-numbers-v0-4-1.md
+      - source: en/docs/automa/markdown/defaults/markdown--no-horizontal-rules-v0-3-1.md
+        dest: en/docs/automa/markdown/defaults/markdown--no-horizontal-rules-v0-3-1.md
+      - source: en/docs/automa/markdown/defaults/markdown--use-commas-not-em-dashes-v0-3-1.md
+        dest: en/docs/automa/markdown/defaults/markdown--use-commas-not-em-dashes-v0-3-1.md
+      - source: en/docs/automa/markdown/defaults/markdown--no-hard-line-wraps-v0-1-0.md
+        dest: en/docs/automa/markdown/defaults/markdown--no-hard-line-wraps-v0-1-0.md
+      - source: en/docs/automa/markdown/defaults/markdown--license-statement-templates-v0-3-1.md
+        dest: en/docs/automa/markdown/defaults/markdown--license-statement-templates-v0-3-1.md
+      - source: en/docs/automa/markdown/defaults/markdown--apa-7-citations-using-citation-anchor-pairs-v0-1-0.md
+        dest: en/docs/automa/markdown/defaults/markdown--apa-7-citations-using-citation-anchor-pairs-v0-1-0.md
+
+  ai-collaboration:
+    description: >
+      The standing directives every AI collaboration session follows.
+    items:
+      - source: en/docs/automa/ai-collaboration/defaults/collaboration--energy-conservation-in-ai-collaborations-v0-2-0.md
+        dest: en/docs/automa/ai-collaboration/defaults/collaboration--energy-conservation-in-ai-collaborations-v0-2-0.md
+
+  license-blocks:
+    description: >
+      Reusable License-section snippets, copied so License sections are
+      assembled from canonical text rather than re-derived by eye.
+      uc-cboard's own License section should additionally note it
+      redistributes GPL-3.0-licensed built output from cboard-org/cboard.
+    items:
+      - source: en/docs/automa/licenses/license-block--agpl-3-0-or-later.md
+        dest: en/docs/automa/licenses/license-block--agpl-3-0-or-later.md
+      - source: en/docs/automa/licenses/license-block--code-and-code-docs--gpl-3-0-or-later.md
+        dest: en/docs/automa/licenses/license-block--code-and-code-docs--gpl-3-0-or-later.md
+      - source: en/docs/automa/licenses/license-block--content-cc-by-4-0.md
+        dest: en/docs/automa/licenses/license-block--content-cc-by-4-0.md
+
+  claude-md:
+    description: >
+      The shared CLAUDE.md signpost, a fairy-owned block at the top of
+      the target's CLAUDE.md; everything below the markers is the
+      target's own. Requires file-fairy 0.4.0 or later.
+    items:
+      - block: claude-md-signpost
+        source: en/docs/automa/claude-md/claude-md-signpost-block.md
+        dest: CLAUDE.md
+        anchor: BOF
+
+  style-guides:
+    sync_mode: reference_only
+    description: >
+      Style guides are cited by versionless slug, never copied; a copy
+      is exactly the drift the shared zone exists to prevent. This group
+      records that they are in force here without syncing anything.
+    items: []
