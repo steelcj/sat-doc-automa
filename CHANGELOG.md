@@ -6,6 +6,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.3.1] - 2026-08-20
+
+* added 	modified:   CLAUDE.md
+	modified:   ROADMAP.md
+	new file:   en/docs/automa/ai-collaboration/conserving-bandwidth-and-compute-with-claude.md
+	new file:   en/docs/automa/versioning/README.md
+	new file:   en/docs/automa/versioning/defaults/versioning-postfix-rules-v0-1-0.md
+	new file:   en/docs/guides/devops/runbook--cutting-and-publishing-releases-v0-1-0.md
+	new file:   en/docs/guides/style-guides/style-guide--markdown-mermaid-navigation-flowcharts-and-linked-sections-v0-1-5.md
+	new file:   ff-manifest-osat-fluent-cboard-manager.yaml
+	new file:   ff-manifest-site-blankstudio.com
+	new file:   ff-manifest-uc-cboard.yaml
+	new file:   ff-manifest-uc-metrics.yaml
+	new file:   style-guide--markdown-mermaid-navigation-flowcharts-and-linked-sections-v0-1-2.md
+
 ### Fixed
 
 - The ten devops-docs rows for the fairy usage guide still pointed at en/docs/guides/devops/, the path it left at 0.2.1 when the guide moved to en/docs/guides/file-fairy/. The first fleet plan after 0.3.0 reported it as MISSING SOURCE in every carrying manifest. Rows repointed to the new path, and a state:absent item added beside each so the stale copy the first sync placed at the old path is retracted from the targets.
