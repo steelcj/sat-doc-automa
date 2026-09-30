@@ -6,6 +6,22 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-09-29
+
+* 	deleted:    CLAUDE.md
+	new file:   en/docs/automa/devops/gitignore--release-artifacts.gitignore
+	renamed:    style-guide--markdown-mermaid-navigation-flowcharts-and-linked-sections-v0-1-2.md -> en/docs/automa/markdown/defaults/artifacts/style-guide--markdown-mermaid-navigation-flowcharts-and-linked-sections-v0-1-2.md
+	new file:   en/docs/automa/markdown/defaults/artifacts/style-guide--markdown-mermaid-navigation-flowcharts-and-linked-sections-v0-1-3.md
+	new file:   en/docs/automa/markdown/defaults/artifacts/style-guide--markdown-mermaid-navigation-flowcharts-and-linked-sections-v0-1-4.md
+	new file:   en/docs/automa/markdown/defaults/style-guide--markdown-mermaid-navigation-flowcharts-and-linked-sections-v0-1-5.md
+	new file:   en/docs/automa/markdown/guides/mermaid-accessibility-and-portability-v0.0.1.md
+	new file:   en/docs/automa/markdown/guides/mermaid-accessibility-and-portability-v0.0.2.md
+	new file:   en/docs/overview/overview-of-the-universalcake-evaluated-pipeline.md
+	new file:   ff-manifest-osat-manager-slugify.yaml
+	new file:   ff-manifest-vishpala-eleventy-mvp.yaml
+	modified:   publish-release.py
+
+
 ## [0.3.1] - 2026-08-20
 
 * added 	modified:   CLAUDE.md
