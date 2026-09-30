@@ -1,6 +1,6 @@
 ---
 dc:title: "Style Guide: Markdown Mermaid Navigation Flowcharts and Linked Sections"
-dcterms:version: "0.1.2"
+dcterms:version: "0.1.4"
 dc:creator: "Christopher Steel"
 dc:contributor: "Claude (Anthropic)"
 dc:subject:
@@ -14,7 +14,7 @@ dc:description: >
   box links to a section on the same page and each section links back.
 dc:publisher: "UniversalCake"
 dcterms:created: "2026-08-08"
-dcterms:modified: "2026-08-09"
+dcterms:modified: "2026-09-02"
 dc:format: "text/markdown"
 dc:language: "en"
 sat:language_bcp47: "en"
@@ -27,6 +27,23 @@ sat:uuid: ""
 sat:version_at_creation: ""
 sat:migration_status: pre-sat
 sat:changelog:
+  - version: "0.1.4"
+    date: "2026-09-02"
+    author: "Christopher Steel"
+    notes: >
+      Resolved the anchor conflict. The chart now sits under its own heading
+      rather than carrying an explicit anchor above it, which removes the last
+      use of the obsolete HTML name attribute in this pattern and makes the
+      chart announceable and reachable from a generated table of contents.
+      Renamed "Give the chart its own anchor" to "Give the chart its own
+      heading" and corrected its malformed example. Added a rule requiring
+      unique heading text, because two headings with the same text produce two
+      claims on one slug and the renderer disambiguates one of them with a
+      numeric suffix that no click line predicts. Scoped explicit anchors to
+      citations only and switched them to the id attribute. Repaired five
+      malformed return links in Chart Example Resources. Drafted from a source
+      file named v0-1-3 whose internals read 0.1.2, so any changes made in
+      0.1.3 are not carried here.
   - version: "0.1.2"
     date: "2026-08-09"
     author: "Christopher Steel"
@@ -67,7 +84,7 @@ sat:changelog:
 
 # Style Guide: Markdown Mermaid Navigation Flowcharts and Linked Sections
 
-Version: 0.1.2
+Version: 0.1.4
 Status: Draft
 Style Guide: style-guide--plain-language-for-general-audiences
 
@@ -85,7 +102,7 @@ For document structure, filenames, frontmatter, and closing sections, this guide
 
 A few words are used throughout, so here is what each one means.
 
-Mermaid is a tool that turns plain text into a diagram (<a name="apa-mermaid-docs-citation"></a>[Mermaid, n.d.](#apa-mermaid-docs-reference)). You write the diagram as text inside a fenced code block marked `mermaid`, and the renderer draws it.
+Mermaid is a tool that turns plain text into a diagram (<a id="apa-mermaid-docs-citation"></a>[Mermaid, n.d.](#apa-mermaid-docs-reference)). You write the diagram as text inside a fenced code block marked `mermaid`, and the renderer draws it.
 
 ### Edge
 
@@ -127,15 +144,15 @@ A node is a box in the chart. An edge is an arrow between two boxes.
 
 An anchor is a named spot on the page that a link can point to. A link to an anchor looks like `#the-name`.
 
-A slug is a short, lowercase, hyphen-separated name, such as `other-humans`.
+A slug is a short, lowercase, hyphen-separated name, such as other-humans.
 
-The Markdown renderer auto-generates an anchor for every heading. It builds the slug from the heading text by lowercasing it, replacing spaces with hyphens, and dropping punctuation. So this heading:
+In Markdown documents, the Markdown renderer auto-generates an anchor for every heading (H1 .. H6) automatically. It builds the slug from the heading text by lowercasing it, replacing spaces with hyphens, and dropping punctuation. So this heading:
 
 ```markdown
 ## Other Humans
 ```
 
-becomes the anchor `#other-humans` on the rendered page, with no extra markup from you.
+automatically creates the anchor `#other-humans` on the rendered page, with no extra markup required.
 
 A Mermaid chart references that auto-generated anchor. A `click` line pointing at the slug sends the reader to the heading:
 
@@ -145,9 +162,11 @@ click HUMANS "#other-humans" "Jump to Other Humans"
 
 That heading id is the target, and nothing more is needed. Do not add a second explicit anchor such as `<a name="other-humans"></a>` under the heading. The renderer has already given the heading that exact id, so a hand-written one duplicates it, relies on the obsolete HTML `name` attribute, and leaves two targets answering to one slug. A link then resolves to whichever the renderer lists first, which can drop the reader on the empty anchor beside the heading rather than on the heading itself.
 
-Explicit anchors are reserved for a spot that is **not** a heading, such as the chart, which the renderer gives no id of its own. That single legitimate use is covered under "Give the chart its own anchor".
+Explicit anchors are not used in this pattern. The chart would otherwise be the one target with no id of its own, so the chart is given a heading, and the renderer supplies its id along with every other heading's. This is covered under "Give the chart its own heading".
 
-If you must publish the same file through renderers that build heading ids by different rules, pin the id on the heading itself rather than adding a separate anchor element; do not reach back for the `<a name>` under the heading.
+The one place an explicit anchor still belongs is a citation, where a reference needs a return target that is not a heading. Write those with the `id` attribute. The obsolete `name` attribute is not used anywhere in this repository.
+
+If you must publish the same file through renderers that build heading ids by different rules, pin the id on the heading itself rather than adding a separate anchor element; do not reach back for an `<a name>` under the heading.
 
 ### Tooltip
 
@@ -163,7 +182,7 @@ Do not use it for a diagram that only illustrates a flow and has no matching  se
 
 A navigation flowchart has three parts, and they must agree with each other:
 
-- A chart, with one clickable box for each section, and its own anchor so the sections can have links that return the user back to the chart.
+- A chart under its own heading, with one clickable box for each section, so the sections have a heading to return the reader to.
 - A set of sections, one for each box, each reachable at the id the renderer gives its heading, which its box links to.
 - A return link at the end of each section that points back to the chart.
 
@@ -186,9 +205,9 @@ Example of the Mermaid code in a Markdown file:
 ````code
 ```mermaid
 flowchart TD
-    UCM["Universal Cake Metric"]
-    BODY["Body
-          Physical vitality"]
+    UCM("Universal Cake Metric")
+    BODY("Body
+          Physical vitality")
 ```
 ````
 
@@ -196,9 +215,9 @@ Rendered as a Mermaid chart in a Markdown document:
 
 ```mermaid
 flowchart TD
-    UCM["Universal Cake Metric"]
-    BODY["Body
-          Physical vitality"]
+    UCM("Universal Cake Metric")
+    BODY("Body
+          Physical vitality")
 ```
 
 ### Keep labels short and readable in two places
@@ -213,8 +232,8 @@ Never use html in a chart if it is not requires so:
 Instead of using `\n` or `<br/>` ,  you can place the text you want on the second line in the node directly on the second line in the chart code and align it with the text on the preceding line like this: 
 
 ```code
-    BODY["Body
-          Physical vitality"]
+    BODY("Body
+          Physical vitality")
 ```
 
 ### Use two kinds of edge
@@ -223,14 +242,23 @@ There are two kinds of arrow, and each says something different.
 
 A plain arrow shows that one box belongs to or leads/points to another.
 
+We have also styled the edge (arrows) to be curved with this bit of code just before the `flowchart TD` is declarative:
+
+```bash
+%%{init: {"flowchart": {"curve": "basis"}}}%%
+```
+
+The above only affects the edges (arrows).
+
 Example of the Mermaid code in a Markdown file:
 
 ````code
 ```mermaid
+%%{init: {"flowchart": {"curve": "basis"}}}%%
 flowchart TD
-    UCM["Universal Cake Metric"]
-    BODY["Body
-          Physical vitality"]
+    UCM("Universal Cake Metric")
+    BODY("Body
+          Physical vitality")
     UCM --> BODY
     UCM --> MIND
 ```
@@ -239,22 +267,40 @@ flowchart TD
 Rendered results:
 
 ```mermaid
+%%{init: {"flowchart": {"curve": "basis"}}}%%
 flowchart TD
-    UCM["Universal Cake Metric"]
-    BODY["Body
-          Physical vitality"]
+    UCM("Universal Cake Metric")
+    BODY("Body
+          Physical vitality")
     UCM --> BODY
     UCM --> MIND
 ```
 
 A labeled arrow names the relationship. Add a label only when the relationship needs a name.
 
+Also notice that creating our two nodes using:
+
+```bash
+    UCM --> MIND
+    BODY -->|raises / lowers| SPIRIT
+```
+
+Instead of manually naming them using ("Name") makes them render as hard edged rectangles instead of rectangles with rounded edges which looks like this:
+
+```bash
+    MIND("Mind")
+    SPIRITS("Spirit")
+```
+
+
+
 ````code
 ```mermaid
+%%{init: {"flowchart": {"curve": "basis"}}}%%
 flowchart TD
-    UCM["Universal Cake Metric"]
-    BODY["Body
-          Physical vitality"]
+    UCM("Universal Cake Metric")
+    BODY("Body
+          Physical vitality")
     UCM --> BODY
     UCM --> MIND
     BODY -->|raises / lowers| SPIRIT
@@ -266,9 +312,9 @@ Example:
 
 ```mermaid
 flowchart TD
-    UCM["Universal Cake Metric"]
-    BODY["Body
-          Physical vitality"]
+    UCM("Universal Cake Metric")
+    BODY("Body
+          Physical vitality")
     BODY -->|raises / lowers| SPIRIT
     MIND -->|raises / lowers| SPIRIT
 ```
@@ -286,11 +332,13 @@ Mermaid code example:
 ````code
 ```mermaid
 flowchart TD
-    UCM["Universal Cake Metric"]
-    BODY["**Body**
-          Physical vitality"]
-    UCM --> BODY
-    UCM --> MIND
+    UCM("Universal Cake Metric")
+    BODY("Body
+          Physical vitality")
+    MIND("Mind
+          Mental vitality")
+    SPIRIT("Spirit
+          Feelings of well being")
     BODY -->|raises / lowers| SPIRIT
     MIND -->|raises / lowers| SPIRIT
     click BODY "#body" "Jump to Body"
@@ -301,9 +349,13 @@ Rendered:
 
 ```mermaid
 flowchart TD
-    UCM["Universal Cake Metric"]
-    BODY["Body
-          Physical vitality"]
+    UCM("Universal Cake Metric")
+    BODY("Body
+          Physical vitality")
+    MIND("Mind
+          Mental vitality")
+    SPIRIT("Spirit
+          Feelings of well being")
     BODY -->|raises / lowers| SPIRIT
     MIND -->|raises / lowers| SPIRIT
     click BODY "#body" "Jump to Body"
@@ -322,34 +374,40 @@ Example of click targets in a Markdown file:
 
 Always include the tooltip. It tells a reader where the box leads, and it gives assistive technology a label for the box.
 
-### Give the chart its own anchor
+### Give the chart its own heading
 
-Put an anchor on the line directly above the chart. The sections link back to this anchor. Name it after the document or the chart, and end it with `-chart`.
+Put a heading directly above the chart. The sections link back to that heading's own id, the same way boxes link to section headings.
 
-This is the one place an explicit `<a name>` belongs. The chart is not a heading, so the renderer creates no id for it, and the sections need a fixed target to return to. Everywhere else, a box points at a heading's own id and no hand-written anchor is used.
+Earlier versions of this guide placed an explicit `<a name>` above the chart, on the reasoning that a chart is not a heading and so has no id of its own. Giving the chart a heading removes that exception rather than accommodating it, and it is better on every count. The renderer supplies the id, so nothing is hand-written and nothing can drift. The chart appears in the document outline and in any generated table of contents, where an invisible anchor never would. A reader returning to the chart lands on a heading a screen reader announces, so they hear where they arrived instead of hearing nothing. And the pattern ends up with one rule, headings own their ids, rather than a rule and an exception.
 
-Example of the anchor and chart in a Markdown file:
+Name the heading for what the chart maps, beginning with "Flowchart illustrating". Keep the wording unique within the document, because the heading's id is the return target for every section.
+
+Example of the heading and chart in a Markdown file:
 
 ````code
-<a name="universal-cake-metric-chart"></a>
+## Flowchart illustrating the Universal Cake metric
 
 ```mermaid
+%%{init: {"flowchart": {"curve": "basis"}}}%%
 flowchart TD
-    UCM["Universal Cake Metric"]
-    BODY["Body
-          Physical vitality"]
-    UCM --> BODY
+    UCM("Universal Cake Metric")
+    BODY("Body
+          Physical vitality")
+    UCM -->| description of process | BODY 
 ```
 ````
 
 Rendered as a Mermaid chart in a Markdown document:
 
 ```mermaid
+%%{init: {"flowchart": {"curve": "basis"}}}%%
 flowchart TD
-    UCM["Universal Cake Metric"]
-    BODY["Body
-          Physical vitality"]
-    UCM --> BODY
+ accTitle: Universal Cake Metric
+ accDescr: Metric used by Universal Cake
+    UCM("Universal Cake Metric")
+    BODY("Body
+          Physical vitality")
+    UCM -->| description of process | BODY 
 ```
 
 ### Leave the defaults alone
@@ -380,6 +438,12 @@ The heading above is reachable at `#other-humans`, and its box points at it with
 
 Do not place an `<a name>` beneath the heading. It duplicates the id the renderer already assigned, creates a second target for the same slug, and uses the obsolete HTML `name` attribute. If you need an id that survives the heading text changing, set it on the heading itself rather than adding a separate element.
 
+### Keep heading text unique
+
+No two headings in a document may share the same text. Two headings reading `## HTML` produce two claims on the slug `#html`, and the renderer resolves the collision by appending a numeric suffix to one of them. Which heading keeps the bare slug depends on document order, and no `click` line predicts the suffixed form, so one box silently sends the reader to the wrong section.
+
+Short, generic box labels are where this bites. A label such as `HTML` or `Output` reads well in a chart and collides easily in prose. Where a label is that short, give its section a heading specific enough to stay unique, and keep the box label and heading recognisably the same phrase.
+
 ### Follow one shape inside each section
 
 Keep the sections parallel. A reader learns the shape once and then reads the rest quickly. Use this shape:
@@ -399,7 +463,7 @@ When a box sits under another box in the chart, its section sits under the paren
 Finish every section with a link back to the chart anchor. This lets a reader return to the map without scrolling.
 
 ```markdown
-[Return to the chart](#dimensions-chart)
+[Return to the chart](#universal-cake-metric-chart)
 ```
 
 ## Keep the parts in sync
@@ -408,31 +472,33 @@ The pattern works only when the chart, the sections, and the links all agree. Be
 
 - Every box has a `click` line with a tooltip.
 - Every `click` target matches the id the renderer gives its heading, which is the heading's slug.
-- No section places a separate `<a name>` under its heading.
+- No section places a separate explicit anchor under its heading.
+- No two headings in the document share the same text.
 - Every section that appears in the chart is present, and every section present is in the chart.
 - Each box label and its section heading correspond, so their shared slug is the link target.
-- The chart carries its own explicit anchor, because it is not a heading, and every section links back to it.
+- The chart sits under its own heading, and every section links back to that heading's id.
 - Nested boxes have matching nested heading depths.
 - The chart sets no `securityLevel`, uses no escaped `\n`, and has no horizontal rules around it.
 
 ## A complete example
 
-This example shows a trimmed version of the framework chart with two sections and their return links. It follows every rule above: the boxes point at the headings' own ids, and the only explicit anchor is the chart's, because the chart is not a heading.
+This example shows a trimmed version of the framework chart with two sections and their return links. It follows every rule above: the boxes point at the headings' own ids, the chart sits under its own heading, and the document contains no explicit anchors.
 
 ````markdown
-<a name="flowchart-illustrating-universal-cake-metrics"></a>
+## Flowchart illustrating universal cake metrics
 
 ```mermaid
+%%{init: {"flowchart": {"curve": "basis"}}}%%
 flowchart TD
     accTitle: Flowchart Illustrating Universal Cake Metrics
     accDescr: Flowchart to illustrate the creation of highly accessible flow charts that include links to H1..H6 headings below it so that clicking an item in the flow chart takes you to that item's section and description and a return to chart link at the end of the section returns you to the chart again
-    UCM["Universal Cake Metric"]
-    BODY["Body
-          Physical vitality"]
-    MIND["Mind
-          Cognitive and emotional balance"]
-    SPIRIT["Spirit
-            Derived from Body, Mind, and Others"]
+    UCM("Universal Cake Metric")
+    BODY("Body
+          Physical vitality")
+    MIND("Mind
+          Cognitive and emotional balance")
+    SPIRIT("Spirit
+            Derived from Body, Mind, and Others")
 
     UCM --> BODY
     UCM --> MIND
@@ -440,6 +506,7 @@ flowchart TD
     BODY -->|raises / lowers| SPIRIT
     MIND -->|raises / lowers| SPIRIT
 
+    click UCM "#universal-cake-metric" "Jump to Universal Cake Metric"
     click BODY "#body" "Jump to Body"
     click MIND "#mind" "Jump to Mind"
     click SPIRIT "#spirit" "Jump to Spirit"
@@ -470,21 +537,22 @@ Potential metrics:
 
 Rendered as a Mermaid chart in a Markdown document:
 
-<a name="rendered-flowchart-illustrating-universal-cake-metrics"></a>
+## Rendered flowchart illustrating universal cake metrics
 
 
 
 ```mermaid
+%%{init: {"flowchart": {"curve": "basis"}}}%%
 flowchart TD
     accTitle: Flowchart Illustrating Universal Cake Metrics
     accDescr: Flowchart to illustrate the creation of highly accessible flow charts that include links to H1..H6 headings below it so that clicking an item in the flow chart takes you to that item's section and description and a return to chart link at the end of the section returns you to the chart again
-    UCM["Universal Cake Metric"]
-    BODY["Body
-          Physical vitality"]
-    MIND["Mind
-          Cognitive and emotional balance"]
-    SPIRIT["Spirit
-            Derived from Body, Mind, and Others"]
+    UCM("Universal Cake Metric")
+    BODY("Body
+          Physical vitality")
+    MIND("Mind
+          Cognitive and emotional balance")
+    SPIRIT("Spirit
+            Derived from Body, Mind, and Others")
 
     UCM --> BODY
     UCM --> MIND
@@ -506,7 +574,9 @@ Every section boundary is a real heading, never bold text. A screen reader build
 
 Every box carries a tooltip on its `click` line. The tooltip is the label assistive technology reads for that box, so a box without one is a box a screen reader cannot describe.
 
-Every box links to its heading's own id, so the reader lands on the heading itself and a screen reader announces it on arrival. Explicit `<a name>` anchors are used only for non-heading targets such as the chart, where the renderer creates no id of its own. A separate anchor placed under a heading is avoided: it duplicates the heading's id, and a jump can land on the empty anchor beside the heading instead of on the heading, giving assistive technology nothing to announce.
+Every box links to its heading's own id, so the reader lands on the heading itself and a screen reader announces it on arrival. The chart has a heading for the same reason, so a return link is announced rather than landing the reader in silence.
+
+A separate anchor placed under a heading is avoided: it duplicates the heading's id, and a jump can land on the empty anchor beside the heading instead of on the heading, giving assistive technology nothing to announce. Citations are the only explicit anchors in a document, and they use the `id` attribute.
 
 ## License
 
@@ -522,19 +592,19 @@ These short entries exist only so the rendered example charts above have working
 
 Here what the Universal Cake Metric node represents is describe. The Universal Cake Metrics are used to evaluate products, services, ideas, approaches and practices for applications in situations when you want to create highly accessible and healthy products for as many people as possible by evaluating the item for supporting high quality relationships with the Mind, with your Body and with Others.
 
-[Return to the "Rendered Flowchart Illustrating Universal Cake Metrics"](#rendered-flowchart-illustrating-universal-cake-metrics)
+[Return to the rendered flowchart illustrating universal cake metrics](#rendered-flowchart-illustrating-universal-cake-metrics)
 
 #### Body
 
 Body refers to the quality of your relationship with your physical being
 
-[Return to the "Rendered Flowchart Illustrating Universal Cake Metrics"](#rendered-flowchart-illustrating-universal-cake-metrics)
+[Return to the rendered flowchart illustrating universal cake metrics](#rendered-flowchart-illustrating-universal-cake-metrics)
 
 #### Mind
 
 Body refers to the quality of your relationship with your mind being
 
-[Return to the "Rendered Flowchart Illustrating Universal Cake Metrics"](#rendered-flowchart-illustrating-universal-cake-metrics)
+[Return to the rendered flowchart illustrating universal cake metrics](#rendered-flowchart-illustrating-universal-cake-metrics)
 
 #### Others
 
@@ -542,13 +612,13 @@ Others refers to the quality of your relationship with other humans including fr
 
 Other also refers the the quality of your relationship with the natural world and all of the living things in it.
 
-[Return to the "Rendered Flowchart Illustrating Universal Cake Metrics"](#rendered-flowchart-illustrating-universal-cake-metrics)
+[Return to the rendered flowchart illustrating universal cake metrics](#rendered-flowchart-illustrating-universal-cake-metrics)
 
 #### Spirit
 
 Is the way you feel as a result of the quality of all three of these relations with with self (mind and body) and with Others (People, Environment, Animals, Plants...). When you engage in activities that strengthen your relationships with self and others then Spirit follows. The same goes when you engage in activities that are harmful to the quality of your relationships with your mind, body and others.
 
-[Return to the "Rendered Flowchart Illustrating Universal Cake Metrics"](#rendered-flowchart-illustrating-universal-cake-metrics)
+[Return to the rendered flowchart illustrating universal cake metrics](#rendered-flowchart-illustrating-universal-cake-metrics)
 
 ### Diagram syntax
 
@@ -556,13 +626,14 @@ Is the way you feel as a result of the quality of all three of these relations w
 
 ## References
 
-<a name="apa-mermaid-docs-reference"></a>Mermaid. (n.d.). *Flowchart syntax*. Retrieved August 8, 2026, from https://mermaid.js.org/syntax/flowchart.html
+<a id="apa-mermaid-docs-reference"></a>Mermaid. (n.d.). *Flowchart syntax*. Retrieved August 8, 2026, from https://mermaid.js.org/syntax/flowchart.html
 [Return to citation](#apa-mermaid-docs-citation)
 
 ## Changelog
 
 | Version | Status | Notes |
 |---------|--------|-------|
+| 0.1.4 | Draft | Resolved the anchor conflict: the chart sits under its own heading instead of carrying an explicit anchor, which removes the last use of the obsolete `name` attribute in this pattern and makes the chart announceable and reachable from a table of contents; renamed and corrected "Give the chart its own heading"; added a unique heading text rule so no two headings claim one slug; scoped explicit anchors to citations and switched them to `id`; repaired five malformed return links. Drafted from a source named v0-1-3 whose internals read 0.1.2 |
 | 0.1.2 | Draft | Changed the anchor rule: boxes link to the heading's own auto-generated id, and the explicit `<a name>` under each heading is dropped because it duplicated that id, used the obsolete `name` attribute, and could send a jump to the empty anchor beside the heading; explicit anchors are now reserved for non-heading targets such as the chart; updated the terminology, three-parts summary, linked-section rule, sync checklist, complete example, and accessibility notes, and pointed the example return links at the chart anchor |
 | 0.1.1 | Draft | Reformatted chart examples to show the Mermaid source then a rendered chart; reworked the chart-anchor and complete examples; converted the click-target snippet to a source-only block to avoid a parse error; added a Chart Example Resources group with working targets and return links; renamed to the markdown-mermaid identifier and bumped the version |
 | 0.1.0 | Draft | Initial draft; codifies the clickable navigation flowchart pattern from framework/dimensions.md and the shape of the sections it links to |
