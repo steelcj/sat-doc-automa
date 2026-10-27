@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Added
+
+- Proposal: Offline Testing for OSAT Managers (`en/docs/design/osat-managers/proposal--offline-testing-for-osat-managers-v0.1.0.md`)
+- `osat-store.py` 0.1.0, the shared artifact store for OSAT managers and their tests: status, verify, path, add, seed export and import, with `test_osat_store.py` (45 offline tests)
+- Proposal: One OS-Agnostic End-to-End Pass for OSAT Managers (`en/docs/design/osat-managers/proposal--one-os-agnostic-end-to-end-pass-for-osat-managers-v0.1.0.md`)
+- Proposal: Choosing an Incus Host That Supports the Windows Agent (`en/docs/design/proposals/proposal--choosing-an-incus-host-that-supports-the-windows-agent-v0.1.0.md`)
+
 ## [0.4.0] - 2026-09-29
 
 * 	deleted:    CLAUDE.md
