@@ -12,6 +12,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - `osat-store.py` 0.1.0, the shared artifact store for OSAT managers and their tests: status, verify, path, add, seed export and import, with `test_osat_store.py` (45 offline tests)
 - Proposal: One OS-Agnostic End-to-End Pass for OSAT Managers (`en/docs/design/osat-managers/proposal--one-os-agnostic-end-to-end-pass-for-osat-managers-v0.1.0.md`)
 - Proposal: Choosing an Incus Host That Supports the Windows Agent (`en/docs/design/proposals/proposal--choosing-an-incus-host-that-supports-the-windows-agent-v0.1.0.md`)
+- Draft directive: Markdown: Versioned Document Filenames 0.2.0 (`en/docs/automa/markdown/defaults/markdown--versioned-document-filenames-v0.2.0.md`), with 0.1.0 under `artifacts/`
+
+### Changed
+
+- The six markdown defaults and the mermaid navigation style guide under `en/docs/automa/markdown/defaults/` carry dotted version postfixes, such as `markdown--no-heading-numbers-v0.4.1.md`; their contents are unchanged
+- README links and every `ff-manifest-*` `source:` path follow those renames; `dest:` paths keep the names the target repositories hold
 
 ## [0.4.0] - 2026-09-29
 

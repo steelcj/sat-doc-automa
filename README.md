@@ -16,10 +16,10 @@ Standing directives, organized per-format, with a `defaults/` directory answerin
 
 #### Markdown
 
-- [Markdown: Use Commas, Not Em Dashes](en/docs/automa/markdown/defaults/markdown--use-commas-not-em-dashes-v0-3-1.md)
-- [Markdown: No Heading Numbers](en/docs/automa/markdown/defaults/markdown--no-heading-numbers-v0-4-1.md)
-- [Markdown: No Horizontal Rules](en/docs/automa/markdown/defaults/markdown--no-horizontal-rules-v0-3-1.md)
-- [Markdown: License Statement Templates](en/docs/automa/markdown/defaults/markdown--license-statement-templates-v0-3-1.md)
+- [Markdown: Use Commas, Not Em Dashes](en/docs/automa/markdown/defaults/markdown--use-commas-not-em-dashes-v0.3.1.md)
+- [Markdown: No Heading Numbers](en/docs/automa/markdown/defaults/markdown--no-heading-numbers-v0.4.1.md)
+- [Markdown: No Horizontal Rules](en/docs/automa/markdown/defaults/markdown--no-horizontal-rules-v0.3.1.md)
+- [Markdown: License Statement Templates](en/docs/automa/markdown/defaults/markdown--license-statement-templates-v0.3.1.md)
 
 #### AI collaboration
 

@@ -54,17 +54,17 @@ groups:
     description: >
       Standing markdown house rules, enforced by check-conformance.py.
     items:
-      - source: en/docs/automa/markdown/defaults/markdown--no-heading-numbers-v0-4-1.md
+      - source: en/docs/automa/markdown/defaults/markdown--no-heading-numbers-v0.4.1.md
         dest: en/docs/automa/markdown/defaults/markdown--no-heading-numbers-v0-4-1.md
-      - source: en/docs/automa/markdown/defaults/markdown--no-horizontal-rules-v0-3-1.md
+      - source: en/docs/automa/markdown/defaults/markdown--no-horizontal-rules-v0.3.1.md
         dest: en/docs/automa/markdown/defaults/markdown--no-horizontal-rules-v0-3-1.md
-      - source: en/docs/automa/markdown/defaults/markdown--use-commas-not-em-dashes-v0-3-1.md
+      - source: en/docs/automa/markdown/defaults/markdown--use-commas-not-em-dashes-v0.3.1.md
         dest: en/docs/automa/markdown/defaults/markdown--use-commas-not-em-dashes-v0-3-1.md
-      - source: en/docs/automa/markdown/defaults/markdown--no-hard-line-wraps-v0-1-0.md
+      - source: en/docs/automa/markdown/defaults/markdown--no-hard-line-wraps-v0.1.0.md
         dest: en/docs/automa/markdown/defaults/markdown--no-hard-line-wraps-v0-1-0.md
-      - source: en/docs/automa/markdown/defaults/markdown--license-statement-templates-v0-3-1.md
+      - source: en/docs/automa/markdown/defaults/markdown--license-statement-templates-v0.3.1.md
         dest: en/docs/automa/markdown/defaults/markdown--license-statement-templates-v0-3-1.md
-      - source: en/docs/automa/markdown/defaults/markdown--apa-7-citations-using-citation-anchor-pairs-v0-1-0.md
+      - source: en/docs/automa/markdown/defaults/markdown--apa-7-citations-using-citation-anchor-pairs-v0.1.0.md
         dest: en/docs/automa/markdown/defaults/markdown--apa-7-citations-using-citation-anchor-pairs-v0-1-0.md
 
   ai-collaboration:
