@@ -6,6 +6,8 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-10-27
+
 ### Added
 
 - Proposal: Offline Testing for OSAT Managers (`en/docs/design/osat-managers/proposal--offline-testing-for-osat-managers-v0.1.0.md`)
